@@ -312,10 +312,6 @@ PatchTrack-Replication-Package/
 
 The replication package includes full robustness checks for the stage-based models. These checks exclude the dominant repository, exclude extreme PR sizes, exclude the dominant programming language, and compare aggregate PQS models against individual Context/Specificity/Verification specifications. Outputs are generated under `results/diagnostics/` and summarized in `results/diagnostics/robustness_sensitivity_summary.md`.
 
-## License
-
-This repository is MIT licensed. See the [LICENSE](./LICENSE) file for more information.
-
 ### Diagnostic plots and model-validity summaries
 
 The package includes generated diagnostic plots and a narrative diagnostics summary in:
@@ -376,3 +372,7 @@ This package also includes several final reproducibility-support artifacts:
 - `docs/docker_reproduction.md` and `docker-compose.yml` — containerized reproduction instructions.
 
 The methodological-alignment outputs under `results/diagnostics/` include repository-clustered standard-error variants, mixed-effects approximations, holdout stability checks, and a documented prompt-length-control feasibility record.
+
+## License
+
+This repository is MIT licensed. See the [LICENSE](./LICENSE) file for more information.
