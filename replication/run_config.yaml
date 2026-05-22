@@ -1,0 +1,6 @@
+project_root: .
+results_dir: results
+seed: 42
+threads: 1
+mode: full
+fixture_policy: generate_when_processed_data_missing

@@ -1,0 +1,4 @@
+Gate,Model,Status,Reason,Required_Field
+Gate0,prompt_length_control,not_estimated,Full prompt text is not included in final_analysis_dataset.csv; raw PDFs are provided for traceability.,Developer_Prompt_Text_Length
+Gate1,prompt_length_control,not_estimated,Full prompt text is not included in final_analysis_dataset.csv; raw PDFs are provided for traceability.,Developer_Prompt_Text_Length
+Gate2,prompt_length_control,not_estimated,Full prompt text is not included in final_analysis_dataset.csv; raw PDFs are provided for traceability.,Developer_Prompt_Text_Length

@@ -1,0 +1,16 @@
+field,role,description
+Case ID,canonical identifier,Unique case identifier used across annotation and modeling.
+PR_Link,canonical traceability,GitHub pull request URL; repository and PR number are derived from this field.
+Conversation_Link,canonical traceability,Shared ChatGPT conversation URL.
+Outcome_Class,canonical outcome,PatchTrack outcome class: PA PN NE or CL.
+Context,prompt score,Context rubric score from 0 to 2.
+Specificity,prompt score,Specificity rubric score from 0 to 2.
+Verification,prompt score,Verification rubric score from 0 to 2.
+PQS ,prompt score,Prompt Quality Score preserved with original trailing-space column name.
+PR_Size,control variable,Pull request size metric.
+Log_PR_Size,control variable,Log-transformed pull request size used in models.
+Status,lifecycle outcome,PR status; used to derive merged and closed indicators.
+Repository,derived metadata,Derived from PR_Link in the analysis view only.
+PR_Number,derived metadata,Derived from PR_Link in the analysis view only.
+Merged,derived lifecycle,Derived from Status in the analysis view only.
+Closed,derived lifecycle,Derived from Status in the analysis view only.

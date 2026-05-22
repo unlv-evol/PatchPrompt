@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+title: PatchPrompt Replication Package
+message: "If you use this replication package, please cite it using this metadata."
+type: software
+
+authors:
+  - family-names: Sserunjogi
+    given-names: Richard
+
+  - family-names: Ogenrwot
+    given-names: Daniel
+
+  - family-names: Businge
+    given-names: John
+
+date-released: 2026-05-21
+
+license: MIT
+
+repository-code: https://github.com/unlv-evol/PatchPrompt
+
+abstract: >-
+  Replication package for the PatchPrompt empirical software engineering study.
+  The package includes raw PatchTrack artifacts, ChatGPT conversation PDFs,
+  human and LLM-based prompt annotations, downstream modeling datasets,
+  descriptive statistics, stage-based quantitative analyses, robustness and
+  sensitivity analyses, qualitative evidence artifacts, diagnostics, notebooks,
+  and artifact-evaluation materials supporting end-to-end reproducibility of the
+  study findings.

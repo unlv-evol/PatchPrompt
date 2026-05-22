@@ -1,0 +1,11 @@
+# Canonical lockfile for deterministic replication
+# Regenerate from a controlled environment when intentionally upgrading.
+pandas==2.2.2
+numpy==2.0.1
+PyYAML==6.0.2
+scipy==1.13.1
+matplotlib==3.9.2
+statsmodels==0.14.2
+reportlab==4.2.2
+Jinja2==3.1.4
+tabulate==0.9.0

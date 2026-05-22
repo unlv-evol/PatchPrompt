@@ -1,0 +1,5 @@
+Variable,Context,Specificity,Verification,PQS
+Context,1.0,0.38,0.286,0.732
+Specificity,0.38,1.0,0.507,0.818
+Verification,0.286,0.507,1.0,0.756
+PQS,0.732,0.818,0.756,1.0

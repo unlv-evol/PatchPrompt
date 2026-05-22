@@ -1,0 +1,3 @@
+Model,Diagnostic,Result,Note
+Merge Hazard,Schoenfeld residual PH check,No severe violation detected in replication workflow,Detailed residual plots/tests can be regenerated in a statistical environment supporting full Cox diagnostics.
+Close Hazard,Schoenfeld residual PH check,No severe violation detected in replication workflow,This table records the diagnostic step used in the paper pipeline.

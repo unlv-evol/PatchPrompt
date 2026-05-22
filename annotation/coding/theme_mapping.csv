@@ -1,0 +1,10 @@
+family,theme,description
+Context,Explicit locus,Prompt identifies concrete code/files/APIs or environment details.
+Context,Missing code context,Prompt lacks the grounding needed to localize the change.
+Context,Workflow grounding,Prompt references development workflow or integration context.
+Specificity,Open-ended ask,Prompt is broad and under-specified.
+Specificity,Constrained task,Prompt narrows the expected implementation or behavior.
+Specificity,Structured output,Prompt asks for a precise format or bounded deliverable.
+Verification,No oracle,Prompt provides no checkable validation condition.
+Verification,Expected behavior,Prompt includes informal expected behavior.
+Verification,Tests/checks included,Prompt includes tests or explicit acceptance checks.

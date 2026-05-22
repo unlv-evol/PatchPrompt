@@ -1,0 +1,573 @@
+artifacts:
+- name: canonical final analysis dataset
+  path: dataset/processed/final_analysis_dataset.csv
+  validation: csv_schema
+  required_columns:
+  - Case ID
+  - PR_Link
+  - Conversation_Link
+  - Outcome_Class
+  - Context
+  - Specificity
+  - Verification
+  - Rationale
+  - 'PQS '
+  - PR_Size
+  - Log_PR_Size
+  - Has_Code
+  - Adopt_Any
+  - Fraction_Adopted
+  - Status
+  - Exp_Author_Repo
+  - Time_To_Event
+  - PR_Language
+  smoke: true
+- name: derived gate model dataset
+  path: dataset/processed/gate_model_dataset.csv
+  validation: csv_schema
+  required_columns:
+  - Case_ID
+  - PR_Link
+  - Outcome_Class
+  - Context
+  - Specificity
+  - Verification
+  - PQS
+  - Repository
+  - PR_Number
+  - Merged
+  - Closed
+  - Generated_Code
+  - Adopted_Code
+  smoke: true
+- name: prompt scores
+  path: dataset/processed/prompt_scores.csv
+  validation: csv_schema
+  required_columns:
+  - Case ID
+  - Context
+  - Specificity
+  - Verification
+  - 'PQS '
+  smoke: true
+- name: Table 1 Summary
+  path: results/tables/table_1_summary.csv
+  validation: csv_schema
+  required_columns:
+  - Metric
+  - Value
+  smoke: true
+- name: RQ1 Overall Agreement Metrics
+  path: results/rq1/rq1_overall_agreement_metrics.csv
+  validation: csv_schema
+  required_columns:
+  - Dimension
+  - Quadratic_Weighted_Kappa
+  - MAE
+  - Directional_Bias
+  smoke: true
+- name: RQ1 Class-Conditioned Kappa
+  path: results/rq1/rq1_class_conditioned_kappa.csv
+  validation: csv_schema
+  required_columns:
+  - Class
+  - N
+  - kappa_C
+  - kappa_S
+  - kappa_V
+  smoke: true
+- name: RQ1 Annotation Policy Table
+  path: results/rq1/rq1_annotation_policy.csv
+  validation: csv_schema
+  required_columns:
+  - Metric
+  - PA
+  - PN
+  - CL
+  - NE
+  smoke: true
+- name: RQ1 Validation Pairs
+  path: results/rq1/rq1_human_llm_validation_pairs.csv
+  validation: csv_schema
+  required_columns:
+  - Case_ID
+  - Classification
+  - Human_Context
+  - Human_Specificity
+  - Human_Verification
+  - LLM_Context
+  - LLM_Specificity
+  - LLM_Verification
+  smoke: true
+- name: Table 3a Prompt Structure
+  path: results/tables/table_3a_prompt_structure.csv
+  validation: csv_schema
+  required_columns:
+  - Statistic
+  - Context
+  - Specificity
+  - Verification
+  smoke: true
+- name: Table 3b PQS by Outcome
+  path: results/tables/table_3b_pqs_by_outcome.csv
+  validation: csv_schema
+  required_columns:
+  - Class
+  - Mean
+  - Median
+  - N
+  smoke: true
+- name: Appendix Table 8 PQS Distribution
+  path: results/tables/appendix_table_8_pqs_distribution.csv
+  validation: csv_schema
+  required_columns:
+  - Statistic
+  - Value
+  smoke: true
+- name: Appendix Table 9 Extended PQS by Outcome
+  path: results/tables/appendix_table_9_extended_pqs_by_outcome.csv
+  validation: csv_schema
+  required_columns:
+  - Class
+  - Count
+  - Mean
+  - Median
+  - Std. Dev.
+  - Max
+  smoke: true
+- name: Appendix Table 10 PR Size
+  path: results/tables/appendix_table_10_pr_size.csv
+  validation: csv_schema
+  required_columns:
+  - Metric
+  - Value
+  smoke: true
+- name: Appendix Table 11 Language Distribution
+  path: results/tables/appendix_table_11_language_distribution.csv
+  validation: csv_schema
+  required_columns:
+  - Language
+  - Count
+  smoke: true
+- name: Appendix Table 12 Contributor Experience
+  path: results/tables/appendix_table_12_contributor_experience.csv
+  validation: csv_schema
+  required_columns:
+  - Metric
+  - Value
+  smoke: true
+- name: Table 2 Models
+  path: results/tables/table_2_models.csv
+  validation: nonempty
+  smoke: true
+- name: Gate 0 Model
+  path: results/tables/gate0_generation_model.csv
+  validation: nonempty
+  smoke: true
+- name: Gate 1 Model
+  path: results/tables/gate1_adoption_model.csv
+  validation: nonempty
+  smoke: true
+- name: Gate 2 Model
+  path: results/tables/gate2_integration_model.csv
+  validation: nonempty
+  smoke: true
+- name: Axis B Model
+  path: results/tables/axisb_lifecycle_model.csv
+  validation: nonempty
+  smoke: true
+- name: VIF Results
+  path: results/diagnostics/vif_results.csv
+  validation: csv_schema
+  required_columns:
+  - Variable
+  - VIF
+  smoke: true
+- name: Separation Checks
+  path: results/diagnostics/separation_checks.csv
+  validation: nonempty
+  smoke: true
+- name: Schoenfeld Diagnostics
+  path: results/diagnostics/schoenfeld_residual_tests.csv
+  validation: nonempty
+  smoke: true
+- name: Sensitivity Analysis
+  path: results/diagnostics/sensitivity_analysis.csv
+  validation: nonempty
+  smoke: true
+- name: Full Robustness Sensitivity Results
+  path: results/diagnostics/full_robustness_sensitivity_results.csv
+  validation: csv_schema
+  required_columns:
+  - Gate
+  - Scenario
+  - Specification
+  - N
+  - Term
+  - Metric
+  - Estimate
+  - CI_Low
+  - CI_High
+  - p_value
+  - Formatted
+  smoke: true
+- name: Dominant Repository Exclusion
+  path: results/diagnostics/dominant_repository_exclusion.csv
+  validation: nonempty
+  smoke: true
+- name: Extreme PR Size Exclusion
+  path: results/diagnostics/extreme_pr_size_exclusion.csv
+  validation: nonempty
+  smoke: true
+- name: Dominant Language Exclusion
+  path: results/diagnostics/dominant_language_exclusion.csv
+  validation: nonempty
+  smoke: true
+- name: PQS vs Dimension Models
+  path: results/diagnostics/pqs_vs_dimension_models.csv
+  validation: nonempty
+  smoke: true
+- name: Robustness Sensitivity Summary
+  path: results/diagnostics/robustness_sensitivity_summary.md
+  validation: nonempty
+  smoke: true
+- name: Code Frequencies
+  path: results/qualitative/code_frequencies.csv
+  validation: nonempty
+  smoke: true
+- name: Thematic Summary
+  path: results/qualitative/thematic_summary.csv
+  validation: nonempty
+  smoke: true
+- name: Triangulation Summary
+  path: results/qualitative/triangulation_summary.csv
+  validation: nonempty
+  smoke: true
+- name: Illustrative Examples Dataset
+  path: results/qualitative/illustrative_examples_dataset.csv
+  validation: csv_schema
+  required_columns:
+  - Case ID
+  - Paper_Section
+  - Gate_or_Axis
+  - Illustrative_Role
+  - Paper_Label
+  - Paper_Interpretation
+  - Outcome_Class
+  - Context
+  - Specificity
+  - Verification
+  - PQS
+  - PR_Link
+  - Conversation_Link
+  smoke: true
+- name: Illustrative Examples Summary
+  path: results/qualitative/illustrative_examples_summary.csv
+  validation: csv_schema
+  required_columns:
+  - Case ID
+  - Paper_Section
+  - Gate_or_Axis
+  - Illustrative_Role
+  - Paper_Label
+  - Paper_Interpretation
+  - Outcome_Class
+  - Context
+  - Specificity
+  - Verification
+  - PQS
+  - Fraction_Adopted
+  smoke: true
+- name: Illustrative Examples Markdown Summary
+  path: results/qualitative/illustrative_examples_summary.md
+  validation: nonempty
+  smoke: true
+- name: Illustrative Case Manifest
+  path: results/qualitative/illustrative_case_manifest.csv
+  validation: csv_schema
+  required_columns:
+  - artifact
+  - description
+  - case_count
+  - unique_cases
+  smoke: true
+- name: Figure 1 Outcome Distribution
+  path: results/figures/figure_1_outcome_distribution.png
+  validation: nonempty
+  smoke: true
+- name: Figure 2 PQS by Outcome
+  path: results/figures/figure_2_pqs_by_outcome.png
+  validation: nonempty
+  smoke: true
+- name: Figure 3 Fraction Adopted by Context
+  path: results/figures/figure_3_fraction_adopted_by_context.png
+  validation: nonempty
+  smoke: true
+- name: Run Metadata
+  path: results/logs/last_run_metadata.json
+  validation: nonempty
+  smoke: true
+- name: Diagnostics Summary Markdown
+  path: results/diagnostics/diagnostics_summary.md
+  validation: nonempty
+  smoke: true
+- name: VIF Diagnostic Plot
+  path: results/diagnostics/vif_diagnostics.png
+  validation: nonempty
+  smoke: true
+- name: VIF Correlation Heatmap
+  path: results/diagnostics/vif_correlation_heatmap.png
+  validation: nonempty
+  smoke: true
+- name: Merge Hazard Context Schoenfeld Plot
+  path: results/diagnostics/schoenfeld_residual_plots/merge_hazard_context_schoenfeld.png
+  validation: nonempty
+  smoke: true
+- name: Close Hazard Verification Schoenfeld Plot
+  path: results/diagnostics/schoenfeld_residual_plots/close_hazard_verification_schoenfeld.png
+  validation: nonempty
+  smoke: true
+- name: Appendix B Summary Statistics
+  path: results/descriptive/appendix_b_summary_statistics.csv
+  validation: csv_schema
+  required_columns:
+  - Variable
+  - N
+  - Mean
+  - Median
+  - Std_Dev
+  - Min
+  - Q1
+  - Q3
+  - IQR
+  - Max
+  - Skewness
+  smoke: true
+- name: Prompt Dimension Distributions
+  path: results/descriptive/prompt_dimension_distributions.csv
+  validation: csv_schema
+  required_columns:
+  - Dimension
+  - Score
+  - Count
+  - Percent
+  smoke: true
+- name: Repository Distribution
+  path: results/descriptive/repository_distribution.csv
+  validation: csv_schema
+  required_columns:
+  - Repository
+  - Count
+  smoke: true
+- name: Language Distribution Full
+  path: results/descriptive/language_distribution.csv
+  validation: csv_schema
+  required_columns:
+  - Language
+  - Count
+  smoke: true
+- name: Skewness Analysis
+  path: results/descriptive/skewness_analysis.csv
+  validation: csv_schema
+  required_columns:
+  - Variable
+  - N
+  - Mean
+  - Median
+  - Mean_Median_Gap
+  - Skewness
+  - Interpretation
+  smoke: true
+- name: Outlier Summary
+  path: results/descriptive/outlier_summary.csv
+  validation: csv_schema
+  required_columns:
+  - Variable
+  - Q1
+  - Q3
+  - IQR
+  - Lower_Threshold
+  - Upper_Threshold
+  - Upper_Outlier_Count
+  - Top_Outlier_Cases
+  smoke: true
+- name: Prompt Structure Correlations
+  path: results/descriptive/prompt_structure_correlations.csv
+  validation: csv_schema
+  required_columns:
+  - Variable
+  - Context
+  - Specificity
+  - Verification
+  - PQS
+  smoke: true
+- name: Contributor Experience Summary Extended
+  path: results/descriptive/contributor_experience_summary.csv
+  validation: csv_schema
+  required_columns:
+  - Variable
+  - N
+  - Mean
+  - Median
+  - Std_Dev
+  - Min
+  - Q1
+  - Q3
+  - IQR
+  - Max
+  - Skewness
+  smoke: true
+- name: PR Size Distribution Summary Extended
+  path: results/descriptive/pr_size_distribution_summary.csv
+  validation: csv_schema
+  required_columns:
+  - Variable
+  - N
+  - Mean
+  - Median
+  - Std_Dev
+  - Min
+  - Q1
+  - Q3
+  - IQR
+  - Max
+  - Skewness
+  smoke: true
+- name: Appendix B Summary Markdown
+  path: results/descriptive/appendix_b_summary.md
+  validation: nonempty
+  smoke: true
+- name: Appendix B PR Size Histogram
+  path: results/descriptive/appendix_b_figures/pr_size_histogram.png
+  validation: nonempty
+  smoke: true
+- name: Appendix B Contributor Experience Histogram
+  path: results/descriptive/appendix_b_figures/contributor_experience_histogram.png
+  validation: nonempty
+  smoke: true
+- name: Appendix B Prompt Dimension Density
+  path: results/descriptive/appendix_b_figures/prompt_dimension_density.png
+  validation: nonempty
+  smoke: true
+- name: Appendix B PQS Density
+  path: results/descriptive/appendix_b_figures/pqs_density.png
+  validation: nonempty
+  smoke: true
+- name: Appendix B Repository Frequency Plot
+  path: results/descriptive/appendix_b_figures/repository_frequency_plot.png
+  validation: nonempty
+  smoke: true
+- name: Appendix B Language Frequency Plot
+  path: results/descriptive/appendix_b_figures/language_frequency_plot.png
+  validation: nonempty
+  smoke: true
+- name: Clustered SE Models
+  path: results/diagnostics/clustered_se_models.csv
+  validation: csv_schema
+  required_columns:
+  - Gate
+  - Model
+  - N
+  - Repositories
+  - Term
+  - Estimate
+  - CI_Low
+  - CI_High
+  - p_value
+  - Status
+  smoke: false
+- name: Mixed Effects Models
+  path: results/diagnostics/mixed_effects_models.csv
+  validation: csv_schema
+  required_columns:
+  - Gate
+  - Model
+  - Outcome
+  - N
+  - Repositories
+  - Term
+  - Estimate
+  - p_value
+  - Status
+  smoke: false
+- name: Holdout Stability Checks
+  path: results/diagnostics/holdout_stability_checks.csv
+  validation: csv_schema
+  required_columns:
+  - Gate
+  - Replicate
+  - Train_N
+  - Term
+  - Estimate
+  - p_value
+  - Sign
+  - Status
+  smoke: false
+- name: Prompt Length Control Models
+  path: results/diagnostics/prompt_length_control_models.csv
+  validation: csv_schema
+  required_columns:
+  - Gate
+  - Model
+  - Status
+  - Reason
+  - Required_Field
+  smoke: false
+- name: Runtime Environment JSON
+  path: results/runtime/runtime_environment.json
+  validation: nonempty
+  smoke: true
+- name: Runtime Benchmarks
+  path: results/runtime/runtime_benchmarks.csv
+  validation: csv_schema
+  required_columns:
+  - step
+  - seconds
+  smoke: true
+- name: Reproduction Timing Summary
+  path: results/runtime/reproduction_timing_summary.md
+  validation: nonempty
+  smoke: true
+- name: Runtime Capture JSON
+  path: environment/runtime_capture.json
+  validation: nonempty
+  smoke: true
+- name: Pip Freeze Snapshot
+  path: environment/pip_freeze.txt
+  validation: nonempty
+  smoke: true
+- name: Frozen Conda Environment
+  path: environment/conda_env_frozen.yml
+  validation: nonempty
+  smoke: true
+- name: Reproduction Report
+  path: results/reproduction_report.md
+  validation: nonempty
+  smoke: true
+- name: Table PDF Exports Directory Marker
+  path: results/paper_tables_pdf/table_1_summary.pdf
+  validation: nonempty
+  smoke: true
+- name: Docker Reproduction Documentation
+  path: docs/docker_reproduction.md
+  validation: nonempty
+  smoke: true
+- name: Docker Compose File
+  path: docker-compose.yml
+  validation: nonempty
+  smoke: true
+- name: Data Manifest
+  path: dataset/provenance/data_manifest.csv
+  validation: csv_schema
+  required_columns:
+  - path
+  - category
+  - bytes
+  - sha256
+  - mime_type
+  - description
+  smoke: true
+- name: SHA256 Checksums
+  path: dataset/provenance/checksums.sha256
+  validation: nonempty
+  smoke: true

@@ -1,0 +1,5 @@
+Variable,N,Mean,Median,Mean_Median_Gap,Skewness,Interpretation
+PR_Size,269,1769.93,202.0,1567.93,13.49,right-skewed
+Exp_Author_Repo,269,57.21,10.0,47.21,3.72,right-skewed
+Time_To_Event,269,13.96,4.0,9.96,4.15,right-skewed
+PQS,273,2.93,3.0,-0.07,-0.23,approximately symmetric

@@ -1,0 +1,4 @@
+family,theme,example
+Context,Explicit locus,"Update route.ts to use sendApiError for Unauthorized responses."
+Specificity,Structured output,"Return the PR review feedback as raw markdown with blockers and acceptance criteria."
+Verification,Tests/checks included,"Add Playwright coverage and ensure make smoke passes."

@@ -1,0 +1,41 @@
+steps:
+  - id: prepare_processed_data
+    command: python mining/preprocessing/build_processed_datasets.py --root .
+    inputs: [dataset/raw, annotation]
+    outputs:
+      - dataset/processed/final_analysis_dataset.csv
+      - dataset/processed/prompt_scores.csv
+      - dataset/processed/gate_model_dataset.csv
+      - dataset/processed/qualitative_dataset.csv
+  - id: reproduce_tables
+    command: python replication/reproduce_tables.py
+    inputs:
+      - dataset/processed/final_analysis_dataset.csv
+      - annotation/validation/human_gold_annotations.csv
+      - annotation/validation/llm_annotations_v1_combined.csv
+    outputs:
+      - results/tables/table_1_summary.csv
+      - results/rq1/rq1_overall_agreement_metrics.csv
+      - results/rq1/rq1_class_conditioned_kappa.csv
+      - results/rq1/rq1_annotation_policy.csv
+      - results/tables/table_3a_prompt_structure.csv
+      - results/tables/table_3b_pqs_by_outcome.csv
+      - results/tables/appendix_table_8_pqs_distribution.csv
+      - results/tables/appendix_table_9_extended_pqs_by_outcome.csv
+      - results/tables/appendix_table_10_pr_size.csv
+      - results/tables/appendix_table_11_language_distribution.csv
+      - results/tables/appendix_table_12_contributor_experience.csv
+      - results/tables/table_2_models.csv
+      - results/diagnostics/vif_results.csv
+      - results/qualitative/code_frequencies.csv
+  - id: reproduce_figures
+    command: python replication/reproduce_figures.py
+    inputs: [dataset/processed/final_analysis_dataset.csv]
+    outputs:
+      - results/figures/figure_1_outcome_distribution.png
+      - results/figures/figure_2_pqs_by_outcome.png
+      - results/figures/figure_3_fraction_adopted_by_context.png
+  - id: verify_outputs
+    command: python replication/verify_outputs.py --expected replication/expected_outputs.yaml
+    inputs: [replication/expected_outputs.yaml]
+    outputs: [results/logs/last_run_metadata.json]

@@ -1,0 +1,13 @@
+Gate,Scenario,N_before,N_after,Exclusion_Detail
+Gate 0,Main sample,214,214,No exclusion
+Gate 0,Exclude dominant repository,214,204,Excluded repository: VOICEVOX/voicevox
+Gate 0,Exclude extreme PR size,214,203,Kept PR_Size <= 95th percentile (2536.50)
+Gate 0,Exclude dominant language,214,154,Excluded language: TypeScript
+Gate 1,Main sample,139,139,No exclusion
+Gate 1,Exclude dominant repository,139,133,Excluded repository: UNLV-CS472-672/2024-S-GROUP3-Barbell
+Gate 1,Exclude extreme PR size,139,132,Kept PR_Size <= 95th percentile (2750.40)
+Gate 1,Exclude dominant language,139,100,Excluded language: TypeScript
+Gate 2,Main sample,87,87,No exclusion
+Gate 2,Exclude dominant repository,87,81,Excluded repository: UNLV-CS472-672/2024-S-GROUP3-Barbell
+Gate 2,Exclude extreme PR size,87,82,Kept PR_Size <= 95th percentile (4006.40)
+Gate 2,Exclude dominant language,87,57,Excluded language: TypeScript

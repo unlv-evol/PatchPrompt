@@ -1,0 +1,4 @@
+Metric,PA,PN,CL,NE
+Context,Human,Human,Human,Human
+Specificity,Human,LLM,LLM,LLM
+Verification,Human,LLM,Human,Human

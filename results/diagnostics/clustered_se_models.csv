@@ -1,0 +1,8 @@
+Gate,Model,N,Repositories,Term,Estimate,CI_Low,CI_High,p_value,Status
+Gate0,repository_clustered_se,214,159,model,,,,,not estimated: 'LogitResults' object has no attribute 'get_robustcov_results'
+Gate1,repository_clustered_se,139,111,model,,,,,not estimated: 'LogitResults' object has no attribute 'get_robustcov_results'
+Gate2,repository_clustered_se,87,69,Intercept,33.18339400215752,3.237807464785469,63.12898053952957,0.030385745946822796,estimated
+Gate2,repository_clustered_se,87,69,Context,12.664273257180552,2.540326226876763,22.788220287484343,0.014983591117435888,estimated
+Gate2,repository_clustered_se,87,69,Specificity,-2.9959743091914763,-15.685275879973924,9.693327261590971,0.639052354087106,estimated
+Gate2,repository_clustered_se,87,69,Verification,0.0491871672666776,-9.86882067365363,9.967195008186984,0.9921330101467372,estimated
+Gate2,repository_clustered_se,87,69,Log_PR_Size,-3.6696274032495215,-7.5815741758489885,0.24231936934994547,0.06552696614869397,estimated

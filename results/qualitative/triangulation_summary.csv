@@ -1,0 +1,5 @@
+Research_Question,Quantitative_Result,Qualitative_Interpretation
+RQ2a,Context and Specificity predict code generation,Prompts must define a codable implementation space.
+RQ2b,Specificity and Verification predict adoption,Developers adopt outputs when constraints and correctness cues make them evaluable.
+RQ2c,Context predicts integration depth,Deep reuse depends on alignment with surrounding implementation context.
+RQ2d,Prompt structure weak for merge timing; Verification associated with close hazard,Lifecycle outcomes reflect review and repository processes beyond prompt quality.
