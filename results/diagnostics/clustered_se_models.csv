@@ -1,8 +1,13 @@
-Gate,Model,N,Repositories,Term,Estimate,CI_Low,CI_High,p_value,Status
-Gate0,repository_clustered_se,214,159,model,,,,,not estimated: 'LogitResults' object has no attribute 'get_robustcov_results'
-Gate1,repository_clustered_se,139,111,model,,,,,not estimated: 'LogitResults' object has no attribute 'get_robustcov_results'
-Gate2,repository_clustered_se,87,69,Intercept,33.18339400215752,3.237807464785469,63.12898053952957,0.030385745946822796,estimated
-Gate2,repository_clustered_se,87,69,Context,12.664273257180552,2.540326226876763,22.788220287484343,0.014983591117435888,estimated
-Gate2,repository_clustered_se,87,69,Specificity,-2.9959743091914763,-15.685275879973924,9.693327261590971,0.639052354087106,estimated
-Gate2,repository_clustered_se,87,69,Verification,0.0491871672666776,-9.86882067365363,9.967195008186984,0.9921330101467372,estimated
-Gate2,repository_clustered_se,87,69,Log_PR_Size,-3.6696274032495215,-7.5815741758489885,0.24231936934994547,0.06552696614869397,estimated
+Family,Gate,Scenario,Specification,N,Term,Metric,Estimate,CI_Low,CI_High,p_value,Significant_0_05,Direction,Formatted
+Repository-level dependence,Gate 0,Repository-clustered SE,C/S/V + PR size,214,Context,OR,3.087276038264116,1.6415981351976123,5.806094154275107,0.00046864101673369825,True,positive,"3.09*** [1.64, 5.81]"
+Repository-level dependence,Gate 0,Repository-clustered SE,C/S/V + PR size,214,Specificity,OR,5.917527734508299,3.206863954780777,10.91943249930249,1.2848143288918512e-08,True,positive,"5.92*** [3.21, 10.92]"
+Repository-level dependence,Gate 0,Repository-clustered SE,C/S/V + PR size,214,Verification,OR,0.9472432686412622,0.49169654589582185,1.8248446475283788,0.8712983047186434,False,negative,"0.95 [0.49, 1.82]"
+Repository-level dependence,Gate 0,Repository-clustered SE,C/S/V + PR size,214,Log_PR_Size,OR,1.0320767064444671,0.8618465580501605,1.235930361426661,0.7313654719214004,False,positive,"1.03 [0.86, 1.24]"
+Repository-level dependence,Gate 1,Repository-clustered SE,C/S/V + PR size,139,Context,OR,2.00980406617727,0.8957145643123368,4.509597750622458,0.09048024373999015,False,positive,"2.01 [0.90, 4.51]"
+Repository-level dependence,Gate 1,Repository-clustered SE,C/S/V + PR size,139,Specificity,OR,6.820537283716018,2.173486631564193,21.40327350671646,0.0010001711732415069,True,positive,"6.82** [2.17, 21.40]"
+Repository-level dependence,Gate 1,Repository-clustered SE,C/S/V + PR size,139,Verification,OR,3.6164211333627736,1.4908321779873126,8.772618412012962,0.004466284234039141,True,positive,"3.62** [1.49, 8.77]"
+Repository-level dependence,Gate 1,Repository-clustered SE,C/S/V + PR size,139,Log_PR_Size,OR,1.4727610753105786,1.1591541346876546,1.8712137756679244,0.0015303817925905899,True,positive,"1.47** [1.16, 1.87]"
+Repository-level dependence,Gate 2,Repository-clustered SE,C/S/V + PR size,87,Context,AME,0.13764125044517528,0.0289086121260293,0.24637388876432126,0.013099335564680877,True,positive,"0.138* [0.029, 0.246]"
+Repository-level dependence,Gate 2,Repository-clustered SE,C/S/V + PR size,87,Specificity,AME,-0.028626119023494805,-0.1524624313213685,0.0952101932743789,0.6505004051649688,False,negative,"-0.029 [-0.152, 0.095]"
+Repository-level dependence,Gate 2,Repository-clustered SE,C/S/V + PR size,87,Verification,AME,0.0006205711931684321,-0.10204626907642918,0.10328741146276606,0.990547658379165,False,positive,"0.001 [-0.102, 0.103]"
+Repository-level dependence,Gate 2,Repository-clustered SE,C/S/V + PR size,87,Log_PR_Size,AME,-0.03739243217142545,-0.07780639092130337,0.0030215265784524674,0.06976577334284408,False,negative,"-0.037 [-0.078, 0.003]"

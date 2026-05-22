@@ -1,4 +1,16 @@
-Gate,Model,Status,Reason,Required_Field
-Gate0,prompt_length_control,not_estimated,Full prompt text is not included in final_analysis_dataset.csv; raw PDFs are provided for traceability.,Developer_Prompt_Text_Length
-Gate1,prompt_length_control,not_estimated,Full prompt text is not included in final_analysis_dataset.csv; raw PDFs are provided for traceability.,Developer_Prompt_Text_Length
-Gate2,prompt_length_control,not_estimated,Full prompt text is not included in final_analysis_dataset.csv; raw PDFs are provided for traceability.,Developer_Prompt_Text_Length
+Family,Gate,Scenario,Specification,N,Term,Metric,Estimate,CI_Low,CI_High,p_value,Significant_0_05,Direction,Formatted
+Prompt-length control,Gate 0,Add log(prompt_tokens),C/S/V + PR size + prompt length,214,Context,OR,3.0896463374622276,1.716023940821465,5.562809622588427,0.0001700348371180235,True,positive,"3.09*** [1.72, 5.56]"
+Prompt-length control,Gate 0,Add log(prompt_tokens),C/S/V + PR size + prompt length,214,Specificity,OR,5.860414997953945,2.713522604349315,12.656781960539115,6.763414252445861e-06,True,positive,"5.86*** [2.71, 12.66]"
+Prompt-length control,Gate 0,Add log(prompt_tokens),C/S/V + PR size + prompt length,214,Verification,OR,0.9383452330227666,0.45483564905069473,1.9358460098153232,0.863255546394242,False,negative,"0.94 [0.45, 1.94]"
+Prompt-length control,Gate 0,Add log(prompt_tokens),C/S/V + PR size + prompt length,214,Log_PR_Size,OR,1.0316500893017353,0.8627059892724259,1.2336785880597294,0.732738007910274,False,positive,"1.03 [0.86, 1.23]"
+Prompt-length control,Gate 0,Add log(prompt_tokens),C/S/V + PR size + prompt length,214,log_prompt_tokens,OR,1.0908756393547503,0.16795234444011603,7.085400709973043,0.927402138691323,False,positive,"1.09 [0.17, 7.09]"
+Prompt-length control,Gate 1,Add log(prompt_tokens),C/S/V + PR size + prompt length,139,Context,OR,2.104934196236668,0.8347211202671871,5.308057820638662,0.11476144432835249,False,positive,"2.10 [0.83, 5.31]"
+Prompt-length control,Gate 1,Add log(prompt_tokens),C/S/V + PR size + prompt length,139,Specificity,OR,4.561673427648026,1.365517882959829,15.238807722829542,0.013655650167177066,True,positive,"4.56* [1.37, 15.24]"
+Prompt-length control,Gate 1,Add log(prompt_tokens),C/S/V + PR size + prompt length,139,Verification,OR,2.2091088106875656,0.7976715146376853,6.11800929067158,0.12725697104561678,False,positive,"2.21 [0.80, 6.12]"
+Prompt-length control,Gate 1,Add log(prompt_tokens),C/S/V + PR size + prompt length,139,Log_PR_Size,OR,1.4702013422269924,1.1450680610795925,1.8876537213413789,0.002508967431990597,True,positive,"1.47** [1.15, 1.89]"
+Prompt-length control,Gate 1,Add log(prompt_tokens),C/S/V + PR size + prompt length,139,log_prompt_tokens,OR,86.90351171856496,5.290306251882794,1427.5582526684454,0.001768975904718056,True,positive,"86.90** [5.29, 1427.56]"
+Prompt-length control,Gate 2,Add log(prompt_tokens),C/S/V + PR size + prompt length,87,Context,AME,0.13779732189374702,-0.09629501006846977,0.3718896538559638,0.2486136101087596,False,positive,"0.138 [-0.096, 0.372]"
+Prompt-length control,Gate 2,Add log(prompt_tokens),C/S/V + PR size + prompt length,87,Specificity,AME,-0.013820431553442473,-0.2589449612112829,0.231304098104398,0.9120086843234203,False,negative,"-0.014 [-0.259, 0.231]"
+Prompt-length control,Gate 2,Add log(prompt_tokens),C/S/V + PR size + prompt length,87,Verification,AME,0.0038735002488664663,-0.20883497577076235,0.2165819762684953,0.9715282117631051,False,positive,"0.004 [-0.209, 0.217]"
+Prompt-length control,Gate 2,Add log(prompt_tokens),C/S/V + PR size + prompt length,87,Log_PR_Size,AME,-0.0366493442528789,-0.09805281746920273,0.02475412896344493,0.24207089776664414,False,negative,"-0.037 [-0.098, 0.025]"
+Prompt-length control,Gate 2,Add log(prompt_tokens),C/S/V + PR size + prompt length,87,log_prompt_tokens,AME,-0.10905929294366878,-0.6241084464847703,0.40598986059743275,0.6781321135953101,False,negative,"-0.109 [-0.624, 0.406]"

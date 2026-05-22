@@ -1,6 +1,6 @@
-# PatchTrack Prompt Replication Package
+# Patch Prompt Replication Package
 
-This repository is an end-to-end replication package for the PatchTrack prompt-quality study, **Prompt Quality and Pull Request Outcomes: A Stage-Based Empirical Study of LLM-Assisted Development**.
+This repository is an end-to-end replication package for the PatchPrompt prompt-quality study, **Prompt Quality and Pull Request Outcomes: A Stage-Based Empirical Study of LLM-Assisted Development**.
 
 The package preserves the cleaned downstream analysis dataset exactly as used for modeling and regenerates the annotation-reliability results, quantitative tables, diagnostics, qualitative summaries, figures, LaTeX tables, output manifests, and run metadata.
 
@@ -147,6 +147,15 @@ make PYTHON=.venv/bin/python verify
 - `results/diagnostics/separation_checks.csv`
 - `results/diagnostics/schoenfeld_residual_tests.csv`
 - `results/diagnostics/sensitivity_analysis.csv`
+- `results/diagnostics/full_robustness_sensitivity_results.csv`
+- `results/diagnostics/robustness_summary_table.csv`
+- `results/diagnostics/clustered_se_models.csv`
+- `results/diagnostics/mixed_effects_models.csv`
+- `results/diagnostics/holdout_stability_checks.csv`
+- `results/diagnostics/prompt_length_control_models.csv`
+- `results/diagnostics/gate2_reuse_level_counts.csv`
+- `paper/tables/robustness_summary_table.tex`
+- `paper/tables/full_robustness_sensitivity_results.tex`
 - `results/qualitative/*.csv`
 - `results/figures/*.png`
 - `paper/tables/*.tex`
@@ -288,6 +297,7 @@ PatchTrack-Replication-Package/
 ├── docs/
 │   ├── reproduction_steps.md              ← full reproduction instructions
 │   ├── quickstart_artifact_eval.md        ← short evaluator path
+│   ├── robustness_sensitivity_analysis.md ← guideline-based robustness and sensitivity documentation
 │   ├── computational_requirements.md      ← hardware/software assumptions
 │   ├── threats_to_validity.md             ← validity discussion
 │   ├── artifact_evaluation.md             ← artifact-evaluation guidance
@@ -310,7 +320,25 @@ PatchTrack-Replication-Package/
 
 ### Robustness and sensitivity analyses
 
-The replication package includes full robustness checks for the stage-based models. These checks exclude the dominant repository, exclude extreme PR sizes, exclude the dominant programming language, and compare aggregate PQS models against individual Context/Specificity/Verification specifications. Outputs are generated under `results/diagnostics/` and summarized in `results/diagnostics/robustness_sensitivity_summary.md`.
+The replication package includes a structured robustness and sensitivity analysis layer for the Gate~0, Gate~1, and Gate~2 models.
+
+These analyses evaluate whether the main findings remain qualitatively stable under:
+
+- repository-clustered standard errors,
+- mixed-effects-style specifications,
+- exclusion of the dominant repository,
+- exclusion of the top five repositories,
+- exclusion of dominant programming languages,
+- exclusion of top 1\% and top 5\% PR-size outliers,
+- alternative Gate~2 reuse operationalization,
+- aggregate PQS models,
+- prompt-length controls,
+- and stratified hold-out stability checks.
+
+The robustness outputs are generated under:
+
+```text
+results/diagnostics/
 
 ### Diagnostic plots and model-validity summaries
 

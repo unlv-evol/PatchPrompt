@@ -116,10 +116,11 @@ def main() -> None:
     out = root / "results" / "diagnostics"
     out.mkdir(parents=True, exist_ok=True)
     df = _prep(root)
-    _clustered_models(df, out)
+    # The comprehensive robustness script now owns clustered-SE, holdout,
+    # and prompt-length-control outputs. This helper only generates the
+    # mixed-effects approximation so it does not overwrite the reviewer-guided
+    # robustness artifacts produced earlier in the pipeline.
     _mixed_effects(df, out)
-    _holdout(df, out)
-    _prompt_length_controls(df, out)
 
 
 if __name__ == "__main__":

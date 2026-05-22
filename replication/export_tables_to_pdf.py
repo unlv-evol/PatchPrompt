@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Iterable
 
 import pandas as pd
+from pandas.errors import EmptyDataError
 from reportlab.lib.pagesizes import letter
 from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
@@ -44,8 +45,16 @@ def _column_widths(data: list[list[str]], total_width: float) -> list[float]:
 
 def _render_csv_to_pdf(csv_path: Path, pdf_path: Path) -> None:
     styles = getSampleStyleSheet()
-    df = pd.read_csv(csv_path)
-    data = [list(df.columns)] + [[_stringify(v) for v in row] for row in df.values.tolist()]
+    try:
+        df = pd.read_csv(csv_path)
+        if df.empty and len(df.columns) == 0:
+            data = [["Notice"], ["Source CSV is empty."]]
+        else:
+            data = [list(df.columns)] + [[_stringify(v) for v in row] for row in df.values.tolist()]
+            if len(data) == 1:
+                data.append(["No rows available in source CSV."] + [""] * (len(data[0]) - 1))
+    except EmptyDataError:
+        data = [["Notice"], ["Source CSV is empty."]]
 
     doc = SimpleDocTemplate(
         str(pdf_path),
@@ -87,7 +96,7 @@ def _render_csv_to_pdf(csv_path: Path, pdf_path: Path) -> None:
 
 
 def _csv_sources(root: Path) -> Iterable[Path]:
-    for rel in ["results/tables", "results/rq1"]:
+    for rel in ["results/tables", "results/rq1", "results/diagnostics"]:
         src_dir = root / rel
         if src_dir.exists():
             yield from sorted(src_dir.glob("*.csv"))

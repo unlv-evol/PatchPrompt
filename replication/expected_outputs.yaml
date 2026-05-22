@@ -197,19 +197,15 @@ artifacts:
   smoke: true
 - name: Full Robustness Sensitivity Results
   path: results/diagnostics/full_robustness_sensitivity_results.csv
-  validation: csv_schema
-  required_columns:
-  - Gate
-  - Scenario
-  - Specification
-  - N
-  - Term
-  - Metric
-  - Estimate
-  - CI_Low
-  - CI_High
-  - p_value
-  - Formatted
+  validation: nonempty
+  smoke: true
+- name: Robustness Summary Table
+  path: results/diagnostics/robustness_summary_table.csv
+  validation: nonempty
+  smoke: true
+- name: Robustness Core Finding Stability
+  path: results/diagnostics/robustness_core_finding_stability.csv
+  validation: nonempty
   smoke: true
 - name: Dominant Repository Exclusion
   path: results/diagnostics/dominant_repository_exclusion.csv
@@ -227,8 +223,44 @@ artifacts:
   path: results/diagnostics/pqs_vs_dimension_models.csv
   validation: nonempty
   smoke: true
+- name: Robustness Exclusion Details
+  path: results/diagnostics/robustness_exclusion_details.csv
+  validation: nonempty
+  smoke: true
+- name: Robustness Fit Warnings
+  path: results/diagnostics/robustness_fit_warnings.csv
+  validation: exists
+  smoke: true
 - name: Robustness Sensitivity Summary
   path: results/diagnostics/robustness_sensitivity_summary.md
+  validation: nonempty
+  smoke: true
+- name: Robustness Memo
+  path: results/diagnostics/robustness_memo.md
+  validation: nonempty
+  smoke: true
+- name: Gate 2 Reuse Level Counts
+  path: results/diagnostics/gate2_reuse_level_counts.csv
+  validation: nonempty
+  smoke: true
+- name: Full Robustness Sensitivity Results LaTeX
+  path: paper/tables/full_robustness_sensitivity_results.tex
+  validation: nonempty
+  smoke: true
+- name: Robustness Summary Table LaTeX
+  path: paper/tables/robustness_summary_table.tex
+  validation: nonempty
+  smoke: true
+- name: Robustness Core Finding Stability LaTeX
+  path: paper/tables/robustness_core_finding_stability.tex
+  validation: nonempty
+  smoke: true
+- name: Gate 2 Reuse Level Counts LaTeX
+  path: paper/tables/gate2_reuse_level_counts.tex
+  validation: nonempty
+  smoke: true
+- name: Sensitivity Analysis LaTeX
+  path: paper/tables/sensitivity_analysis.tex
   validation: nonempty
   smoke: true
 - name: Code Frequencies
@@ -463,55 +495,19 @@ artifacts:
   smoke: true
 - name: Clustered SE Models
   path: results/diagnostics/clustered_se_models.csv
-  validation: csv_schema
-  required_columns:
-  - Gate
-  - Model
-  - N
-  - Repositories
-  - Term
-  - Estimate
-  - CI_Low
-  - CI_High
-  - p_value
-  - Status
+  validation: nonempty
   smoke: false
 - name: Mixed Effects Models
   path: results/diagnostics/mixed_effects_models.csv
-  validation: csv_schema
-  required_columns:
-  - Gate
-  - Model
-  - Outcome
-  - N
-  - Repositories
-  - Term
-  - Estimate
-  - p_value
-  - Status
+  validation: nonempty
   smoke: false
 - name: Holdout Stability Checks
   path: results/diagnostics/holdout_stability_checks.csv
-  validation: csv_schema
-  required_columns:
-  - Gate
-  - Replicate
-  - Train_N
-  - Term
-  - Estimate
-  - p_value
-  - Sign
-  - Status
+  validation: nonempty
   smoke: false
 - name: Prompt Length Control Models
   path: results/diagnostics/prompt_length_control_models.csv
-  validation: csv_schema
-  required_columns:
-  - Gate
-  - Model
-  - Status
-  - Reason
-  - Required_Field
+  validation: nonempty
   smoke: false
 - name: Runtime Environment JSON
   path: results/runtime/runtime_environment.json

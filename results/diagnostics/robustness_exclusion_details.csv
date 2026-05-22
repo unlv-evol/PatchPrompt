@@ -1,13 +1,17 @@
-Gate,Scenario,N_before,N_after,Exclusion_Detail
-Gate 0,Main sample,214,214,No exclusion
-Gate 0,Exclude dominant repository,214,204,Excluded repository: VOICEVOX/voicevox
-Gate 0,Exclude extreme PR size,214,203,Kept PR_Size <= 95th percentile (2536.50)
-Gate 0,Exclude dominant language,214,154,Excluded language: TypeScript
-Gate 1,Main sample,139,139,No exclusion
-Gate 1,Exclude dominant repository,139,133,Excluded repository: UNLV-CS472-672/2024-S-GROUP3-Barbell
-Gate 1,Exclude extreme PR size,139,132,Kept PR_Size <= 95th percentile (2750.40)
-Gate 1,Exclude dominant language,139,100,Excluded language: TypeScript
-Gate 2,Main sample,87,87,No exclusion
-Gate 2,Exclude dominant repository,87,81,Excluded repository: UNLV-CS472-672/2024-S-GROUP3-Barbell
-Gate 2,Exclude extreme PR size,87,82,Kept PR_Size <= 95th percentile (4006.40)
-Gate 2,Exclude dominant language,87,57,Excluded language: TypeScript
+Family,Gate,Scenario,N_before,N_after,Removed
+Dominant repository sensitivity,Gate 0,Exclude largest repository,214,204,VOICEVOX/voicevox
+Dominant repository sensitivity,Gate 0,Exclude top 5 repositories,214,184,VOICEVOX/voicevox; UNLV-CS472-672/2024-S-GROUP3-Barbell; VOICEVOX/voicevox_core; open-learning-exchange/myplanet; darklang/dark
+Dominant repository sensitivity,Gate 1,Exclude largest repository,139,133,UNLV-CS472-672/2024-S-GROUP3-Barbell
+Dominant repository sensitivity,Gate 1,Exclude top 5 repositories,139,119,UNLV-CS472-672/2024-S-GROUP3-Barbell; open-learning-exchange/myplanet; VOICEVOX/voicevox; pyspark-ai/pyspark-ai; darklang/dark
+Dominant repository sensitivity,Gate 2,Exclude largest repository,87,81,UNLV-CS472-672/2024-S-GROUP3-Barbell
+Dominant repository sensitivity,Gate 2,Exclude top 5 repositories,87,69,UNLV-CS472-672/2024-S-GROUP3-Barbell; UNLV-CS472-672/2024-S-GROUP1-Roadwatch; pyspark-ai/pyspark-ai; VOICEVOX/voicevox; open-learning-exchange/myplanet
+Language sensitivity,Gate 0,Exclude dominant language,214,154,TypeScript
+Language sensitivity,Gate 0,Exclude top 2 languages,214,123,TypeScript; Python
+Language sensitivity,Gate 1,Exclude dominant language,139,100,TypeScript
+Language sensitivity,Gate 1,Exclude top 2 languages,139,77,TypeScript; Python
+Language sensitivity,Gate 2,Exclude dominant language,87,57,TypeScript
+Language sensitivity,Gate 2,Exclude top 2 languages,87,44,TypeScript; Python
+PR-size outlier sensitivity,Gate 1,Exclude top 1% PR size,139,137,PR_Size > 10573.90; removed 2
+PR-size outlier sensitivity,Gate 1,Exclude top 5% PR size,139,132,PR_Size > 2750.40; removed 7
+PR-size outlier sensitivity,Gate 2,Exclude top 1% PR size,87,86,PR_Size > 9918.34; removed 1
+PR-size outlier sensitivity,Gate 2,Exclude top 5% PR size,87,82,PR_Size > 4006.40; removed 5
