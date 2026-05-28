@@ -39,11 +39,21 @@ def _should_run_preprocessing(root: Path, cfg: dict, smoke: bool) -> bool:
 
 def _write_manifest(root: Path) -> None:
     manifests_dir = root / "results" / "manifests"; manifests_dir.mkdir(parents=True, exist_ok=True)
+    def _collect_files(base: Path, suffixes: set[str], recursive: bool = False) -> list[Path]:
+        if not base.exists():
+            return []
+        iterator = base.rglob("*") if recursive else base.glob("*")
+        return sorted(
+            p for p in iterator
+            if p.is_file() and not p.name.startswith(".") and p.suffix.lower() in suffixes
+        )
+
     groups={
         "tables": sorted((root/"results/tables").glob("*.csv")),
         "figures": sorted((root/"results/figures").glob("*.png")),
         "diagnostics": sorted(list((root/"results/diagnostics").glob("*.csv")) + list((root/"results/diagnostics").glob("*.md")) + list((root/"results/diagnostics").glob("*.png")) + list((root/"results/diagnostics/schoenfeld_residual_plots").glob("*.png"))),
-        "qualitative": sorted(list((root/"results/qualitative").glob("*.csv")) + list((root/"results/qualitative").glob("*.md"))),
+        "qualitative": _collect_files(root/"results/qualitative", {".csv", ".md", ".xlsx", ".pdf", ".txt"}, recursive=True),
+        "qualitative_examples": _collect_files(root/"qualitative_examples", {".csv", ".md", ".xlsx", ".pdf", ".txt"}, recursive=True),
         "descriptive": sorted(list((root/"results/descriptive").glob("*.csv")) + list((root/"results/descriptive").glob("*.md")) + list((root/"results/descriptive/appendix_b_figures").glob("*.png")) + list((root/"results/descriptive/appendix_b_tables").glob("*.csv"))),
         "runtime": sorted(list((root/"results/runtime").glob("*.json")) + list((root/"results/runtime").glob("*.csv")) + list((root/"results/runtime").glob("*.md")) + [root/"results/reproduction_report.md"]),
         "paper_tables_pdf": sorted((root/"results/paper_tables_pdf").glob("*.pdf")),

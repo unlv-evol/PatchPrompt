@@ -66,36 +66,6 @@ ILLUSTRATIVE_CASES = [
 ]
 
 
-def _write_markdown(examples: pd.DataFrame, output_path: Path) -> None:
-    lines = [
-        "# Illustrative Qualitative Evidence Dataset",
-        "",
-        "This file summarizes the paper-referenced illustrative cases used in the stage-based qualitative discussion.",
-        "The companion CSV contains the full canonical dataset record for each selected case, augmented with the paper section and interpretive role.",
-        "",
-        "The examples are not treated as a statistically representative sample. They are purposefully selected to illustrate mechanisms suggested by the quantitative models.",
-        "",
-        "## Included Examples",
-        "",
-        "Note: the current paper draft does not identify a separate case-level illustrative example for the lifecycle/Axis B discussion; therefore this artifact includes only the explicitly named cases from the Gate 0, Gate 1, and Gate 2 illustrative subsections.",
-        "",
-    ]
-    for _, row in examples.iterrows():
-        lines.extend([
-            f"### {row['Case ID']} — {row['Paper_Section']}",
-            "",
-            f"- **Outcome class:** {row.get('Outcome_Class', '')}",
-            f"- **Prompt scores:** C={row.get('Context', '')}, S={row.get('Specificity', '')}, V={row.get('Verification', '')}, PQS={row.get('PQS', row.get('PQS ', ''))}",
-            f"- **Fraction adopted:** {row.get('Fraction_Adopted', '')}",
-            f"- **Illustrative role:** {row['Illustrative_Role']}",
-            f"- **Interpretation:** {row['Paper_Interpretation']}",
-            f"- **PR link:** {row.get('PR_Link', '')}",
-            f"- **Conversation link:** {row.get('Conversation_Link', '')}",
-            "",
-        ])
-    output_path.write_text("\n".join(lines), encoding="utf-8")
-
-
 def run(root: Path) -> pd.DataFrame:
     df = load_analysis_dataset(root).copy()
     df = df.rename(columns={"Case_ID": "Case ID"}) if "Case_ID" in df.columns and "Case ID" not in df.columns else df
@@ -113,24 +83,10 @@ def run(root: Path) -> pd.DataFrame:
     out_dir.mkdir(parents=True, exist_ok=True)
     write_csv(examples, out_dir / "illustrative_examples_dataset.csv")
 
-    summary = metadata.copy()
-    summary = summary.merge(
-        examples[["Case ID", "Outcome_Class", "Context", "Specificity", "Verification", "PQS", "Fraction_Adopted"]],
-        on="Case ID",
-        how="left",
-    )
-    write_csv(summary, out_dir / "illustrative_examples_summary.csv")
     manifest = pd.DataFrame([
         {"artifact": "illustrative_examples_dataset.csv", "description": "Full canonical records for paper-referenced illustrative qualitative examples", "case_count": len(examples), "unique_cases": examples["Case ID"].nunique()},
-        {"artifact": "illustrative_examples_summary.csv", "description": "Compact case-role mapping used for qualitative cross-reference", "case_count": len(summary), "unique_cases": summary["Case ID"].nunique()},
-        {"artifact": "illustrative_examples_summary.md", "description": "Human-readable summary of selected qualitative examples", "case_count": len(examples), "unique_cases": examples["Case ID"].nunique()},
     ])
     write_csv(manifest, out_dir / "illustrative_case_manifest.csv")
-    _write_markdown(examples, out_dir / "illustrative_examples_summary.md")
-
-    paper_dir = root / "paper" / "generated_sections"
-    paper_dir.mkdir(parents=True, exist_ok=True)
-    _write_markdown(examples, paper_dir / "illustrative_examples_summary.md")
     return examples
 
 

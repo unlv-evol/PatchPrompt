@@ -82,7 +82,7 @@ models, and no severe proportional-hazards violations in the lifecycle models.
 
 ## Qualitative Illustrative Evidence
 
-The package includes a traceable qualitative evidence dataset at `results/qualitative/illustrative_examples_dataset.csv`. It extracts the full canonical records for the paper-referenced illustrative cases used in the stage-based qualitative discussion, including PN-19, NE-3, PA-22, PA-78, and PA-24. A companion markdown summary is available at `results/qualitative/illustrative_examples_summary.md`, and the selection process is documented in `notebooks/illustrative_examples_walkthrough.ipynb`.
+The package includes a traceable qualitative evidence dataset at `results/qualitative/illustrative_examples_dataset.csv` and gate-specific qualitative outputs under `results/qualitative/gate0/`, `results/qualitative/gate1/`, and `results/qualitative/gate2/`. `make verify` also validates the mirrored evaluator copies under `qualitative_examples/gate0/`, `qualitative_examples/gate1/`, and `qualitative_examples/gate2/`, plus the cross-gate index at `results/qualitative/qualitative_examples_manifest.csv`.
 
 ## Appendix B Descriptive Output Validation
 

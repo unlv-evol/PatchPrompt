@@ -293,27 +293,6 @@ artifacts:
   - PR_Link
   - Conversation_Link
   smoke: true
-- name: Illustrative Examples Summary
-  path: results/qualitative/illustrative_examples_summary.csv
-  validation: csv_schema
-  required_columns:
-  - Case ID
-  - Paper_Section
-  - Gate_or_Axis
-  - Illustrative_Role
-  - Paper_Label
-  - Paper_Interpretation
-  - Outcome_Class
-  - Context
-  - Specificity
-  - Verification
-  - PQS
-  - Fraction_Adopted
-  smoke: true
-- name: Illustrative Examples Markdown Summary
-  path: results/qualitative/illustrative_examples_summary.md
-  validation: nonempty
-  smoke: true
 - name: Illustrative Case Manifest
   path: results/qualitative/illustrative_case_manifest.csv
   validation: csv_schema
@@ -322,6 +301,143 @@ artifacts:
   - description
   - case_count
   - unique_cases
+  smoke: true
+- name: Qualitative Results README
+  path: results/qualitative/README.md
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Manifest
+  path: results/qualitative/qualitative_examples_manifest.csv
+  validation: csv_schema
+  required_columns:
+  - Gate
+  - Case ID
+  - Outcome Class
+  - Structural Pattern
+  smoke: true
+- name: Gate 0 Patterns CSV
+  path: results/qualitative/gate0/gate0_qualitative_patterns.csv
+  validation: nonempty
+  smoke: true
+- name: Gate 0 Full Records CSV
+  path: results/qualitative/gate0/gate0_full_case_records.csv
+  validation: nonempty
+  smoke: true
+- name: Gate 0 Patterns XLSX
+  path: results/qualitative/gate0/gate0_qualitative_patterns.xlsx
+  validation: nonempty
+  smoke: true
+- name: Gate 0 Patterns PDF
+  path: results/qualitative/gate0/gate0_qualitative_patterns.pdf
+  validation: nonempty
+  smoke: true
+- name: Gate 0 README
+  path: results/qualitative/gate0/README.txt
+  validation: nonempty
+  smoke: true
+- name: Gate 1 Patterns CSV
+  path: results/qualitative/gate1/gate1_qualitative_patterns.csv
+  validation: nonempty
+  smoke: true
+- name: Gate 1 Full Records CSV
+  path: results/qualitative/gate1/gate1_full_case_records.csv
+  validation: nonempty
+  smoke: true
+- name: Gate 1 Patterns XLSX
+  path: results/qualitative/gate1/gate1_qualitative_patterns.xlsx
+  validation: nonempty
+  smoke: true
+- name: Gate 1 Patterns PDF
+  path: results/qualitative/gate1/gate1_qualitative_patterns.pdf
+  validation: nonempty
+  smoke: true
+- name: Gate 1 README
+  path: results/qualitative/gate1/README.txt
+  validation: nonempty
+  smoke: true
+- name: Gate 2 Patterns CSV
+  path: results/qualitative/gate2/gate2_qualitative_patterns.csv
+  validation: nonempty
+  smoke: true
+- name: Gate 2 Full Records CSV
+  path: results/qualitative/gate2/gate2_full_case_records.csv
+  validation: nonempty
+  smoke: true
+- name: Gate 2 Patterns XLSX
+  path: results/qualitative/gate2/gate2_qualitative_patterns.xlsx
+  validation: nonempty
+  smoke: true
+- name: Gate 2 Patterns PDF
+  path: results/qualitative/gate2/gate2_qualitative_patterns.pdf
+  validation: nonempty
+  smoke: true
+- name: Gate 2 README
+  path: results/qualitative/gate2/README.txt
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples README
+  path: qualitative_examples/README.md
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Gate 0 CSV
+  path: qualitative_examples/gate0/gate0_qualitative_patterns.csv
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Gate 0 Full Records CSV
+  path: qualitative_examples/gate0/gate0_full_case_records.csv
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Gate 0 XLSX
+  path: qualitative_examples/gate0/gate0_qualitative_patterns.xlsx
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Gate 0 PDF
+  path: qualitative_examples/gate0/gate0_qualitative_patterns.pdf
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Gate 0 README
+  path: qualitative_examples/gate0/README.txt
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Gate 1 CSV
+  path: qualitative_examples/gate1/gate1_qualitative_patterns.csv
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Gate 1 Full Records CSV
+  path: qualitative_examples/gate1/gate1_full_case_records.csv
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Gate 1 XLSX
+  path: qualitative_examples/gate1/gate1_qualitative_patterns.xlsx
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Gate 1 PDF
+  path: qualitative_examples/gate1/gate1_qualitative_patterns.pdf
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Gate 1 README
+  path: qualitative_examples/gate1/README.txt
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Gate 2 CSV
+  path: qualitative_examples/gate2/gate2_qualitative_patterns.csv
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Gate 2 Full Records CSV
+  path: qualitative_examples/gate2/gate2_full_case_records.csv
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Gate 2 XLSX
+  path: qualitative_examples/gate2/gate2_qualitative_patterns.xlsx
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Gate 2 PDF
+  path: qualitative_examples/gate2/gate2_qualitative_patterns.pdf
+  validation: nonempty
+  smoke: true
+- name: Qualitative Examples Gate 2 README
+  path: qualitative_examples/gate2/README.txt
+  validation: nonempty
   smoke: true
 - name: Figure 1 Outcome Distribution
   path: results/figures/figure_1_outcome_distribution.png

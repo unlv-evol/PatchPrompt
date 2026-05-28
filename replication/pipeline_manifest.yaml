@@ -28,6 +28,37 @@ steps:
       - results/tables/table_2_models.csv
       - results/diagnostics/vif_results.csv
       - results/qualitative/code_frequencies.csv
+      - results/qualitative/qualitative_examples_manifest.csv
+      - results/qualitative/gate0/gate0_qualitative_patterns.csv
+      - results/qualitative/gate0/gate0_full_case_records.csv
+      - results/qualitative/gate0/gate0_qualitative_patterns.xlsx
+      - results/qualitative/gate0/gate0_qualitative_patterns.pdf
+      - results/qualitative/gate0/README.txt
+      - results/qualitative/gate1/gate1_qualitative_patterns.csv
+      - results/qualitative/gate1/gate1_full_case_records.csv
+      - results/qualitative/gate1/gate1_qualitative_patterns.xlsx
+      - results/qualitative/gate1/gate1_qualitative_patterns.pdf
+      - results/qualitative/gate1/README.txt
+      - results/qualitative/gate2/gate2_qualitative_patterns.csv
+      - results/qualitative/gate2/gate2_full_case_records.csv
+      - results/qualitative/gate2/gate2_qualitative_patterns.xlsx
+      - results/qualitative/gate2/gate2_qualitative_patterns.pdf
+      - results/qualitative/gate2/README.txt
+      - qualitative_examples/gate0/gate0_qualitative_patterns.csv
+      - qualitative_examples/gate0/gate0_full_case_records.csv
+      - qualitative_examples/gate0/gate0_qualitative_patterns.xlsx
+      - qualitative_examples/gate0/gate0_qualitative_patterns.pdf
+      - qualitative_examples/gate0/README.txt
+      - qualitative_examples/gate1/gate1_qualitative_patterns.csv
+      - qualitative_examples/gate1/gate1_full_case_records.csv
+      - qualitative_examples/gate1/gate1_qualitative_patterns.xlsx
+      - qualitative_examples/gate1/gate1_qualitative_patterns.pdf
+      - qualitative_examples/gate1/README.txt
+      - qualitative_examples/gate2/gate2_qualitative_patterns.csv
+      - qualitative_examples/gate2/gate2_full_case_records.csv
+      - qualitative_examples/gate2/gate2_qualitative_patterns.xlsx
+      - qualitative_examples/gate2/gate2_qualitative_patterns.pdf
+      - qualitative_examples/gate2/README.txt
   - id: reproduce_figures
     command: python replication/reproduce_figures.py
     inputs: [dataset/processed/final_analysis_dataset.csv]

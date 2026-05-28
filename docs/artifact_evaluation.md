@@ -143,7 +143,7 @@ verification manifest.
 
 ## Qualitative Illustrative Evidence
 
-The package includes a traceable qualitative evidence dataset at `results/qualitative/illustrative_examples_dataset.csv`. It extracts the full canonical records for the paper-referenced illustrative cases used in the stage-based qualitative discussion, including PN-19, NE-3, PA-22, PA-78, and PA-24. A companion markdown summary is available at `results/qualitative/illustrative_examples_summary.md`, and the selection process is documented in `notebooks/illustrative_examples_walkthrough.ipynb`.
+The package includes a traceable qualitative evidence dataset at `results/qualitative/illustrative_examples_dataset.csv`, gate-specific qualitative evidence bundles under `results/qualitative/gate0/`, `results/qualitative/gate1/`, and `results/qualitative/gate2/`, and mirrored reviewer-facing copies under `qualitative_examples/gate0/`, `qualitative_examples/gate1/`, and `qualitative_examples/gate2/`. Each gate bundle provides CSV/XLSX/PDF pattern tables, full-record case CSV files, and a README. A cross-gate index is provided in `results/qualitative/qualitative_examples_manifest.csv`, and the illustrative-case selection process is documented in `notebooks/illustrative_examples_walkthrough.ipynb`.
 
 ## Final Reproducibility Support Artifacts
 

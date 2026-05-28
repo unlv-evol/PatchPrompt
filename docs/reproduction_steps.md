@@ -97,7 +97,7 @@ The canonical dataset is intentionally preserved as supplied. Repository, PR num
 
 ## Qualitative Illustrative Evidence
 
-The package includes a traceable qualitative evidence dataset at `results/qualitative/illustrative_examples_dataset.csv`. It extracts the full canonical records for the paper-referenced illustrative cases used in the stage-based qualitative discussion, including PN-19, NE-3, PA-22, PA-78, and PA-24. A companion markdown summary is available at `results/qualitative/illustrative_examples_summary.md`, and the selection process is documented in `notebooks/illustrative_examples_walkthrough.ipynb`.
+The package includes a traceable qualitative evidence dataset at `results/qualitative/illustrative_examples_dataset.csv` and gate-specific qualitative evidence outputs in `results/qualitative/gate0/`, `results/qualitative/gate1/`, and `results/qualitative/gate2/`. Each gate directory contains curated pattern tables (CSV/XLSX/PDF), full-record case CSV files, and README notes. Matching reviewer-facing copies are mirrored under `qualitative_examples/`, and a cross-gate index is written to `results/qualitative/qualitative_examples_manifest.csv`.
 
 ## Appendix B Extended Descriptive Analysis
 

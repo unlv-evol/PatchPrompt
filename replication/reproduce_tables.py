@@ -12,6 +12,7 @@ from analysis.descriptive import descriptive_statistics, appendix_b_descriptives
 from analysis.quantitative import gate0_generation, gate1_adoption, gate2_integration, axisB_lifecycle, effect_sizes
 from analysis.diagnostics import vif_analysis, separation_checks, schoenfeld_tests, sensitivity_analysis, robustness_sensitivity_outputs, diagnostic_plots_summary
 from analysis.qualitative import code_frequency_analysis, thematic_analysis, triangulation_analysis, illustrative_examples
+from analysis.qualitative import gate0_qualitative_patterns, gate1_qualitative_patterns, gate2_qualitative_patterns
 from analysis.rq1 import agreement_analysis
 
 def reproduce_tables(root_or_results_dir: Path) -> None:
@@ -39,4 +40,5 @@ def reproduce_tables(root_or_results_dir: Path) -> None:
     write_csv(combined, root/"results/tables/table_2_models.csv")
     effect_sizes.run(root); vif_analysis.run(root); separation_checks.run(root); schoenfeld_tests.run(root); sensitivity_analysis.run(root); robustness_sensitivity_outputs.run(root); diagnostic_plots_summary.run(root)
     code_frequency_analysis.run(root); thematic_analysis.run(root); triangulation_analysis.run(root); illustrative_examples.run(root)
+    gate0_qualitative_patterns.main(); gate1_qualitative_patterns.main(); gate2_qualitative_patterns.main()
 if __name__=="__main__": reproduce_tables(Path("."))

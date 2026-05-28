@@ -45,7 +45,7 @@ The pipeline covers the empirical workflow described in the paper:
 
 ## Quick start
 
-Recommended Python version: 3.11 (the Makefile accepts 3.9 to 3.12 and allows explicit interpreter override).
+Recommended Python version: 3.11 (tested and supported range is 3.10 to 3.12; the Makefile enforces this and allows explicit interpreter override).
 
 Create and use a virtual environment (recommended):
 
@@ -117,6 +117,10 @@ To generate all outputs:
 make PYTHON=.venv/bin/python reproduce
 make PYTHON=.venv/bin/python verify
 ```
+
+## Docker (optional)
+
+Docker is not required for replication. If you prefer containerized execution, use the optional path documented in `docs/docker_reproduction.md`.
 
 ## Fresh output behavior
 
@@ -261,7 +265,11 @@ PatchTrack-Replication-Package/
 │       ├── code_frequency_analysis.py     ← code frequency summaries
 │       ├── thematic_analysis.py           ← directed qualitative summary
 │       ├── triangulation_analysis.py      ← quantitative/qualitative triangulation
-│       └── illustrative_examples.py       ← illustrative case extraction and summaries
+│       ├── illustrative_examples.py       ← illustrative case extraction and summaries
+│       ├── gate_qualitative_patterns_common.py ← shared helpers for gate evidence-table generation
+│       ├── gate0_qualitative_patterns.py  ← Gate 0 qualitative pattern table generator
+│       ├── gate1_qualitative_patterns.py  ← Gate 1 qualitative pattern table generator
+│       └── gate2_qualitative_patterns.py  ← Gate 2 qualitative pattern table generator
 │
 ├── results/
 │   ├── rq1/                               ← generated Section 4.1 RQ1 outputs
@@ -270,11 +278,22 @@ PatchTrack-Replication-Package/
 │   ├── diagnostics/                       ← generated diagnostic outputs
 │   ├── descriptive/                       ← generated Appendix B descriptive outputs
 │   ├── qualitative/                       ← generated qualitative outputs
+│   │   ├── README.md                      ← qualitative output documentation
+│   │   ├── gate0/                         ← Gate 0 qualitative tables and full records
+│   │   ├── gate1/                         ← Gate 1 qualitative tables and full records
+│   │   ├── gate2/                         ← Gate 2 qualitative tables and full records
+│   │   └── (top-level qualitative summary CSV/manifest files)
 │   ├── manifests/                         ← generated output manifests
 │   ├── paper_tables_pdf/                  ← rendered PDF previews of generated tables
 │   ├── runtime/                           ← runtime environment and timing outputs
 │   ├── logs/                              ← run logs and metadata
 │   └── reproduction_report.md             ← concise artifact-evaluation run report
+│
+├── qualitative_examples/                  ← mirrored reviewer-facing qualitative outputs
+│   ├── README.md                          ← qualitative mirror usage notes
+│   ├── gate0/                             ← Gate 0 mirrored qualitative outputs
+│   ├── gate1/                             ← Gate 1 mirrored qualitative outputs
+│   └── gate2/                             ← Gate 2 mirrored qualitative outputs
 │
 ├── paper/
 │   ├── figures/                           ← paper-ready figure copies
@@ -318,31 +337,21 @@ PatchTrack-Replication-Package/
 ```
 
 
-### Robustness and sensitivity analyses
+### Robustness, Sensitivity, and Diagnostics
 
-The replication package includes a structured robustness and sensitivity analysis layer for the Gate~0, Gate~1, and Gate~2 models.
+Robustness and sensitivity outputs for Gate 0, Gate 1, and Gate 2 are generated under `results/diagnostics/`.
 
-These analyses evaluate whether the main findings remain qualitatively stable under:
+The package includes checks for:
 
 - repository-clustered standard errors,
 - mixed-effects-style specifications,
-- exclusion of the dominant repository,
-- exclusion of the top five repositories,
-- exclusion of dominant programming languages,
-- exclusion of top 1\% and top 5\% PR-size outliers,
-- alternative Gate~2 reuse operationalization,
-- aggregate PQS models,
-- prompt-length controls,
+- dominant repository/language exclusions,
+- top 1\% and 5\% PR-size outlier exclusions,
+- alternative Gate 2 reuse operationalization,
+- aggregate PQS and prompt-length-control variants,
 - and stratified hold-out stability checks.
 
-The robustness outputs are generated under:
-
-```text
-results/diagnostics/
-
-### Diagnostic plots and model-validity summaries
-
-The package includes generated diagnostic plots and a narrative diagnostics summary in:
+Diagnostic artifacts also include:
 
 ```text
 results/diagnostics/
@@ -352,8 +361,7 @@ results/diagnostics/
 └── schoenfeld_residual_plots/
 ```
 
-These artifacts complement the tabular VIF, separation, Schoenfeld, and robustness
-outputs used to support the paper's model-validity discussion.
+Together, these outputs support model-validity checks for multicollinearity, separation, proportional hazards, and robustness stability.
 
 ### LLM annotation versions
 
@@ -363,7 +371,7 @@ were not used and are not required for reproduction.
 
 ## Qualitative Illustrative Evidence
 
-The package includes a traceable qualitative evidence dataset at `results/qualitative/illustrative_examples_dataset.csv`. It extracts the full canonical records for the paper-referenced illustrative cases used in the stage-based qualitative discussion, including PN-19, NE-3, PA-22, PA-78, and PA-24. A companion markdown summary is available at `results/qualitative/illustrative_examples_summary.md`, and the selection process is documented in `notebooks/illustrative_examples_walkthrough.ipynb`.
+The package includes a traceable qualitative evidence dataset at `results/qualitative/illustrative_examples_dataset.csv` and gate-specific qualitative evidence bundles under `results/qualitative/gate0/`, `results/qualitative/gate1/`, and `results/qualitative/gate2/`. Each gate folder includes curated pattern tables in CSV/XLSX/PDF, full-record case CSV files, and a README. Matching evaluator-facing copies are mirrored under `qualitative_examples/gate0/`, `qualitative_examples/gate1/`, and `qualitative_examples/gate2/`, with a cross-gate index in `results/qualitative/qualitative_examples_manifest.csv`. The illustrative selection process is documented in `notebooks/illustrative_examples_walkthrough.ipynb`.
 
 ## Appendix B Descriptive Evidence
 
@@ -389,17 +397,12 @@ The walkthrough notebook is available at `notebooks/appendix_b_descriptive_walkt
 
 ## Final Artifact-Evaluation Additions
 
-This package also includes several final reproducibility-support artifacts:
+The repository structure already lists these support artifacts in one place. For evaluator use, prioritize:
 
-- `results/reproduction_report.md` — concise run report with dataset counts, generated-output counts, runtime environment, and verification notes.
-- `results/runtime/` — runtime environment capture and timing benchmark outputs.
-- `environment/` — frozen package snapshots, including `pip_freeze.txt`, `conda_env_frozen.yml`, and `runtime_capture.json`.
-- `results/paper_tables_pdf/` — quick rendered PDF previews of generated table artifacts for evaluator inspection.
-- `dataset/provenance/data_manifest.csv` and `dataset/provenance/checksums.sha256` — file-level provenance and integrity records.
-- `.github/workflows/smoke-reproduction.yml` — a smoke-reproduction workflow for continuous integration.
-- `docs/docker_reproduction.md` and `docker-compose.yml` — containerized reproduction instructions.
-
-The methodological-alignment outputs under `results/diagnostics/` include repository-clustered standard-error variants, mixed-effects approximations, holdout stability checks, and a documented prompt-length-control feasibility record.
+- `results/reproduction_report.md`
+- `results/runtime/`
+- `results/manifests/`
+- `dataset/provenance/`
 
 ## License
 

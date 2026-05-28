@@ -1,0 +1,31 @@
+Gate,Case ID,Outcome Class,Structural Pattern
+GATE0,NE-11,NE,Conceptual-oriented
+GATE0,NE-25,NE,Conceptual-oriented
+GATE0,NE-3,NE,Conceptual-oriented
+GATE0,NE-4,NE,Conceptual-oriented
+GATE0,PA-22,PA,Implementation-oriented
+GATE0,PA-24,PA,Implementation-oriented
+GATE0,PA-61,PA,Implementation-oriented
+GATE0,PA-78,PA,Implementation-oriented
+GATE0,PN-19,PN,Implementation-oriented
+GATE0,PN-25,PN,Implementation-oriented
+GATE1,PA-16,PA,Testable implementation request
+GATE1,PA-21,PA,Bounded implementation with concrete code context
+GATE1,PA-22,PA,Explicitly evaluable implementation task
+GATE1,PA-23,PA,Strong correctness constraints
+GATE1,PA-3,PA,Structured output expectations
+GATE1,PN-1,PN,Underspecified acceptance criteria
+GATE1,PN-19,PN,Weakly evaluable generated solution
+GATE1,PN-2,PN,Weak framework alignment
+GATE1,PN-25,PN,Implicit verification
+GATE1,PN-3,PN,Exploratory implementation request
+GATE2,PA-16,PA,Project-constrained integration
+GATE2,PA-21,PA,Rich project artifacts supporting direct integration
+GATE2,PA-22,PA,Generic implementation with limited contextual alignment
+GATE2,PA-23,PA,Rich project artifacts supporting direct integration
+GATE2,PA-24,PA,High specificity but shallow integration
+GATE2,PA-3,PA,Contextual grounding with adaptation requirements
+GATE2,PA-34,PA,High specificity but shallow integration
+GATE2,PA-61,PA,Contextual grounding with adaptation requirements
+GATE2,PA-78,PA,Strong contextual grounding enabling deep reuse
+GATE2,PA-84,PA,Strong contextual grounding enabling deep reuse
