@@ -277,25 +277,9 @@ PatchTrack-Replication-Package/
    └── runtime_capture.json               ← captured runtime environment metadata
 ```
 
-
-### LLM annotation versions
-
-Only LLM V1 annotation outputs were used in the final paper analyses and are the
-annotation source required for reproduction.
-
-
 ## Qualitative Illustrative Evidence
 
 The package includes a traceable qualitative evidence dataset at `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/illustrative_examples_dataset.csv` and gate-specific qualitative evidence bundles under `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate0/`, `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate1/`, and `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate2/`. Each gate folder includes curated pattern tables in CSV/XLSX/PDF, full-record case CSV files, and a README, with a cross-gate index in `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/qualitative_examples_manifest.csv`. The illustrative selection process is documented in `RQ2_Prompt_Effectiveness_Modeling/notebooks/illustrative_examples_walkthrough.ipynb`.
-
-## Final Artifact-Evaluation Additions
-
-The repository structure already lists these support artifacts in one place. For evaluator use, prioritize:
-
-- `RQ2_Prompt_Effectiveness_Modeling/results/reproduction_report.md`
-- `RQ2_Prompt_Effectiveness_Modeling/results/runtime/`
-- `RQ2_Prompt_Effectiveness_Modeling/results/manifests/`
-- `Dataset_Construction/provenance/`
 
 ## License
 
