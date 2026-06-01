@@ -81,7 +81,7 @@ CASES = [
     {
         "Case ID": "PA-22",
         "Structural Pattern": "Generic implementation with limited contextual alignment",
-        "Prompt Excerpt": "Kotlin の sksamuel/scrimage ライブラリで、画像上に文字列を描画し、文字列の縁取りをするコードを生成してください。文字の色は白、縁は黒で描画します。",
+        "Prompt Excerpt": "Using Kotlin with the sksamuel/scrimage library, generate code to draw text on an image with an outline. Render white text with a black border.",
         "Why Representative": "The image-rendering task is specific and evaluable but lacks surrounding project code.",
         "Integration Depth Category": "Low",
         "Notes": "Recommended low-reuse example.",

@@ -16,7 +16,7 @@ CASES = [
     {
         "Case ID": "PA-22",
         "Structural Pattern": "Explicitly evaluable implementation task",
-        "Prompt Excerpt": "Kotlin の sksamuel/scrimage ライブラリで、画像上に文字列を描画し、文字列の縁取りをするコードを生成してください。文字の色は白、縁は黒で描画します。",
+        "Prompt Excerpt": "Using Kotlin with the sksamuel/scrimage library, generate code to draw text on an image with an outline. Render white text with a black border.",
         "Why Representative": "The expected visual result is observable: white text with a black outline.",
         "Generated Code?": "Yes",
         "Adopted?": "Yes",
@@ -70,7 +70,7 @@ CASES = [
     {
         "Case ID": "PN-25",
         "Structural Pattern": "Implicit verification",
-        "Prompt Excerpt": "git diff は違いがあった場合のステータスコードは何でしょうか。ありがとうございます。diffはどうでしょうか。",
+        "Prompt Excerpt": "What is the exit status code for git diff when differences are found? Thank you. Also, what about diff?",
         "Why Representative": "The prompt asks about command behavior but leaves adoption conditions implicit.",
         "Generated Code?": "Yes",
         "Adopted?": "No",

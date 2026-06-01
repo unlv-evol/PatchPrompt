@@ -18,7 +18,7 @@ CASES = [
     {
         "Case ID": "PA-22",
         "Structural Pattern": "Implementation-oriented",
-        "Prompt Excerpt": "Kotlin の sksamuel/scrimage ライブラリで、画像上に文字列を描画し、文字列の縁取りをするコードを生成してください。文字の色は白、縁は黒で描画します。",
+        "Prompt Excerpt": "Using Kotlin with the sksamuel/scrimage library, generate code to draw text on an image with an outline. Render white text with a black border.",
         "Why Representative": "Defines a bounded Kotlin image-rendering task with explicit output constraints, enabling code synthesis.",
         "Generated Actionable Code?": "Yes",
         "Notes": "Paper-referenced Gate 1 example also used to show implementation framing at Gate 0.",
@@ -50,7 +50,7 @@ CASES = [
     {
         "Case ID": "PN-25",
         "Structural Pattern": "Implementation-oriented",
-        "Prompt Excerpt": "git diff は違いがあった場合のステータスコードは何でしょうか。ありがとうございます。diffはどうでしょうか。",
+        "Prompt Excerpt": "What is the exit status code for git diff when differences are found? Thank you. Also, what about diff?",
         "Why Representative": "Focuses on command behavior and shell-status handling, creating a bounded workflow/script-oriented task.",
         "Generated Actionable Code?": "Yes",
         "Notes": "Variation: CLI/workflow-oriented prompt.",
@@ -82,7 +82,7 @@ CASES = [
     {
         "Case ID": "NE-11",
         "Structural Pattern": "Conceptual-oriented",
-        "Prompt Excerpt": "こちらの変更に対して、『VVMファイルからVoiceModelをコンストラクトする。』という表現について、生成・解放などの用語選択に関する意見が交わされました。",
+        "Prompt Excerpt": "For this change, there was discussion about the wording 'construct VoiceModel from a VVM file', including terminology choices such as construct versus allocate/free.",
         "Why Representative": "Discusses terminology for API/model construction rather than requesting a code artifact.",
         "Generated Actionable Code?": "No",
         "Notes": "Technical terminology/workflow-oriented NE case.",

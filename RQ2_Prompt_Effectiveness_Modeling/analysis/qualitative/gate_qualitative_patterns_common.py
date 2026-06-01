@@ -37,7 +37,7 @@ except ImportError:  # pragma: no cover
 
 
 ROOT = Path(__file__).resolve().parents[2]
-DATASET_PATH = ROOT / "Dataset_Construction" / "processed_data" / "final_analysis_dataset.csv"
+DATASET_PATH = ROOT.parent / "Dataset_Construction" / "processed_data" / "final_analysis_dataset.csv"
 RESULTS_ROOT = ROOT / "results" / "qualitative"
 
 
@@ -60,6 +60,21 @@ def _score(value) -> int:
     if pd.isna(value):
         return 0
     return int(round(float(value)))
+
+
+def _ensure_english_excerpt(text: str, gate: str, case_id: str) -> str:
+    """Require English-only prompt excerpts for evaluator-facing artifacts.
+
+    We enforce ASCII here to prevent multilingual excerpts from leaking into the
+    generated CSV/XLSX/PDF bundles. Source case specs should provide translated
+    English excerpts before generation.
+    """
+    if any(ord(ch) > 127 for ch in text):
+        raise ValueError(
+            f"Non-ASCII Prompt Excerpt found for {gate} case {case_id}. "
+            "Provide an English translation in the case spec."
+        )
+    return text
 
 
 def build_pattern_table(specs: Iterable[dict], gate: str) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -94,7 +109,7 @@ def build_pattern_table(specs: Iterable[dict], gate: str) -> tuple[pd.DataFrame,
             "Specificity (S)": _score(case["Specificity"]),
             "Verification (V)": _score(case["Verification"]),
             "Structural Pattern": item["Structural Pattern"],
-            "Prompt Excerpt": item["Prompt Excerpt"],
+            "Prompt Excerpt": _ensure_english_excerpt(item["Prompt Excerpt"], gate, case["Case ID"]),
             "Why Representative": item["Why Representative"],
             "Notes": item.get("Notes", ""),
             "PR Language": case.get("PR_Language", ""),
@@ -381,6 +396,6 @@ def _write_pdf(df: pd.DataFrame, path: Path, title: str) -> None:
 
 
 def write_gate_readme(gate: str, text: str) -> None:
-    for root in [RESULTS_ROOT / gate, EXAMPLES_ROOT / gate]:
-        root.mkdir(parents=True, exist_ok=True)
-        (root / "README.txt").write_text(text.strip() + "\n", encoding="utf-8")
+    root = RESULTS_ROOT / gate
+    root.mkdir(parents=True, exist_ok=True)
+    (root / "README.txt").write_text(text.strip() + "\n", encoding="utf-8")
