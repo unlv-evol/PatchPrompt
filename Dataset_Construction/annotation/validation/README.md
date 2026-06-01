@@ -14,8 +14,7 @@ RQ1: Reliability of LLM-Based Prompt Annotation.
 
 Only LLM V1 annotation outputs were used for the agreement analyses, class-conditioned
 kappa results, annotation-policy derivation, and downstream validation reported in the
-paper. LLM V2 annotation files were **not** used in the final study analyses and are
-therefore not required to reproduce the reported results.
+paper.
 
 ## Relationship to paper results
 

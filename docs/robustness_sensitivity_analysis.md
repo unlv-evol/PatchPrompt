@@ -32,6 +32,18 @@ Generated outputs are written to `RQ2_Prompt_Effectiveness_Modeling/results/diag
 - `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/holdout_stability_checks.csv`
 - `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/robustness_memo.md`
 
+Diagnostic artifacts also include:
+
+```text
+RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/
+├── diagnostics_summary.md
+├── vif_diagnostics.png
+├── vif_correlation_heatmap.png
+└── schoenfeld_residual_plots/
+```
+
+Together, these outputs support model-validity checks for multicollinearity, separation, proportional hazards, and robustness stability.
+
 ## Interpretation policy
 
 The analysis focuses on directional consistency, approximate effect stability, and whether significance patterns materially change. Exact p-value replication across all restricted samples is not required. Meaningful deviations are documented transparently, especially for Gate 2, where the PA-only sample becomes small under repository and language exclusions.

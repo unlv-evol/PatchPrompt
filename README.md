@@ -278,63 +278,15 @@ PatchTrack-Replication-Package/
 ```
 
 
-### Robustness, Sensitivity, and Diagnostics
-
-Robustness and sensitivity outputs for Gate 0, Gate 1, and Gate 2 are generated under `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/`.
-
-The package includes checks for:
-
-- repository-clustered standard errors,
-- mixed-effects-style specifications,
-- dominant repository/language exclusions,
-- top 1\% and 5\% PR-size outlier exclusions,
-- alternative Gate 2 reuse operationalization,
-- aggregate PQS and prompt-length-control variants,
-- and stratified hold-out stability checks.
-
-Diagnostic artifacts also include:
-
-```text
-RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/
-├── diagnostics_summary.md
-├── vif_diagnostics.png
-├── vif_correlation_heatmap.png
-└── schoenfeld_residual_plots/
-```
-
-Together, these outputs support model-validity checks for multicollinearity, separation, proportional hazards, and robustness stability.
-
 ### LLM annotation versions
 
-Only LLM V1 annotation outputs were used in the final paper analyses. LLM V2 files
-were not used and are not required for reproduction.
+Only LLM V1 annotation outputs were used in the final paper analyses and are the
+annotation source required for reproduction.
 
 
 ## Qualitative Illustrative Evidence
 
 The package includes a traceable qualitative evidence dataset at `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/illustrative_examples_dataset.csv` and gate-specific qualitative evidence bundles under `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate0/`, `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate1/`, and `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate2/`. Each gate folder includes curated pattern tables in CSV/XLSX/PDF, full-record case CSV files, and a README, with a cross-gate index in `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/qualitative_examples_manifest.csv`. The illustrative selection process is documented in `RQ2_Prompt_Effectiveness_Modeling/notebooks/illustrative_examples_walkthrough.ipynb`.
-
-## Appendix B Descriptive Evidence
-
-The package includes an expanded descriptive-analysis layer beyond the main paper tables. The scripts in `RQ2_Prompt_Effectiveness_Modeling/analysis/descriptive/` regenerate Appendix B summaries for PR-size distributions, contributor experience, repository/language concentration, prompt-score distributions, skewness, outliers, and prompt-structure correlations. Outputs are written to:
-
-```text
-RQ2_Prompt_Effectiveness_Modeling/results/descriptive/
-├── appendix_b_summary_statistics.csv
-├── prompt_dimension_distributions.csv
-├── repository_distribution.csv
-├── language_distribution.csv
-├── skewness_analysis.csv
-├── outlier_summary.csv
-├── prompt_structure_correlations.csv
-├── contributor_experience_summary.csv
-├── pr_size_distribution_summary.csv
-├── appendix_b_tables/
-├── appendix_b_figures/
-└── appendix_b_summary.md
-```
-
-The walkthrough notebook is available at `RQ2_Prompt_Effectiveness_Modeling/notebooks/appendix_b_descriptive_walkthrough.ipynb`.
 
 ## Final Artifact-Evaluation Additions
 

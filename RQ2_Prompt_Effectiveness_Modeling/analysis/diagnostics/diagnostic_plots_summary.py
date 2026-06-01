@@ -149,7 +149,7 @@ def _write_summary(root: Path) -> None:
         "",
         "## LLM annotation versions",
         "",
-        "Only LLM V1 annotation outputs were used for agreement analysis, annotation-policy derivation, and downstream validation. LLM V2 files were not used in the final analyses and are therefore not required for reproduction.",
+        "Only LLM V1 annotation outputs were used for agreement analysis, annotation-policy derivation, and downstream validation.",
     ]
     (out_dir / "diagnostics_summary.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 

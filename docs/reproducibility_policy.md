@@ -16,10 +16,7 @@ The reproducible analysis path begins from processed and validation datasets, wh
 
 ## LLM Annotation Version Policy
 
-Only LLM V1 annotation outputs are part of the final reproducible analysis. LLM V2
-annotations were not used in the final agreement analysis, annotation-policy derivation,
-or downstream modeling. The package therefore does not require V2 files for a complete
-reproduction of the reported results.
+Only LLM V1 annotation outputs are part of the final reproducible analysis. The agreement analysis, annotation-policy derivation, and downstream modeling all use the LLM V1 annotation source.
 
 ## Diagnostic Artifact Policy
 

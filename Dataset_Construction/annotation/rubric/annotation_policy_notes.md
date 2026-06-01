@@ -22,9 +22,9 @@ The RQ1 reliability analysis uses:
 
 Only records appearing in both files are used for human--LLM agreement calculations.
 
-## LLM V2 Policy
+## LLM Annotation Scope
 
-LLM V2 annotations were not used in the final analyses, annotation-policy derivation, or downstream modeling. The replication package therefore treats LLM V1 as the canonical automated annotation source.
+The replication package treats LLM V1 as the canonical automated annotation source.
 
 ## Class-Aware Automation Policy
 
