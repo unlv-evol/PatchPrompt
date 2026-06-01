@@ -30,8 +30,8 @@ robustness checks that exclude the dominant repository and dominant language.
 ## Generated Artifacts
 
 The extended descriptive analysis produces CSV summaries, LaTeX-ready tables, and
-figures under `RQ2_Prompt_Effectiveness_Modeling/results/descriptive/`, `RQ2_Prompt_Effectiveness_Modeling/results/descriptive/appendix_b_tables/`, and
-`RQ2_Prompt_Effectiveness_Modeling/results/descriptive/appendix_b_figures/`.
+figures under `results/descriptive/`, `results/descriptive/appendix_b_tables/`, and
+`results/descriptive/appendix_b_figures/`.
 
 ## Interpretation
 

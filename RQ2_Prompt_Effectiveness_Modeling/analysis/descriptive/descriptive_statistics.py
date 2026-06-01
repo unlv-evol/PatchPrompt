@@ -132,42 +132,15 @@ def contributor_experience_summary(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def write_combined_table3_tex(table3a: pd.DataFrame, table3b: pd.DataFrame, path: Path) -> None:
-    """Write a paper-ready LaTeX table containing Table 3(a) and Table 3(b).
-
-    The paper currently displays the two subtables side by side. This generated file
-    keeps them in one LaTeX artifact while the CSV outputs remain separate for easier
-    automated validation.
-    """
-    left = table3a.rename(columns={"Context": "C", "Specificity": "S", "Verification": "V"}).to_latex(index=False, escape=True)
-    right = table3b.to_latex(index=False, escape=True)
-    tex = rf"""\begin{{table}}[t]
-\centering
-\begin{{minipage}}{{0.45\linewidth}}
-\centering
-{left}
-\vspace{{-0.75em}}
-\caption*{{(a) Prompt structure (C, S, V)}}
-\end{{minipage}}
-\hfill
-\begin{{minipage}}{{0.45\linewidth}}
-\centering
-{right}
-\vspace{{-0.75em}}
-\caption*{{(b) PQS by outcome class}}
-\end{{minipage}}
-\caption{{Prompt structure dimensions and PQS by outcome class.}}
-\label{{tab:prompt-structure-pqs}}
-\end{{table}}
-"""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(tex, encoding="utf-8")
+    """Compatibility no-op for retired TeX exports."""
+    _ = (table3a, table3b, path)
 
 
 def run(root: Path) -> list[pd.DataFrame]:
-    """Generate all descriptive CSV and LaTeX artifacts.
+    """Generate descriptive CSV artifacts.
 
-    Returns the generated dataframes so callers or notebooks can inspect them without
-    re-reading files from disk.
+    Returns the generated dataframes so callers or notebooks can inspect them
+    without re-reading files from disk.
     """
     df = load_analysis_dataset(root)
 
@@ -191,14 +164,15 @@ def run(root: Path) -> list[pd.DataFrame]:
     for filename, table in outputs.items():
         write_csv(table, root / "RQ2_Prompt_Effectiveness_Modeling" / "results" / "tables" / filename)
 
-    write_latex_table(table3a.rename(columns={"Context": "C", "Specificity": "S", "Verification": "V"}), root / "paper" / "tables" / "table_3a_prompt_structure.tex", "Prompt structure dimensions", "tab:prompt-structure")
-    write_latex_table(table3b, root / "paper" / "tables" / "table_3b_pqs_by_outcome.tex", "PQS by outcome class", "tab:pqs-by-outcome")
-    write_combined_table3_tex(table3a, table3b, root / "paper" / "tables" / "table_3_prompt_structure_and_pqs.tex")
-    write_latex_table(appendix8, root / "paper" / "tables" / "appendix_table_8_pqs_distribution.tex", "Overall distribution of PQS", "tab:pqs-distribution")
-    write_latex_table(appendix9, root / "paper" / "tables" / "appendix_table_9_extended_pqs_by_outcome.tex", "Extended PQS statistics by outcome class", "tab:extended-pqs-by-outcome")
-    write_latex_table(appendix10, root / "paper" / "tables" / "appendix_table_10_pr_size.tex", "Summary statistics for PR size", "tab:pr-size-summary")
-    write_latex_table(appendix11, root / "paper" / "tables" / "appendix_table_11_language_distribution.tex", "Top programming languages", "tab:language-distribution")
-    write_latex_table(appendix12, root / "paper" / "tables" / "appendix_table_12_contributor_experience.tex", "Summary statistics for contributor experience", "tab:contributor-experience")
+    tex_out = root / "RQ2_Prompt_Effectiveness_Modeling" / "results" / "tables"
+    write_latex_table(table3a.rename(columns={"Context": "C", "Specificity": "S", "Verification": "V"}), tex_out / "table_3a_prompt_structure.tex", "Prompt structure dimensions", "tab:prompt-structure")
+    write_latex_table(table3b, tex_out / "table_3b_pqs_by_outcome.tex", "PQS by outcome class", "tab:pqs-by-outcome")
+    write_combined_table3_tex(table3a, table3b, tex_out / "table_3_prompt_structure_and_pqs.tex")
+    write_latex_table(appendix8, tex_out / "appendix_table_8_pqs_distribution.tex", "Overall distribution of PQS", "tab:pqs-distribution")
+    write_latex_table(appendix9, tex_out / "appendix_table_9_extended_pqs_by_outcome.tex", "Extended PQS statistics by outcome class", "tab:extended-pqs-by-outcome")
+    write_latex_table(appendix10, tex_out / "appendix_table_10_pr_size.tex", "Summary statistics for PR size", "tab:pr-size-summary")
+    write_latex_table(appendix11, tex_out / "appendix_table_11_language_distribution.tex", "Top programming languages", "tab:language-distribution")
+    write_latex_table(appendix12, tex_out / "appendix_table_12_contributor_experience.tex", "Summary statistics for contributor experience", "tab:contributor-experience")
 
     return [table3a, table3b, appendix8, appendix9, appendix10, appendix11, appendix12]
 

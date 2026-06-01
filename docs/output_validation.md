@@ -17,15 +17,37 @@ Generated manifests are written to `RQ2_Prompt_Effectiveness_Modeling/results/ma
 The Section 4.1 annotation-reliability outputs are explicitly checked by `make verify`:
 
 ```text
+RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_human_agreement_records.csv
+RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_human_disagreements.csv
+RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_human_agreement_metrics.csv
 RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_overall_agreement_metrics.csv
 RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_class_conditioned_kappa.csv
 RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_annotation_policy.csv
 RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_llm_validation_pairs.csv
 ```
 
+The expected-output contract also validates the independent human annotation CSVs and the human-annotation rubric artifacts used to document the scoring protocol:
+
+```text
+Dataset_Construction/annotation/validation/human_annotations/*.csv
+Dataset_Construction/annotation/rubric/human_annotation_codebook.csv
+Dataset_Construction/annotation/rubric/human_annotation_codebook.md
+```
+
 The expected schemas are:
 
 ```text
+rq1_human_human_agreement_records.csv:
+Category, Case_ID, Dimension, Annotator_1_Score, Annotator_2_Score, Agreement,
+Measured_Before_Discussion
+
+rq1_human_human_disagreements.csv:
+Category, Case_ID, Dimension, Annotator_1_Score, Annotator_2_Score, Agreement
+
+rq1_human_human_agreement_metrics.csv:
+Category, Dimension, N, Agreements, Disagreements, Percent_Agreement,
+Cohens_Kappa, Quadratic_Weighted_Kappa
+
 rq1_overall_agreement_metrics.csv:
 Dimension, Quadratic_Weighted_Kappa, MAE, Directional_Bias
 
@@ -40,7 +62,7 @@ Case_ID, Classification, Human_Context, Human_Specificity, Human_Verification,
 LLM_Context, LLM_Specificity, LLM_Verification
 ```
 
-The RQ1 values should reproduce the manuscript-level results:
+The human--human agreement outputs are computed before discussion/reconciliation. The human--LLM values should reproduce the manuscript-level results:
 
 - Context overall κ = 0.526, MAE = 0.463, bias = -0.439;
 - Specificity overall κ = 0.431, MAE = 0.317, bias = -0.195;

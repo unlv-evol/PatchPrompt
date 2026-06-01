@@ -27,7 +27,7 @@ It contains 273 PR-linked cases and 21 variables. The dataset is intentionally p
 The pipeline covers the empirical workflow described in the paper:
 
 1. dataset preparation from the finalized cleaned dataset;
-2. RQ1 annotation reliability analysis using the 30% human gold subset and LLM-v1 annotations;
+2. RQ1 annotation reliability analysis, including human--human inter-rater agreement from the independent 30% human annotations and human--LLM validation using the reconciled human gold subset and LLM-v1 annotations;
 3. prompt scoring using Context, Specificity, Verification, and PQS;
 4. outcome classes PA, PN, NE, and CL;
 5. gate-level modeling:
@@ -137,6 +137,9 @@ make PYTHON=.venv/bin/python verify
 
 ## Key outputs
 
+- `RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_human_agreement_records.csv`
+- `RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_human_disagreements.csv`
+- `RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_human_agreement_metrics.csv`
 - `RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_overall_agreement_metrics.csv`
 - `RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_class_conditioned_kappa.csv`
 - `RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_annotation_policy.csv`
@@ -237,9 +240,9 @@ PatchTrack-Replication-Package/
 │
 ├── RQ1_Prompt_Evaluation_Validation/
 │   ├── analysis/
-│   │   └── rq1/
+│   │   └── rq1/                         ← agreement-analysis script
 │   ├── results/
-│   │   └── rq1/
+│   │   └── rq1/                          ← generated RQ1 CSVs, including human--human agreement outputs
 │   └── notebooks/
 │       └── rq1_annotation_reliability.ipynb  ← RQ1 reliability walkthrough
 │

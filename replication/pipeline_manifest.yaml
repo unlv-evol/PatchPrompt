@@ -1,7 +1,11 @@
 steps:
   - id: prepare_processed_data
     command: python Dataset_Construction/mining/preprocessing/build_processed_datasets.py --root .
-    inputs: [Dataset_Construction/raw_data, Dataset_Construction/annotation]
+    inputs:
+      - Dataset_Construction/raw_data
+      - Dataset_Construction/annotation
+      - Dataset_Construction/annotation/rubric/human_annotation_codebook.csv
+      - Dataset_Construction/annotation/rubric/human_annotation_codebook.md
     outputs:
       - Dataset_Construction/processed_data/final_analysis_dataset.csv
       - Dataset_Construction/processed_data/prompt_scores.csv
@@ -11,10 +15,16 @@ steps:
     command: python replication/reproduce_tables.py
     inputs:
       - Dataset_Construction/processed_data/final_analysis_dataset.csv
+      - Dataset_Construction/annotation/validation/human_annotations
       - Dataset_Construction/annotation/validation/human_gold_annotations.csv
       - Dataset_Construction/annotation/validation/llm_annotations_v1_combined.csv
+      - Dataset_Construction/annotation/rubric/human_annotation_codebook.csv
+      - Dataset_Construction/annotation/rubric/human_annotation_codebook.md
     outputs:
       - RQ2_Prompt_Effectiveness_Modeling/results/tables/table_1_summary.csv
+      - RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_human_agreement_records.csv
+      - RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_human_disagreements.csv
+      - RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_human_agreement_metrics.csv
       - RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_overall_agreement_metrics.csv
       - RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_class_conditioned_kappa.csv
       - RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_annotation_policy.csv

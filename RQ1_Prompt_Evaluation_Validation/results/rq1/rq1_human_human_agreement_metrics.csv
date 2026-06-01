@@ -1,0 +1,13 @@
+Category,Dimension,N,Agreements,Disagreements,Percent_Agreement,Cohens_Kappa,Quadratic_Weighted_Kappa,Measured_Before_Discussion
+PA,Context,27,16,11,59.3,0.233,0.125,True
+PA,Specificity,27,19,8,70.4,0.368,0.195,True
+PA,Verification,27,18,9,66.7,0.399,0.467,True
+PN,Context,16,9,7,56.2,0.337,0.416,True
+PN,Specificity,16,6,10,37.5,-0.006,0.279,True
+PN,Verification,16,12,4,75.0,0.158,0.429,True
+CL,Context,14,5,9,35.7,-0.033,0.045,True
+CL,Specificity,14,4,10,28.6,-0.207,-0.565,True
+CL,Verification,14,4,10,28.6,0.073,0.099,True
+NE,Context,25,14,11,56.0,0.314,0.563,True
+NE,Specificity,25,18,7,72.0,0.324,0.441,True
+NE,Verification,25,23,2,92.0,0.457,0.457,True

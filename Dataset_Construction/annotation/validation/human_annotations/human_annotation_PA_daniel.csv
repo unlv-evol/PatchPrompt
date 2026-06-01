@@ -1,0 +1,30 @@
+,Case ID,PR_Link,Conversation_Link,Classification,Context,Specificity,Verification,Efficiency,Rationale,Notes
+30,PA-33,https://github.com/uchicago-cs/chigame/pull/265,https://chat.openai.com/share/e3e3871f-4acd-4959-94a3-d260c84f8ede,PA,1,1,2,5,,Change Verification to 1; The prompt specifies a condition but not necessarily an explicit verification criteria
+0,PA-1,https://github.com/Altinn/altinn-broker/pull/259,https://chat.openai.com/share/b7853f70-84b8-477b-9879-a93a51215f81,PA,1,1,0,5,,
+22,PA-24,https://github.com/viets-software-club/truffle-ai-backend/pull/52,https://chat.openai.com/share/48bd44b4-13a7-4ff8-9938-2214f0b17f6b,PA,2,2,0,5,,Change verification to 1 because citeria is implied; Change context to 1
+31,PA-34,https://github.com/viets-software-club/truffle-ai-backend/pull/52,https://chat.openai.com/share/48bd44b4-13a7-4ff8-9938-2214f0b17f6b,PA,2,2,0,,,Change verification to 1 because citeria is implied
+18,PA-20,https://github.com/firezone/firezone/pull/3621,https://chat.openai.com/share/b1bb1f8c-b376-42fe-a887-4499cf141b31,PA,2,2,0,5,,Change verification to 1 because citeria is implied
+28,PA-30,https://github.com/qin-team-recipe/05-recipe-app/pull/62,https://chat.openai.com/share/4a9bc421-35fb-4452-bf93-c8fea1e3c473,PA,2,2,2,5,,Change context 1
+10,PA-12,https://github.com/globalbibletools/gbt/pull/114,https://chat.openai.com/share/1e32601b-3ca7-400c-a1db-1fcbe3d652e7,PA,1,1,0,4,,Change context to 2 because prompt contain edvience 
+70,PA-80,https://github.com/EthicApp-Development/ethicapp-main/pull/301,https://chat.openai.com/share/c7183873-b4c6-4228-9279-0730c085ca1c,PA,1,1,0,2,,Cap Efficiency to 3 since the prompts goes above 5 turns and its generally exploratory
+4,PA-5,https://github.com/SharezoneApp/sharezone-app/pull/980,https://chat.openai.com/share/fd82b66d-d949-4397-9b12-384fa87c7b35,PA,2,2,1,2,,Cap Efficiency to 3 since the prompts goes above 5 turns and its generally exploratory; Change specificiy to 1 - prompt doesn't give expicit constriant
+12,PA-14,https://github.com/ssvlabs/ssv-web/pull/277,https://chat.openai.com/share/952f594b-24af-48d4-92ec-e06b3b3fbbff,PA,1,1,0,5,,
+49,PA-56,https://github.com/poki/netlib/pull/50,https://chat.openai.com/share/7e23cfa9-7ae9-4d83-bf46-f4ee1f25465f,PA,1,1,0,5,,Change context to 2 because a code snippet was provided
+33,PA-36,https://github.com/Mudlet/Mudlet/pull/7123,https://chat.openai.com/share/cf97d3d8-e419-4878-9a2b-87409195340a,PA,2,2,0,5,,
+67,PA-75,https://github.com/sCrypt-Inc/scryptTS-docs/pull/209,https://chat.openai.com/share/79885c38-345b-4d2f-9f4f-d947562490b8,PA,1,1,0,5,,
+35,PA-38,https://github.com/StuartGavidia/businessapp/pull/35,https://chat.openai.com/share/1e410029-c111-4fde-be74-6c4e792d0722,PA,1,1,0,5,,Change verification to 1 because citeria is implied
+68,PA-78,https://github.com/VyProductions/SeniorDesign/pull/57,https://chat.openai.com/share/968d797a-0ef8-4644-91b9-70d1a3d0c016,PA,2,2,1,4,,
+45,PA-50,https://github.com/jwjacobson/jazz_repertoire/pull/65,https://chat.openai.com/share/8242fb00-dd2a-4891-8318-935b7fd1d136,PA,2,1,0,5,,
+73,PA-83,https://github.com/netdata/netdata/pull/15485,https://chat.openai.com/share/1489a07a-5d1d-47f0-b35c-c7ba4138f2ff,PA,1,1,0,4,,Change context to2
+61,PA-69,https://github.com/g12-4soat/techlanches-lambda-auth/pull/1,https://chat.openai.com/share/7e8febae-38ae-4b44-ae2e-9b8cc8b4b0da,PA,1,1,0,5,,Change verification to 1 because citeria is implied; Change context to 2
+55,PA-62,https://github.com/UNLV-CS472-672/2024-S-GROUP3-Barbell/pull/238,https://chat.openai.com/share/3727054b-5519-4170-97fa-ba85ecae86ac,PA,0,0,0,1,,Cap Efficiency to 3 since the prompts goes above 5 turns and its generally exploratory; Change verification to 2 because citeria is explicit; Change specificity to 2; Change context 2
+40,PA-43,https://github.com/UNLV-CS472-672/2024-S-GROUP3-Barbell/pull/258,https://chat.openai.com/share/32926458-88e0-430c-a875-85edf02efb96,PA,1,1,0,3,,Change context to 2
+9,PA-11,https://github.com/alcionai/corso/pull/4417,https://chat.openai.com/share/9550ff9a-5077-459d-a35e-47c20890240e,PA,1,1,0,5,,
+64,PA-72,https://github.com/netdata/netdata/pull/15455,https://chat.openai.com/share/e93e3816-c8ad-4276-8f95-a8a0a1ba57b4,PA,1,1,0,5,,Change verification to 2
+5,PA-7,https://github.com/StreamSG/ABCWorkshop/pull/38,https://chat.openai.com/share/714269d7-1801-4ced-8581-c640ffd7126a,PA,2,2,1,2,,Cap Efficiency to 3 since the prompts goes above 5 turns and its generally exploratory; Change context to 2
+47,PA-52,https://github.com/mcagov/beacons/pull/539,https://chat.openai.com/share/f2b7484c-8455-47e2-bb45-1725138dcdb0,PA,1,1,0,5,,
+34,PA-37,https://github.com/QRTaxi/QRTaxi_Web/pull/29,https://chat.openai.com/share/41409ce2-fe94-4c74-b425-f0760f9d1ca3,PA,2,2,1,1,,Cap Efficiency to 3 since the prompts goes above 5 turns and its generally exploratory; Change specificty to 1
+62,PA-70,https://github.com/hackforla/CivicTechJobs/pull/477,https://chat.openai.com/share/f09f38e5-f541-4f98-9483-e183f5650398,PA,1,1,0,5,,Change verification to 1 because citeria is implied; Change context to 2
+42,PA-45,https://github.com/annuaire-entreprises-data-gouv-fr/site/pull/796,https://chat.openai.com/share/caad291b-920c-4e2e-bcc1-04c191f2d587,PA,1,1,0,5,,Change Efficieny to 4 because the prompt has 1 follow up turn.
+,,,,,,,,,,
+,PA-9,https://github.com/VOICEVOX/voicevox/pull/1621,https://chat.openai.com/share/85e06c91-586d-4872-835e-1ef91a69e56f,PA,1,1,1,5,,

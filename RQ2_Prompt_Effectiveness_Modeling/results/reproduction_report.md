@@ -1,6 +1,6 @@
 # Reproduction Report
 
-Generated: 2026-05-27T23:16:26Z
+Generated: 2026-06-01T23:53:09Z
 
 ## Dataset
 
@@ -22,9 +22,9 @@ Generated: 2026-05-27T23:16:26Z
 - Figures: 3
 - Descriptive artifacts: 25
 - Diagnostic artifacts: 36
-- Qualitative artifacts: 13
-- RQ1 artifacts: 5
-- PDF table exports: 41
+- Qualitative artifacts: 14
+- RQ1 artifacts: 9
+- PDF table exports: 44
 
 ## Verification Status
 

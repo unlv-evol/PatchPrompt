@@ -1,0 +1,17 @@
+,Case ID,PR_Link,Conversation_Link,Classification,Context,Specificity,Verification,Efficiency,Rationale,Notes
+13,PN-15,https://github.com/robotology/icub-models-generator/pull/252,https://chat.openai.com/share/69784828-87f9-4a53-b805-55d02d66384b,PN,2,2,2,5,,Change verification to 1
+45,PN-50,https://github.com/groundlight/python-sdk/pull/142,https://chat.openai.com/share/c2b2ef08-7577-41d6-890d-01a8ddab9517,PN,1,1,0,5,,"Change verification to 1, implied; Change specificity to 2; Change context to 2 because the prompt mention path information"
+47,PN-52,https://github.com/netket/netket/pull/1631,https://chat.openai.com/share/eefd3861-16f7-4850-ac63-998784264c7b,PN,1,1,0,5,,Change context to 2 because code snippet was provided and library was explicitly mentioned
+44,PN-49,https://github.com/sablier-labs/v2-periphery/pull/191,https://chat.openai.com/share/67619484-f686-4d11-8cac-cb9e8d4ca1ce,PN,2,2,0,5,,Change Specifity to 1
+17,PN-19,https://github.com/laravel-json-api/core/pull/12,https://chat.openai.com/share/e9555822-4ffb-4845-8e40-0bc6cbbc658d,PN,0,0,0,4,,Change verification to 1; Change specificity to 1; Change context to 1
+27,PN-30,https://github.com/23-OSSCA-python-mysql-replication/python-mysql-replication/pull/79,https://chat.openai.com/share/8857034c-873f-477f-915a-1846683bcbae,PN,0,0,0,5,,Change Specifity to 1; Change context to 2
+26,PN-29,https://github.com/tinygrad/tinygrad/pull/1661,https://chat.openai.com/share/30ab0b7e-d72c-444f-a228-620b132e9500,PN,1,1,0,2,,Change verification to 1; Change specificity to 2; Change context to 2
+25,PN-27,https://github.com/VOICEVOX/voicevox_engine/pull/904,https://chat.openai.com/share/cb0a7a43-fbff-4876-801a-921c90ed5618,PN,1,1,0,4,,Change context to 2
+31,PN-34,https://github.com/ggerganov/llama.cpp/pull/1684,https://chat.openai.com/share/18251255-6a86-4acf-88ed-34f591e542b5,PN,2,1,0,4,,
+19,PN-21,https://github.com/MrNeRF/gaussian-splatting-cuda/pull/23,https://chat.openai.com/share/944c67d3-555e-4524-b2f0-81481f9cd5ba,PN,0,0,0,5,,Change Specificity to 1 - clear goal
+12,PN-14,https://github.com/pokt-network/poktroll/pull/338,https://chat.openai.com/share/d2590505-31e2-4e34-be93-8e4fabf8d872,PN,1,0,0,4,,Change Specificity to 1 - clear goal
+4,PN-5,https://github.com/pyg-team/pytorch-frame/pull/281,https://chat.openai.com/share/3506c8b0-4810-42f2-a23a-a9d4e3c38fe4,PN,1,0,0,5,,Change Specificity to 1 - clear goal
+34,PN-37,https://github.com/astahmer/openapi-zod-client/pull/151,https://chat.openai.com/share/954082b4-d72d-4b5f-a0d1-4a2107705ddb,PN,1,0,0,5,,Change Specificity to 1 - clear goal
+8,PN-10,https://github.com/unity-atoms/unity-atoms/pull/448,https://chat.openai.com/share/d30de92e-1ced-4eab-b255-e035079d1a5d,PN,1,1,0,3,,
+3,PN-4,https://github.com/darklang/dark/pull/5087,https://chat.openai.com/share/91365a6c-3f59-4d2a-8b51-b710f1921415,PN,1,0,0,4,,Change Specificity to 1 - clear goal
+6,PN-7,https://github.com/rapidsai/cuspatial/pull/1295,https://chat.openai.com/share/43a1b380-e356-4b5e-8c87-08b07003435b,PN,2,1,0,4,,

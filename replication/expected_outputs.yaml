@@ -50,12 +50,88 @@ artifacts:
   - Verification
   - 'PQS '
   smoke: true
+- name: Human Annotation Codebook (CSV)
+  path: Dataset_Construction/annotation/rubric/human_annotation_codebook.csv
+  validation: nonempty
+  smoke: true
+- name: Human Annotation Codebook (Markdown)
+  path: Dataset_Construction/annotation/rubric/human_annotation_codebook.md
+  validation: nonempty
+  smoke: true
+- name: Independent Human Annotation CL Richard
+  path: Dataset_Construction/annotation/validation/human_annotations/human_annotation_CL_richard.csv
+  validation: nonempty
+  smoke: true
+- name: Independent Human Annotation CL Daniel
+  path: Dataset_Construction/annotation/validation/human_annotations/human_annotation_CL_daniel.csv
+  validation: nonempty
+  smoke: true
+- name: Independent Human Annotation PN Richard
+  path: Dataset_Construction/annotation/validation/human_annotations/human_annotation_PN_richard.csv
+  validation: nonempty
+  smoke: true
+- name: Independent Human Annotation PN Daniel
+  path: Dataset_Construction/annotation/validation/human_annotations/human_annotation_PN_daniel.csv
+  validation: nonempty
+  smoke: true
+- name: Independent Human Annotation PA Richard
+  path: Dataset_Construction/annotation/validation/human_annotations/human_annotation_PA_richard.csv
+  validation: nonempty
+  smoke: true
+- name: Independent Human Annotation PA Daniel
+  path: Dataset_Construction/annotation/validation/human_annotations/human_annotation_PA_daniel.csv
+  validation: nonempty
+  smoke: true
+- name: Independent Human Annotation NE Richard
+  path: Dataset_Construction/annotation/validation/human_annotations/human_annotation_NE_richard.csv
+  validation: nonempty
+  smoke: true
+- name: Independent Human Annotation NE Daniel
+  path: Dataset_Construction/annotation/validation/human_annotations/human_annotation_NE_daniel.csv
+  validation: nonempty
+  smoke: true
 - name: Table 1 Summary
   path: RQ2_Prompt_Effectiveness_Modeling/results/tables/table_1_summary.csv
   validation: csv_schema
   required_columns:
   - Metric
   - Value
+  smoke: true
+- name: RQ1 Human-Human Agreement Records
+  path: RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_human_agreement_records.csv
+  validation: csv_schema
+  required_columns:
+  - Category
+  - Case_ID
+  - Dimension
+  - Annotator_1_Score
+  - Annotator_2_Score
+  - Agreement
+  - Measured_Before_Discussion
+  smoke: true
+- name: RQ1 Human-Human Disagreements
+  path: RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_human_disagreements.csv
+  validation: csv_schema
+  required_columns:
+  - Category
+  - Case_ID
+  - Dimension
+  - Annotator_1_Score
+  - Annotator_2_Score
+  - Agreement
+  smoke: true
+- name: RQ1 Human-Human Agreement Metrics
+  path: RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_human_agreement_metrics.csv
+  validation: csv_schema
+  required_columns:
+  - Category
+  - Dimension
+  - N
+  - Agreements
+  - Disagreements
+  - Percent_Agreement
+  - Cohens_Kappa
+  - Quadratic_Weighted_Kappa
   smoke: true
 - name: RQ1 Overall Agreement Metrics
   path: RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_overall_agreement_metrics.csv

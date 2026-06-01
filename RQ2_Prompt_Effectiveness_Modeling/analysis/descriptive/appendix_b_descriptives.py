@@ -251,10 +251,11 @@ def run(root: Path) -> list[pd.DataFrame]:
         write_csv(table, outdir / name)
         write_csv(table, tables_dir / name)
 
-    write_latex_table(summary, root / "paper" / "tables" / "appendix_b_summary_statistics.tex", "Appendix B summary statistics", "tab:appendix-b-summary")
-    write_latex_table(skew, root / "paper" / "tables" / "appendix_b_skewness_analysis.tex", "Skewness analysis for key variables", "tab:appendix-b-skewness")
-    write_latex_table(outliers, root / "paper" / "tables" / "appendix_b_outlier_summary.tex", "Outlier summary for skew-sensitive variables", "tab:appendix-b-outliers")
-    write_latex_table(corr, root / "paper" / "tables" / "appendix_b_prompt_structure_correlations.tex", "Prompt-structure correlations", "tab:appendix-b-correlations")
+    tex_out = root / "RQ2_Prompt_Effectiveness_Modeling" / "results" / "tables"
+    write_latex_table(summary, tex_out / "appendix_b_summary_statistics.tex", "Appendix B summary statistics", "tab:appendix-b-summary")
+    write_latex_table(skew, tex_out / "appendix_b_skewness_analysis.tex", "Skewness analysis for key variables", "tab:appendix-b-skewness")
+    write_latex_table(outliers, tex_out / "appendix_b_outlier_summary.tex", "Outlier summary for skew-sensitive variables", "tab:appendix-b-outliers")
+    write_latex_table(corr, tex_out / "appendix_b_prompt_structure_correlations.tex", "Prompt-structure correlations", "tab:appendix-b-correlations")
 
     _plot_histogram(df["PR_Size"], "Pull Request Size Distribution", "PR size", figs_dir / "pr_size_histogram.png", bins=40)
     _plot_histogram(df["Exp_Author_Repo"], "Contributor Experience Distribution", "Author experience in repository", figs_dir / "contributor_experience_histogram.png", bins=40)

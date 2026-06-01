@@ -70,6 +70,8 @@ The RQ1 component evaluates human–LLM agreement for prompt-quality scoring. It
 ```text
 Dataset_Construction/annotation/validation/human_gold_annotations.csv
 Dataset_Construction/annotation/validation/llm_annotations_v1_combined.csv
+Dataset_Construction/annotation/rubric/human_annotation_codebook.csv
+Dataset_Construction/annotation/rubric/human_annotation_codebook.md
 ```
 
 and regenerates:

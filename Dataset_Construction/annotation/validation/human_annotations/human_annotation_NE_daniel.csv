@@ -1,0 +1,26 @@
+,Case ID,PR_Link,Conversation_Link,Classification,Context,Specificity,Verification,Efficiency,Rationale,Notes
+4,NE-6,https://github.com/PostHog/posthog.com/pull/6456,https://chat.openai.com/share/0a9cc9bb-70cc-47e7-a2af-0fedf9c6ba2f,NE,1,1,0,5,,Change context 0
+35,NE-40,https://github.com/wavlake/catalog/pull/404,https://chatgpt.com/share/58562633-8742-4748-8f6d-290338880f5f,NE,2,1,0,4,,
+10,NE-12,https://github.com/SSWConsulting/SSW.Rules.Content/pull/7614,https://chat.openai.com/share/d7be0b08-bdfc-4822-aa9a-bd4843e83078,NE,1,1,0,5,,
+0,NE-1,https://github.com/yzpocket/spring-cafeservice/pull/21,https://chat.openai.com/share/88445359-cc0e-41b9-955f-c446bbd2fc95,NE,2,2,0,1,,Chap efficiency to 3; Change specificity to 1
+45,NE-52,https://github.com/ubiquibot/conversation-rewards/pull/3,https://chat.openai.com/share/3206263b-ba8d-4c4c-9890-5264fd0bdb02,NE,0,0,0,5,,Change context to 1
+47,NE-54,https://github.com/customerio/gist-web/pull/25,https://chat.openai.com/share/d0c2a3ac-6225-4817-aa9c-6202305ff9d2,NE,1,1,0,5,,Chnage context to 2
+65,NE-74,https://github.com/VOICEVOX/voicevox/pull/1934,https://chat.openai.com/share/562ffbce-bc50-416e-9bac-ed200097b24c,NE,1,1,0,4,,Change verification to 1
+53,NE-61,https://github.com/GaloyMoney/galoy-mobile/pull/2617,https://chat.openai.com/share/e5d50333-2d70-4c70-b4ce-652cf5d407e9,NE,0,1,0,5,,Change context to 1
+50,NE-58,https://github.com/rotary-genomics/rotary/pull/57,https://chat.openai.com/share/930460eb-2687-4e57-b683-e06ec3074eee,NE,0,1,0,5,,Change context to 1
+28,NE-32,https://github.com/chatwoot/chatwoot/pull/8231,https://chat.openai.com/share/4ebcdaf3-79aa-495d-b25b-c53ac7197eed,NE,2,2,0,5,,Change specificity to 1
+67,NE-76,https://github.com/daeuniverse/dae/pull/300,https://chat.openai.com/share/9fb7d601-2a86-4079-8cdc-3ecdf90cab48,NE,1,1,1,3,,
+70,NE-79,https://github.com/sign-language-processing/sign-language-processing.github.io/pull/38,https://chatgpt.com/share/d635924e-07f6-4642-9850-d1433b47b9b4,NE,1,1,0,5,,
+18,NE-21,https://github.com/primer-io/primer-sdk-ios/pull/723,https://chat.openai.com/share/3ff353ef-09a3-46b0-b4ea-1a01aa097b82,NE,1,1,1,4,,Change verificiation to 0; Change context rto 2
+12,NE-14,https://github.com/PolicyEngine/policyengine-us/pull/3275,https://chat.openai.com/share/46cfecf8-fe9f-4520-8d59-a2a9f2c819a2,NE,0,1,0,4,,
+58,NE-67,https://github.com/nishiki-tech/nishiki-frontend/pull/271,https://chat.openai.com/share/e5429575-91aa-4585-9332-aa926bfd0085,NE,2,2,0,5,,Change specificity to 1
+33,NE-38,https://github.com/codecrafters-io/frontend/pull/1061,https://chat.openai.com/share/d668d64c-182e-4e9d-8e17-6517d91fc65e,NE,1,1,0,5,,Change context to 2
+9,NE-11,https://github.com/VOICEVOX/voicevox_core/pull/532,https://chat.openai.com/share/60d93fac-6c72-4532-8f7b-f87671a2a73d,NE,1,1,0,5,,Change specificity to 0
+5,NE-7,https://github.com/skypilot-org/skypilot/pull/3081,https://chat.openai.com/share/1a5fb45b-2e92-406f-83ec-89b5501be830,NE,1,1,0,5,,
+34,NE-39,https://github.com/Zekarant/Mangas-Fan-V8/pull/13,https://chat.openai.com/share/2f5541f0-f0cd-4fce-bbf7-b919d5b282c6,NE,1,1,0,5,,
+22,NE-25,https://github.com/marqo-ai/marqo/pull/670,https://chat.openai.com/share/d6c43184-1ad5-49b5-b209-e659bdb68c33,NE,1,1,0,5,,
+30,NE-34,https://github.com/ggerganov/llama.cpp/pull/1807,https://chat.openai.com/share/4b3feffc-438c-492f-80ef-a26a7b026550,NE,1,1,0,5,,Change context to 2
+40,NE-45,https://github.com/boostcampwm2023/web15-BaekjoonRooms/pull/50,https://chat.openai.com/share/13cc5a56-d758-407e-bc55-2ad0711bd719,NE,1,0,0,5,,Change specificity to 1 - clear goal
+39,NE-44,https://github.com/VOICEVOX/voicevox/pull/1555,https://chat.openai.com/share/63cbb2ea-5b4d-4051-b83e-724269ce785d,NE,0,0,0,5,,
+16,NE-19,https://github.com/VOICEVOX/voicevox/pull/1790,https://chat.openai.com/share/3640a35f-056b-4be6-912b-321796408267,NE,1,1,0,5,,Change context to 0
+64,NE-73,https://github.com/skrub-data/skrub/pull/581,https://chat.openai.com/share/d4a00de6-d10b-4c5a-af19-43757fb795cf,NE,0,0,0,5,,Change efficiency to 4

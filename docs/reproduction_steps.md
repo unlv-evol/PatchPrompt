@@ -35,7 +35,7 @@ Smoke mode intentionally skips methodological-alignment sensitivity artifacts to
 The canonical orchestration is implemented in `replication/reproduce_all.py` and described in `replication/pipeline_manifest.yaml`.
 
 1. **Prepare derived datasets** from `Dataset_Construction/processed_data/final_analysis_dataset.csv` without modifying the canonical dataset.
-2. **Reproduce RQ1 annotation reliability** from `Dataset_Construction/annotation/validation/human_gold_annotations.csv` and `Dataset_Construction/annotation/validation/llm_annotations_v1_combined.csv`.
+2. **Reproduce RQ1 annotation reliability** from the independent human annotation CSVs in `Dataset_Construction/annotation/validation/human_annotations/`, the reconciled `human_gold_annotations.csv`, and `llm_annotations_v1_combined.csv`.
 3. **Reproduce descriptive statistics** for Section 4.2.1 and Appendix B.
 4. **Run gate-level quantitative models** for Gate 0, Gate 1, Gate 2, and Axis B.
 5. **Run model diagnostics and sensitivity checks**.
@@ -53,13 +53,26 @@ python -m RQ1_Prompt_Evaluation_Validation.analysis.rq1.agreement_analysis
 Inputs:
 
 ```text
+Dataset_Construction/annotation/validation/human_annotations/human_annotation_CL_richard.csv
+Dataset_Construction/annotation/validation/human_annotations/human_annotation_CL_daniel.csv
+Dataset_Construction/annotation/validation/human_annotations/human_annotation_PN_richard.csv
+Dataset_Construction/annotation/validation/human_annotations/human_annotation_PN_daniel.csv
+Dataset_Construction/annotation/validation/human_annotations/human_annotation_PA_richard.csv
+Dataset_Construction/annotation/validation/human_annotations/human_annotation_PA_daniel.csv
+Dataset_Construction/annotation/validation/human_annotations/human_annotation_NE_richard.csv
+Dataset_Construction/annotation/validation/human_annotations/human_annotation_NE_daniel.csv
 Dataset_Construction/annotation/validation/human_gold_annotations.csv
 Dataset_Construction/annotation/validation/llm_annotations_v1_combined.csv
+Dataset_Construction/annotation/rubric/human_annotation_codebook.csv
+Dataset_Construction/annotation/rubric/human_annotation_codebook.md
 ```
 
 Outputs:
 
 ```text
+RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_human_agreement_records.csv
+RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_human_disagreements.csv
+RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_human_agreement_metrics.csv
 RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_overall_agreement_metrics.csv
 RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_class_conditioned_kappa.csv
 RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_annotation_policy.csv
@@ -67,7 +80,7 @@ RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_llm_validation_pairs.csv
 RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_summary.md
 ```
 
-The policy table is intentionally class-aware and reproduces the paper's Table 2. It uses agreement statistics plus construct-validity judgment rather than a blind threshold rule.
+The human--human agreement outputs are computed before discussion/reconciliation and include per-prompt records, disagreements-only records, and category-by-dimension agreement metrics. The policy table is intentionally class-aware and reproduces the paper's Table 2. It uses agreement statistics plus construct-validity judgment rather than a blind threshold rule.
 
 ## Descriptive statistics reproduction
 
