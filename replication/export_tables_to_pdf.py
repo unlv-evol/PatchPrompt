@@ -103,7 +103,7 @@ def _csv_sources(root: Path) -> Iterable[Path]:
 
 
 def export(root: Path) -> None:
-    out = root / "results" / "paper_tables_pdf"
+    out = root / "RQ2_Prompt_Effectiveness_Modeling" / "results" / "paper_tables_pdf"
     out.mkdir(parents=True, exist_ok=True)
 
     # Ensure a fresh PDF set for each run to avoid stale artifacts.

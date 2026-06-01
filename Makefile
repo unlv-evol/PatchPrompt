@@ -36,10 +36,10 @@ smoke: check-python
 	PYTHONPATH=. $(PYTHON) replication/verify_outputs.py --expected replication/expected_outputs.yaml --smoke
 
 clean-pdfs:
-	rm -f results/paper_tables_pdf/*.pdf
+	rm -f RQ2_Prompt_Effectiveness_Modeling/results/paper_tables_pdf/*.pdf
 
 clean:
-	rm -rf results/tables/*.csv results/figures/*.png results/diagnostics/*.csv results/qualitative/*.csv results/descriptive/*.csv results/descriptive/*.md results/descriptive/appendix_b_figures/*.png results/descriptive/appendix_b_tables/*.csv results/manifests/*.csv
-	rm -f results/paper_tables_pdf/*.pdf results/runtime/*.json results/runtime/*.csv results/runtime/*.md results/reproduction_report.md
+	rm -rf RQ2_Prompt_Effectiveness_Modeling/results/tables/*.csv RQ2_Prompt_Effectiveness_Modeling/results/figures/*.png RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/*.csv RQ2_Prompt_Effectiveness_Modeling/results/qualitative/*.csv RQ2_Prompt_Effectiveness_Modeling/results/descriptive/*.csv RQ2_Prompt_Effectiveness_Modeling/results/descriptive/*.md RQ2_Prompt_Effectiveness_Modeling/results/descriptive/appendix_b_figures/*.png RQ2_Prompt_Effectiveness_Modeling/results/descriptive/appendix_b_tables/*.csv RQ2_Prompt_Effectiveness_Modeling/results/manifests/*.csv
+	rm -f RQ2_Prompt_Effectiveness_Modeling/results/paper_tables_pdf/*.pdf RQ2_Prompt_Effectiveness_Modeling/results/runtime/*.json RQ2_Prompt_Effectiveness_Modeling/results/runtime/*.csv RQ2_Prompt_Effectiveness_Modeling/results/runtime/*.md RQ2_Prompt_Effectiveness_Modeling/results/reproduction_report.md
 	rm -rf paper/tables/*.tex paper/figures/*.png paper/generated_sections/*.md
-	rm -f results/logs/reproduction.log results/logs/last_run_metadata.json
+	rm -f RQ2_Prompt_Effectiveness_Modeling/results/logs/reproduction.log RQ2_Prompt_Effectiveness_Modeling/results/logs/last_run_metadata.json

@@ -99,7 +99,7 @@ make verify
 
 ## Memory and Storage Notes
 
-The CSV datasets and generated outputs are small. The largest storage contribution may come from raw PDF artifacts in `dataset/raw/chatgpt/`.
+The CSV datasets and generated outputs are small. The largest storage contribution may come from raw PDF artifacts in `Dataset_Construction/raw_data/chatgpt/`.
 
 If storage is constrained, evaluators may inspect processed-data reproduction without opening every raw PDF.
 
@@ -119,7 +119,7 @@ The default reproduction pipeline assumes:
 Each run records metadata in:
 
 ```text
-results/logs/last_run_metadata.json
+RQ2_Prompt_Effectiveness_Modeling/results/logs/last_run_metadata.json
 ```
 
 This file captures environment information, timestamps, and configuration details useful for debugging and artifact review.
@@ -128,4 +128,4 @@ This file captures environment information, timestamps, and configuration detail
 
 The package includes a Dockerfile and `docker-compose.yml` for containerized reproduction. A GitHub Actions smoke workflow is provided for CI environments. The smoke workflow is intended to verify installation, the smoke reproduction path, and expected output presence rather than to serve as a full performance benchmark.
 
-Runtime benchmark outputs are written to `results/runtime/` after a full reproduction run.
+Runtime benchmark outputs are written to `RQ2_Prompt_Effectiveness_Modeling/results/runtime/` after a full reproduction run.

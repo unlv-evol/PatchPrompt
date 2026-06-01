@@ -1,6 +1,6 @@
 # Robustness and Sensitivity Analysis
 
-This document summarizes the reviewer-oriented robustness and sensitivity workflow implemented in `analysis/diagnostics/robustness_sensitivity_outputs.py`.
+This document summarizes the reviewer-oriented robustness and sensitivity workflow implemented in `RQ2_Prompt_Effectiveness_Modeling/analysis/diagnostics/robustness_sensitivity_outputs.py`.
 
 ## Purpose
 
@@ -19,20 +19,18 @@ The robustness analysis evaluates whether the Gate 0, Gate 1, and Gate 2 finding
 
 ## Main outputs
 
-Generated outputs are written to `results/diagnostics/`, including:
+Generated outputs are written to `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/`, including:
 
-- `full_robustness_sensitivity_results.csv`
-- `robustness_summary_table.csv`
-- `robustness_core_finding_stability.csv`
-- `robustness_exclusion_details.csv`
-- `pr_size_outlier_thresholds.csv`
-- `gate2_alternative_operationalization.csv`
-- `prompt_tokens.csv`
-- `prompt_length_control_models.csv`
-- `holdout_stability_checks.csv`
-- `robustness_memo.md`
-
-LaTeX tables are written to `paper/tables/`.
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/full_robustness_sensitivity_results.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/robustness_summary_table.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/robustness_core_finding_stability.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/robustness_exclusion_details.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/pr_size_outlier_thresholds.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/gate2_alternative_operationalization.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/prompt_tokens.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/prompt_length_control_models.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/holdout_stability_checks.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/robustness_memo.md`
 
 ## Interpretation policy
 

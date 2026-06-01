@@ -1,6 +1,6 @@
 artifacts:
 - name: canonical final analysis dataset
-  path: dataset/processed/final_analysis_dataset.csv
+  path: Dataset_Construction/processed_data/final_analysis_dataset.csv
   validation: csv_schema
   required_columns:
   - Case ID
@@ -23,7 +23,7 @@ artifacts:
   - PR_Language
   smoke: true
 - name: derived gate model dataset
-  path: dataset/processed/gate_model_dataset.csv
+  path: Dataset_Construction/processed_data/gate_model_dataset.csv
   validation: csv_schema
   required_columns:
   - Case_ID
@@ -41,7 +41,7 @@ artifacts:
   - Adopted_Code
   smoke: true
 - name: prompt scores
-  path: dataset/processed/prompt_scores.csv
+  path: Dataset_Construction/processed_data/prompt_scores.csv
   validation: csv_schema
   required_columns:
   - Case ID
@@ -51,14 +51,14 @@ artifacts:
   - 'PQS '
   smoke: true
 - name: Table 1 Summary
-  path: results/tables/table_1_summary.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/tables/table_1_summary.csv
   validation: csv_schema
   required_columns:
   - Metric
   - Value
   smoke: true
 - name: RQ1 Overall Agreement Metrics
-  path: results/rq1/rq1_overall_agreement_metrics.csv
+  path: RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_overall_agreement_metrics.csv
   validation: csv_schema
   required_columns:
   - Dimension
@@ -67,7 +67,7 @@ artifacts:
   - Directional_Bias
   smoke: true
 - name: RQ1 Class-Conditioned Kappa
-  path: results/rq1/rq1_class_conditioned_kappa.csv
+  path: RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_class_conditioned_kappa.csv
   validation: csv_schema
   required_columns:
   - Class
@@ -77,7 +77,7 @@ artifacts:
   - kappa_V
   smoke: true
 - name: RQ1 Annotation Policy Table
-  path: results/rq1/rq1_annotation_policy.csv
+  path: RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_annotation_policy.csv
   validation: csv_schema
   required_columns:
   - Metric
@@ -87,7 +87,7 @@ artifacts:
   - NE
   smoke: true
 - name: RQ1 Validation Pairs
-  path: results/rq1/rq1_human_llm_validation_pairs.csv
+  path: RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_llm_validation_pairs.csv
   validation: csv_schema
   required_columns:
   - Case_ID
@@ -100,7 +100,7 @@ artifacts:
   - LLM_Verification
   smoke: true
 - name: Table 3a Prompt Structure
-  path: results/tables/table_3a_prompt_structure.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/tables/table_3a_prompt_structure.csv
   validation: csv_schema
   required_columns:
   - Statistic
@@ -109,7 +109,7 @@ artifacts:
   - Verification
   smoke: true
 - name: Table 3b PQS by Outcome
-  path: results/tables/table_3b_pqs_by_outcome.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/tables/table_3b_pqs_by_outcome.csv
   validation: csv_schema
   required_columns:
   - Class
@@ -118,14 +118,14 @@ artifacts:
   - N
   smoke: true
 - name: Appendix Table 8 PQS Distribution
-  path: results/tables/appendix_table_8_pqs_distribution.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/tables/appendix_table_8_pqs_distribution.csv
   validation: csv_schema
   required_columns:
   - Statistic
   - Value
   smoke: true
 - name: Appendix Table 9 Extended PQS by Outcome
-  path: results/tables/appendix_table_9_extended_pqs_by_outcome.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/tables/appendix_table_9_extended_pqs_by_outcome.csv
   validation: csv_schema
   required_columns:
   - Class
@@ -136,147 +136,127 @@ artifacts:
   - Max
   smoke: true
 - name: Appendix Table 10 PR Size
-  path: results/tables/appendix_table_10_pr_size.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/tables/appendix_table_10_pr_size.csv
   validation: csv_schema
   required_columns:
   - Metric
   - Value
   smoke: true
 - name: Appendix Table 11 Language Distribution
-  path: results/tables/appendix_table_11_language_distribution.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/tables/appendix_table_11_language_distribution.csv
   validation: csv_schema
   required_columns:
   - Language
   - Count
   smoke: true
 - name: Appendix Table 12 Contributor Experience
-  path: results/tables/appendix_table_12_contributor_experience.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/tables/appendix_table_12_contributor_experience.csv
   validation: csv_schema
   required_columns:
   - Metric
   - Value
   smoke: true
 - name: Table 2 Models
-  path: results/tables/table_2_models.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/tables/table_2_models.csv
   validation: nonempty
   smoke: true
 - name: Gate 0 Model
-  path: results/tables/gate0_generation_model.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/tables/gate0_generation_model.csv
   validation: nonempty
   smoke: true
 - name: Gate 1 Model
-  path: results/tables/gate1_adoption_model.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/tables/gate1_adoption_model.csv
   validation: nonempty
   smoke: true
 - name: Gate 2 Model
-  path: results/tables/gate2_integration_model.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/tables/gate2_integration_model.csv
   validation: nonempty
   smoke: true
 - name: Axis B Model
-  path: results/tables/axisb_lifecycle_model.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/tables/axisb_lifecycle_model.csv
   validation: nonempty
   smoke: true
 - name: VIF Results
-  path: results/diagnostics/vif_results.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/vif_results.csv
   validation: csv_schema
   required_columns:
   - Variable
   - VIF
   smoke: true
 - name: Separation Checks
-  path: results/diagnostics/separation_checks.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/separation_checks.csv
   validation: nonempty
   smoke: true
 - name: Schoenfeld Diagnostics
-  path: results/diagnostics/schoenfeld_residual_tests.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/schoenfeld_residual_tests.csv
   validation: nonempty
   smoke: true
 - name: Sensitivity Analysis
-  path: results/diagnostics/sensitivity_analysis.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/sensitivity_analysis.csv
   validation: nonempty
   smoke: true
 - name: Full Robustness Sensitivity Results
-  path: results/diagnostics/full_robustness_sensitivity_results.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/full_robustness_sensitivity_results.csv
   validation: nonempty
   smoke: true
 - name: Robustness Summary Table
-  path: results/diagnostics/robustness_summary_table.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/robustness_summary_table.csv
   validation: nonempty
   smoke: true
 - name: Robustness Core Finding Stability
-  path: results/diagnostics/robustness_core_finding_stability.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/robustness_core_finding_stability.csv
   validation: nonempty
   smoke: true
 - name: Dominant Repository Exclusion
-  path: results/diagnostics/dominant_repository_exclusion.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/dominant_repository_exclusion.csv
   validation: nonempty
   smoke: true
 - name: Extreme PR Size Exclusion
-  path: results/diagnostics/extreme_pr_size_exclusion.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/extreme_pr_size_exclusion.csv
   validation: nonempty
   smoke: true
 - name: Dominant Language Exclusion
-  path: results/diagnostics/dominant_language_exclusion.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/dominant_language_exclusion.csv
   validation: nonempty
   smoke: true
 - name: PQS vs Dimension Models
-  path: results/diagnostics/pqs_vs_dimension_models.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/pqs_vs_dimension_models.csv
   validation: nonempty
   smoke: true
 - name: Robustness Exclusion Details
-  path: results/diagnostics/robustness_exclusion_details.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/robustness_exclusion_details.csv
   validation: nonempty
   smoke: true
 - name: Robustness Fit Warnings
-  path: results/diagnostics/robustness_fit_warnings.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/robustness_fit_warnings.csv
   validation: exists
   smoke: true
 - name: Robustness Sensitivity Summary
-  path: results/diagnostics/robustness_sensitivity_summary.md
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/robustness_sensitivity_summary.md
   validation: nonempty
   smoke: true
 - name: Robustness Memo
-  path: results/diagnostics/robustness_memo.md
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/robustness_memo.md
   validation: nonempty
   smoke: true
 - name: Gate 2 Reuse Level Counts
-  path: results/diagnostics/gate2_reuse_level_counts.csv
-  validation: nonempty
-  smoke: true
-- name: Full Robustness Sensitivity Results LaTeX
-  path: paper/tables/full_robustness_sensitivity_results.tex
-  validation: nonempty
-  smoke: true
-- name: Robustness Summary Table LaTeX
-  path: paper/tables/robustness_summary_table.tex
-  validation: nonempty
-  smoke: true
-- name: Robustness Core Finding Stability LaTeX
-  path: paper/tables/robustness_core_finding_stability.tex
-  validation: nonempty
-  smoke: true
-- name: Gate 2 Reuse Level Counts LaTeX
-  path: paper/tables/gate2_reuse_level_counts.tex
-  validation: nonempty
-  smoke: true
-- name: Sensitivity Analysis LaTeX
-  path: paper/tables/sensitivity_analysis.tex
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/gate2_reuse_level_counts.csv
   validation: nonempty
   smoke: true
 - name: Code Frequencies
-  path: results/qualitative/code_frequencies.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/code_frequencies.csv
   validation: nonempty
   smoke: true
 - name: Thematic Summary
-  path: results/qualitative/thematic_summary.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/thematic_summary.csv
   validation: nonempty
   smoke: true
 - name: Triangulation Summary
-  path: results/qualitative/triangulation_summary.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/triangulation_summary.csv
   validation: nonempty
   smoke: true
 - name: Illustrative Examples Dataset
-  path: results/qualitative/illustrative_examples_dataset.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/illustrative_examples_dataset.csv
   validation: csv_schema
   required_columns:
   - Case ID
@@ -294,7 +274,7 @@ artifacts:
   - Conversation_Link
   smoke: true
 - name: Illustrative Case Manifest
-  path: results/qualitative/illustrative_case_manifest.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/illustrative_case_manifest.csv
   validation: csv_schema
   required_columns:
   - artifact
@@ -303,11 +283,11 @@ artifacts:
   - unique_cases
   smoke: true
 - name: Qualitative Results README
-  path: results/qualitative/README.md
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/README.md
   validation: nonempty
   smoke: true
 - name: Qualitative Examples Manifest
-  path: results/qualitative/qualitative_examples_manifest.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/qualitative_examples_manifest.csv
   validation: csv_schema
   required_columns:
   - Gate
@@ -316,167 +296,103 @@ artifacts:
   - Structural Pattern
   smoke: true
 - name: Gate 0 Patterns CSV
-  path: results/qualitative/gate0/gate0_qualitative_patterns.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate0/gate0_qualitative_patterns.csv
   validation: nonempty
   smoke: true
 - name: Gate 0 Full Records CSV
-  path: results/qualitative/gate0/gate0_full_case_records.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate0/gate0_full_case_records.csv
   validation: nonempty
   smoke: true
 - name: Gate 0 Patterns XLSX
-  path: results/qualitative/gate0/gate0_qualitative_patterns.xlsx
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate0/gate0_qualitative_patterns.xlsx
   validation: nonempty
   smoke: true
 - name: Gate 0 Patterns PDF
-  path: results/qualitative/gate0/gate0_qualitative_patterns.pdf
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate0/gate0_qualitative_patterns.pdf
   validation: nonempty
   smoke: true
 - name: Gate 0 README
-  path: results/qualitative/gate0/README.txt
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate0/README.txt
   validation: nonempty
   smoke: true
 - name: Gate 1 Patterns CSV
-  path: results/qualitative/gate1/gate1_qualitative_patterns.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate1/gate1_qualitative_patterns.csv
   validation: nonempty
   smoke: true
 - name: Gate 1 Full Records CSV
-  path: results/qualitative/gate1/gate1_full_case_records.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate1/gate1_full_case_records.csv
   validation: nonempty
   smoke: true
 - name: Gate 1 Patterns XLSX
-  path: results/qualitative/gate1/gate1_qualitative_patterns.xlsx
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate1/gate1_qualitative_patterns.xlsx
   validation: nonempty
   smoke: true
 - name: Gate 1 Patterns PDF
-  path: results/qualitative/gate1/gate1_qualitative_patterns.pdf
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate1/gate1_qualitative_patterns.pdf
   validation: nonempty
   smoke: true
 - name: Gate 1 README
-  path: results/qualitative/gate1/README.txt
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate1/README.txt
   validation: nonempty
   smoke: true
 - name: Gate 2 Patterns CSV
-  path: results/qualitative/gate2/gate2_qualitative_patterns.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate2/gate2_qualitative_patterns.csv
   validation: nonempty
   smoke: true
 - name: Gate 2 Full Records CSV
-  path: results/qualitative/gate2/gate2_full_case_records.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate2/gate2_full_case_records.csv
   validation: nonempty
   smoke: true
 - name: Gate 2 Patterns XLSX
-  path: results/qualitative/gate2/gate2_qualitative_patterns.xlsx
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate2/gate2_qualitative_patterns.xlsx
   validation: nonempty
   smoke: true
 - name: Gate 2 Patterns PDF
-  path: results/qualitative/gate2/gate2_qualitative_patterns.pdf
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate2/gate2_qualitative_patterns.pdf
   validation: nonempty
   smoke: true
 - name: Gate 2 README
-  path: results/qualitative/gate2/README.txt
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples README
-  path: qualitative_examples/README.md
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples Gate 0 CSV
-  path: qualitative_examples/gate0/gate0_qualitative_patterns.csv
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples Gate 0 Full Records CSV
-  path: qualitative_examples/gate0/gate0_full_case_records.csv
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples Gate 0 XLSX
-  path: qualitative_examples/gate0/gate0_qualitative_patterns.xlsx
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples Gate 0 PDF
-  path: qualitative_examples/gate0/gate0_qualitative_patterns.pdf
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples Gate 0 README
-  path: qualitative_examples/gate0/README.txt
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples Gate 1 CSV
-  path: qualitative_examples/gate1/gate1_qualitative_patterns.csv
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples Gate 1 Full Records CSV
-  path: qualitative_examples/gate1/gate1_full_case_records.csv
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples Gate 1 XLSX
-  path: qualitative_examples/gate1/gate1_qualitative_patterns.xlsx
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples Gate 1 PDF
-  path: qualitative_examples/gate1/gate1_qualitative_patterns.pdf
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples Gate 1 README
-  path: qualitative_examples/gate1/README.txt
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples Gate 2 CSV
-  path: qualitative_examples/gate2/gate2_qualitative_patterns.csv
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples Gate 2 Full Records CSV
-  path: qualitative_examples/gate2/gate2_full_case_records.csv
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples Gate 2 XLSX
-  path: qualitative_examples/gate2/gate2_qualitative_patterns.xlsx
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples Gate 2 PDF
-  path: qualitative_examples/gate2/gate2_qualitative_patterns.pdf
-  validation: nonempty
-  smoke: true
-- name: Qualitative Examples Gate 2 README
-  path: qualitative_examples/gate2/README.txt
+  path: RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate2/README.txt
   validation: nonempty
   smoke: true
 - name: Figure 1 Outcome Distribution
-  path: results/figures/figure_1_outcome_distribution.png
+  path: RQ2_Prompt_Effectiveness_Modeling/results/figures/figure_1_outcome_distribution.png
   validation: nonempty
   smoke: true
 - name: Figure 2 PQS by Outcome
-  path: results/figures/figure_2_pqs_by_outcome.png
+  path: RQ2_Prompt_Effectiveness_Modeling/results/figures/figure_2_pqs_by_outcome.png
   validation: nonempty
   smoke: true
 - name: Figure 3 Fraction Adopted by Context
-  path: results/figures/figure_3_fraction_adopted_by_context.png
+  path: RQ2_Prompt_Effectiveness_Modeling/results/figures/figure_3_fraction_adopted_by_context.png
   validation: nonempty
   smoke: true
 - name: Run Metadata
-  path: results/logs/last_run_metadata.json
+  path: RQ2_Prompt_Effectiveness_Modeling/results/logs/last_run_metadata.json
   validation: nonempty
   smoke: true
 - name: Diagnostics Summary Markdown
-  path: results/diagnostics/diagnostics_summary.md
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/diagnostics_summary.md
   validation: nonempty
   smoke: true
 - name: VIF Diagnostic Plot
-  path: results/diagnostics/vif_diagnostics.png
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/vif_diagnostics.png
   validation: nonempty
   smoke: true
 - name: VIF Correlation Heatmap
-  path: results/diagnostics/vif_correlation_heatmap.png
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/vif_correlation_heatmap.png
   validation: nonempty
   smoke: true
 - name: Merge Hazard Context Schoenfeld Plot
-  path: results/diagnostics/schoenfeld_residual_plots/merge_hazard_context_schoenfeld.png
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/schoenfeld_residual_plots/merge_hazard_context_schoenfeld.png
   validation: nonempty
   smoke: true
 - name: Close Hazard Verification Schoenfeld Plot
-  path: results/diagnostics/schoenfeld_residual_plots/close_hazard_verification_schoenfeld.png
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/schoenfeld_residual_plots/close_hazard_verification_schoenfeld.png
   validation: nonempty
   smoke: true
 - name: Appendix B Summary Statistics
-  path: results/descriptive/appendix_b_summary_statistics.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/appendix_b_summary_statistics.csv
   validation: csv_schema
   required_columns:
   - Variable
@@ -492,7 +408,7 @@ artifacts:
   - Skewness
   smoke: true
 - name: Prompt Dimension Distributions
-  path: results/descriptive/prompt_dimension_distributions.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/prompt_dimension_distributions.csv
   validation: csv_schema
   required_columns:
   - Dimension
@@ -501,21 +417,21 @@ artifacts:
   - Percent
   smoke: true
 - name: Repository Distribution
-  path: results/descriptive/repository_distribution.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/repository_distribution.csv
   validation: csv_schema
   required_columns:
   - Repository
   - Count
   smoke: true
 - name: Language Distribution Full
-  path: results/descriptive/language_distribution.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/language_distribution.csv
   validation: csv_schema
   required_columns:
   - Language
   - Count
   smoke: true
 - name: Skewness Analysis
-  path: results/descriptive/skewness_analysis.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/skewness_analysis.csv
   validation: csv_schema
   required_columns:
   - Variable
@@ -527,7 +443,7 @@ artifacts:
   - Interpretation
   smoke: true
 - name: Outlier Summary
-  path: results/descriptive/outlier_summary.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/outlier_summary.csv
   validation: csv_schema
   required_columns:
   - Variable
@@ -540,7 +456,7 @@ artifacts:
   - Top_Outlier_Cases
   smoke: true
 - name: Prompt Structure Correlations
-  path: results/descriptive/prompt_structure_correlations.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/prompt_structure_correlations.csv
   validation: csv_schema
   required_columns:
   - Variable
@@ -550,7 +466,7 @@ artifacts:
   - PQS
   smoke: true
 - name: Contributor Experience Summary Extended
-  path: results/descriptive/contributor_experience_summary.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/contributor_experience_summary.csv
   validation: csv_schema
   required_columns:
   - Variable
@@ -566,7 +482,7 @@ artifacts:
   - Skewness
   smoke: true
 - name: PR Size Distribution Summary Extended
-  path: results/descriptive/pr_size_distribution_summary.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/pr_size_distribution_summary.csv
   validation: csv_schema
   required_columns:
   - Variable
@@ -582,62 +498,62 @@ artifacts:
   - Skewness
   smoke: true
 - name: Appendix B Summary Markdown
-  path: results/descriptive/appendix_b_summary.md
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/appendix_b_summary.md
   validation: nonempty
   smoke: true
 - name: Appendix B PR Size Histogram
-  path: results/descriptive/appendix_b_figures/pr_size_histogram.png
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/appendix_b_figures/pr_size_histogram.png
   validation: nonempty
   smoke: true
 - name: Appendix B Contributor Experience Histogram
-  path: results/descriptive/appendix_b_figures/contributor_experience_histogram.png
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/appendix_b_figures/contributor_experience_histogram.png
   validation: nonempty
   smoke: true
 - name: Appendix B Prompt Dimension Density
-  path: results/descriptive/appendix_b_figures/prompt_dimension_density.png
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/appendix_b_figures/prompt_dimension_density.png
   validation: nonempty
   smoke: true
 - name: Appendix B PQS Density
-  path: results/descriptive/appendix_b_figures/pqs_density.png
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/appendix_b_figures/pqs_density.png
   validation: nonempty
   smoke: true
 - name: Appendix B Repository Frequency Plot
-  path: results/descriptive/appendix_b_figures/repository_frequency_plot.png
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/appendix_b_figures/repository_frequency_plot.png
   validation: nonempty
   smoke: true
 - name: Appendix B Language Frequency Plot
-  path: results/descriptive/appendix_b_figures/language_frequency_plot.png
+  path: RQ2_Prompt_Effectiveness_Modeling/results/descriptive/appendix_b_figures/language_frequency_plot.png
   validation: nonempty
   smoke: true
 - name: Clustered SE Models
-  path: results/diagnostics/clustered_se_models.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/clustered_se_models.csv
   validation: nonempty
   smoke: false
 - name: Mixed Effects Models
-  path: results/diagnostics/mixed_effects_models.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/mixed_effects_models.csv
   validation: nonempty
   smoke: false
 - name: Holdout Stability Checks
-  path: results/diagnostics/holdout_stability_checks.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/holdout_stability_checks.csv
   validation: nonempty
   smoke: false
 - name: Prompt Length Control Models
-  path: results/diagnostics/prompt_length_control_models.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/prompt_length_control_models.csv
   validation: nonempty
   smoke: false
 - name: Runtime Environment JSON
-  path: results/runtime/runtime_environment.json
+  path: RQ2_Prompt_Effectiveness_Modeling/results/runtime/runtime_environment.json
   validation: nonempty
   smoke: true
 - name: Runtime Benchmarks
-  path: results/runtime/runtime_benchmarks.csv
+  path: RQ2_Prompt_Effectiveness_Modeling/results/runtime/runtime_benchmarks.csv
   validation: csv_schema
   required_columns:
   - step
   - seconds
   smoke: true
 - name: Reproduction Timing Summary
-  path: results/runtime/reproduction_timing_summary.md
+  path: RQ2_Prompt_Effectiveness_Modeling/results/runtime/reproduction_timing_summary.md
   validation: nonempty
   smoke: true
 - name: Runtime Capture JSON
@@ -653,11 +569,11 @@ artifacts:
   validation: nonempty
   smoke: true
 - name: Reproduction Report
-  path: results/reproduction_report.md
+  path: RQ2_Prompt_Effectiveness_Modeling/results/reproduction_report.md
   validation: nonempty
   smoke: true
 - name: Table PDF Exports Directory Marker
-  path: results/paper_tables_pdf/table_1_summary.pdf
+  path: RQ2_Prompt_Effectiveness_Modeling/results/paper_tables_pdf/table_1_summary.pdf
   validation: nonempty
   smoke: true
 - name: Docker Reproduction Documentation
@@ -669,7 +585,7 @@ artifacts:
   validation: nonempty
   smoke: true
 - name: Data Manifest
-  path: dataset/provenance/data_manifest.csv
+  path: Dataset_Construction/provenance/data_manifest.csv
   validation: csv_schema
   required_columns:
   - path
@@ -680,6 +596,6 @@ artifacts:
   - description
   smoke: true
 - name: SHA256 Checksums
-  path: dataset/provenance/checksums.sha256
+  path: Dataset_Construction/provenance/checksums.sha256
   validation: nonempty
   smoke: true

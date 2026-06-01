@@ -36,7 +36,7 @@ docs/output_validation.md
 The reproduction pipeline writes outputs to:
 
 ```text
-results/
+RQ2_Prompt_Effectiveness_Modeling/results/
 ├── tables/
 ├── figures/
 ├── diagnostics/
@@ -46,25 +46,16 @@ results/
 └── logs/
 ```
 
-Paper-facing outputs are copied or exported to:
-
-```text
-paper/
-├── tables/
-├── figures/
-└── generated_sections/
-```
-
 ## Reproducibility Guarantees
 
 The package follows the following reproducibility rules:
 
-- The canonical downstream dataset is preserved as `dataset/processed/final_analysis_dataset.csv`.
+- The canonical downstream dataset is preserved as `Dataset_Construction/processed_data/final_analysis_dataset.csv`.
 - Derived variables such as repository and PR number are computed from `PR_Link` rather than duplicated in the dataset.
 - Merge/closure information is derived from the status field already present in the dataset.
 - Random seeds and run settings are centralized in `replication/run_config.yaml`.
 - Output validation is controlled by `replication/expected_outputs.yaml`.
-- Run metadata is recorded in `results/logs/last_run_metadata.json`.
+- Run metadata is recorded in `RQ2_Prompt_Effectiveness_Modeling/results/logs/last_run_metadata.json`.
 
 ## Deterministic Execution Policy
 
@@ -77,16 +68,16 @@ The verification script checks that required outputs exist and, where configured
 The RQ1 component evaluates human–LLM agreement for prompt-quality scoring. It uses:
 
 ```text
-annotation/validation/human_gold_annotations.csv
-annotation/validation/llm_annotations_v1_combined.csv
+Dataset_Construction/annotation/validation/human_gold_annotations.csv
+Dataset_Construction/annotation/validation/llm_annotations_v1_combined.csv
 ```
 
 and regenerates:
 
 ```text
-results/rq1/rq1_overall_agreement_metrics.csv
-results/rq1/rq1_class_conditioned_kappa.csv
-results/rq1/rq1_annotation_policy.csv
+RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_overall_agreement_metrics.csv
+RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_class_conditioned_kappa.csv
+RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_annotation_policy.csv
 ```
 
 These outputs correspond to the paper’s Section 4.1, including Table 1 and Table 2.
@@ -123,16 +114,16 @@ Some raw artifacts may be included for traceability but are not required for the
 
 ## Robustness and sensitivity artifacts
 
-Artifact evaluators can inspect robustness outputs in `results/diagnostics/`. These files demonstrate that the stage-dependent conclusions are not driven solely by one dominant repository, extremely large pull requests, the dominant programming language, or the choice between individual prompt dimensions and aggregate PQS. The primary interpretation is qualitative stability of the main effects rather than exact coefficient equality across all subsets.
+Artifact evaluators can inspect robustness outputs in `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/`. These files demonstrate that the stage-dependent conclusions are not driven solely by one dominant repository, extremely large pull requests, the dominant programming language, or the choice between individual prompt dimensions and aggregate PQS. The primary interpretation is qualitative stability of the main effects rather than exact coefficient equality across all subsets.
 
 ## Diagnostic Evaluation Path
 
 Artifact evaluators can inspect the diagnostic layer after running `make reproduce`:
 
 ```bash
-ls results/diagnostics/
-ls results/diagnostics/schoenfeld_residual_plots/
-cat results/diagnostics/diagnostics_summary.md
+ls RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/
+ls RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/schoenfeld_residual_plots/
+cat RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/diagnostics_summary.md
 ```
 
 The diagnostic layer includes VIF results, logistic separation checks, Schoenfeld
@@ -143,18 +134,18 @@ verification manifest.
 
 ## Qualitative Illustrative Evidence
 
-The package includes a traceable qualitative evidence dataset at `results/qualitative/illustrative_examples_dataset.csv`, gate-specific qualitative evidence bundles under `results/qualitative/gate0/`, `results/qualitative/gate1/`, and `results/qualitative/gate2/`, and mirrored reviewer-facing copies under `qualitative_examples/gate0/`, `qualitative_examples/gate1/`, and `qualitative_examples/gate2/`. Each gate bundle provides CSV/XLSX/PDF pattern tables, full-record case CSV files, and a README. A cross-gate index is provided in `results/qualitative/qualitative_examples_manifest.csv`, and the illustrative-case selection process is documented in `notebooks/illustrative_examples_walkthrough.ipynb`.
+The package includes a traceable qualitative evidence dataset at `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/illustrative_examples_dataset.csv`, gate-specific qualitative evidence bundles under `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate0/`, `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate1/`, and `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate2/`. Each gate bundle provides CSV/XLSX/PDF pattern tables, full-record case CSV files, and a README. A cross-gate index is provided in `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/qualitative_examples_manifest.csv`, and the illustrative-case selection process is documented in `RQ2_Prompt_Effectiveness_Modeling/notebooks/illustrative_examples_walkthrough.ipynb`.
 
 ## Final Reproducibility Support Artifacts
 
 The package includes several evaluator-facing support artifacts in addition to the main reproduced tables and figures:
 
-- `results/reproduction_report.md` summarizes the latest run, dataset size, generated output counts, runtime environment, and verification status.
-- `results/runtime/runtime_environment.json` and `environment/runtime_capture.json` capture OS, Python, and selected package-version details.
+- `RQ2_Prompt_Effectiveness_Modeling/results/reproduction_report.md` summarizes the latest run, dataset size, generated output counts, runtime environment, and verification status.
+- `RQ2_Prompt_Effectiveness_Modeling/results/runtime/runtime_environment.json` and `environment/runtime_capture.json` capture OS, Python, and selected package-version details.
 - `environment/pip_freeze.txt` and `environment/conda_env_frozen.yml` provide frozen environment snapshots for long-term archival.
-- `results/runtime/runtime_benchmarks.csv` and `results/runtime/reproduction_timing_summary.md` record step-level runtime benchmarks.
-- `results/paper_tables_pdf/` contains quick PDF previews of generated LaTeX table files.
-- `dataset/provenance/data_manifest.csv` and `dataset/provenance/checksums.sha256` provide file-level integrity records.
+- `RQ2_Prompt_Effectiveness_Modeling/results/runtime/runtime_benchmarks.csv` and `RQ2_Prompt_Effectiveness_Modeling/results/runtime/reproduction_timing_summary.md` record step-level runtime benchmarks.
+- `RQ2_Prompt_Effectiveness_Modeling/results/paper_tables_pdf/` contains quick PDF previews of generated LaTeX table files.
+- `Dataset_Construction/provenance/data_manifest.csv` and `Dataset_Construction/provenance/checksums.sha256` provide file-level integrity records.
 
 A smoke CI workflow is included at `.github/workflows/smoke-reproduction.yml`. It installs dependencies, runs `make smoke`, and verifies expected outputs.
 

@@ -21,7 +21,7 @@ def _pkg_version(name: str) -> str | None:
 
 def capture(root: Path) -> None:
     env_dir = root / "environment"
-    runtime_dir = root / "results" / "runtime"
+    runtime_dir = root / "RQ2_Prompt_Effectiveness_Modeling" / "results" / "runtime"
     env_dir.mkdir(parents=True, exist_ok=True)
     runtime_dir.mkdir(parents=True, exist_ok=True)
 
