@@ -31,6 +31,6 @@ make reproduce && make verify
 ## Notes
 
 - The package does not require network access after dependencies are available in the image.
-- Generated outputs are written to `results/` inside the container.
+- Generated outputs are written to `RQ2_Prompt_Effectiveness_Modeling/results/` inside the container.
 - For local development, bind-mount the repository if you want generated files to persist outside the container.
 - If Docker is unavailable in your evaluation environment, skip this page and use the local path in `README.md` and `docs/reproduction_steps.md`.

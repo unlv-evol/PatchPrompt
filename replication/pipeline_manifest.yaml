@@ -1,72 +1,57 @@
 steps:
   - id: prepare_processed_data
-    command: python mining/preprocessing/build_processed_datasets.py --root .
-    inputs: [dataset/raw, annotation]
+    command: python Dataset_Construction/mining/preprocessing/build_processed_datasets.py --root .
+    inputs: [Dataset_Construction/raw_data, Dataset_Construction/annotation]
     outputs:
-      - dataset/processed/final_analysis_dataset.csv
-      - dataset/processed/prompt_scores.csv
-      - dataset/processed/gate_model_dataset.csv
-      - dataset/processed/qualitative_dataset.csv
+      - Dataset_Construction/processed_data/final_analysis_dataset.csv
+      - Dataset_Construction/processed_data/prompt_scores.csv
+      - Dataset_Construction/processed_data/gate_model_dataset.csv
+      - Dataset_Construction/processed_data/qualitative_dataset.csv
   - id: reproduce_tables
     command: python replication/reproduce_tables.py
     inputs:
-      - dataset/processed/final_analysis_dataset.csv
-      - annotation/validation/human_gold_annotations.csv
-      - annotation/validation/llm_annotations_v1_combined.csv
+      - Dataset_Construction/processed_data/final_analysis_dataset.csv
+      - Dataset_Construction/annotation/validation/human_gold_annotations.csv
+      - Dataset_Construction/annotation/validation/llm_annotations_v1_combined.csv
     outputs:
-      - results/tables/table_1_summary.csv
-      - results/rq1/rq1_overall_agreement_metrics.csv
-      - results/rq1/rq1_class_conditioned_kappa.csv
-      - results/rq1/rq1_annotation_policy.csv
-      - results/tables/table_3a_prompt_structure.csv
-      - results/tables/table_3b_pqs_by_outcome.csv
-      - results/tables/appendix_table_8_pqs_distribution.csv
-      - results/tables/appendix_table_9_extended_pqs_by_outcome.csv
-      - results/tables/appendix_table_10_pr_size.csv
-      - results/tables/appendix_table_11_language_distribution.csv
-      - results/tables/appendix_table_12_contributor_experience.csv
-      - results/tables/table_2_models.csv
-      - results/diagnostics/vif_results.csv
-      - results/qualitative/code_frequencies.csv
-      - results/qualitative/qualitative_examples_manifest.csv
-      - results/qualitative/gate0/gate0_qualitative_patterns.csv
-      - results/qualitative/gate0/gate0_full_case_records.csv
-      - results/qualitative/gate0/gate0_qualitative_patterns.xlsx
-      - results/qualitative/gate0/gate0_qualitative_patterns.pdf
-      - results/qualitative/gate0/README.txt
-      - results/qualitative/gate1/gate1_qualitative_patterns.csv
-      - results/qualitative/gate1/gate1_full_case_records.csv
-      - results/qualitative/gate1/gate1_qualitative_patterns.xlsx
-      - results/qualitative/gate1/gate1_qualitative_patterns.pdf
-      - results/qualitative/gate1/README.txt
-      - results/qualitative/gate2/gate2_qualitative_patterns.csv
-      - results/qualitative/gate2/gate2_full_case_records.csv
-      - results/qualitative/gate2/gate2_qualitative_patterns.xlsx
-      - results/qualitative/gate2/gate2_qualitative_patterns.pdf
-      - results/qualitative/gate2/README.txt
-      - qualitative_examples/gate0/gate0_qualitative_patterns.csv
-      - qualitative_examples/gate0/gate0_full_case_records.csv
-      - qualitative_examples/gate0/gate0_qualitative_patterns.xlsx
-      - qualitative_examples/gate0/gate0_qualitative_patterns.pdf
-      - qualitative_examples/gate0/README.txt
-      - qualitative_examples/gate1/gate1_qualitative_patterns.csv
-      - qualitative_examples/gate1/gate1_full_case_records.csv
-      - qualitative_examples/gate1/gate1_qualitative_patterns.xlsx
-      - qualitative_examples/gate1/gate1_qualitative_patterns.pdf
-      - qualitative_examples/gate1/README.txt
-      - qualitative_examples/gate2/gate2_qualitative_patterns.csv
-      - qualitative_examples/gate2/gate2_full_case_records.csv
-      - qualitative_examples/gate2/gate2_qualitative_patterns.xlsx
-      - qualitative_examples/gate2/gate2_qualitative_patterns.pdf
-      - qualitative_examples/gate2/README.txt
+      - RQ2_Prompt_Effectiveness_Modeling/results/tables/table_1_summary.csv
+      - RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_overall_agreement_metrics.csv
+      - RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_class_conditioned_kappa.csv
+      - RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_annotation_policy.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/tables/table_3a_prompt_structure.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/tables/table_3b_pqs_by_outcome.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/tables/appendix_table_8_pqs_distribution.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/tables/appendix_table_9_extended_pqs_by_outcome.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/tables/appendix_table_10_pr_size.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/tables/appendix_table_11_language_distribution.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/tables/appendix_table_12_contributor_experience.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/tables/table_2_models.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/vif_results.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/code_frequencies.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/qualitative_examples_manifest.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate0/gate0_qualitative_patterns.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate0/gate0_full_case_records.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate0/gate0_qualitative_patterns.xlsx
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate0/gate0_qualitative_patterns.pdf
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate0/README.txt
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate1/gate1_qualitative_patterns.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate1/gate1_full_case_records.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate1/gate1_qualitative_patterns.xlsx
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate1/gate1_qualitative_patterns.pdf
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate1/README.txt
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate2/gate2_qualitative_patterns.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate2/gate2_full_case_records.csv
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate2/gate2_qualitative_patterns.xlsx
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate2/gate2_qualitative_patterns.pdf
+      - RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate2/README.txt
   - id: reproduce_figures
     command: python replication/reproduce_figures.py
-    inputs: [dataset/processed/final_analysis_dataset.csv]
+    inputs: [Dataset_Construction/processed_data/final_analysis_dataset.csv]
     outputs:
-      - results/figures/figure_1_outcome_distribution.png
-      - results/figures/figure_2_pqs_by_outcome.png
-      - results/figures/figure_3_fraction_adopted_by_context.png
+      - RQ2_Prompt_Effectiveness_Modeling/results/figures/figure_1_outcome_distribution.png
+      - RQ2_Prompt_Effectiveness_Modeling/results/figures/figure_2_pqs_by_outcome.png
+      - RQ2_Prompt_Effectiveness_Modeling/results/figures/figure_3_fraction_adopted_by_context.png
   - id: verify_outputs
     command: python replication/verify_outputs.py --expected replication/expected_outputs.yaml
     inputs: [replication/expected_outputs.yaml]
-    outputs: [results/logs/last_run_metadata.json]
+    outputs: [RQ2_Prompt_Effectiveness_Modeling/results/logs/last_run_metadata.json]

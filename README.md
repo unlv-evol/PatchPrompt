@@ -2,7 +2,7 @@
 
 This repository is an end-to-end replication package for the PatchPrompt prompt-quality study, **Prompt Quality and Pull Request Outcomes: A Stage-Based Empirical Study of LLM-Assisted Development**.
 
-The package preserves the cleaned downstream analysis dataset exactly as used for modeling and regenerates the annotation-reliability results, quantitative tables, diagnostics, qualitative summaries, figures, LaTeX tables, output manifests, and run metadata.
+The package preserves the cleaned downstream analysis dataset exactly as used for modeling and regenerates the annotation-reliability results, quantitative tables, diagnostics, qualitative summaries, figures, output manifests, and run metadata.
 
 ## Abstract
 
@@ -13,7 +13,7 @@ This replication package supports a stage-based empirical study of how developer
 The canonical dataset is:
 
 ```text
-dataset/processed/final_analysis_dataset.csv
+Dataset_Construction/processed_data/final_analysis_dataset.csv
 ```
 
 It contains 273 PR-linked cases and 21 variables. The dataset is intentionally preserved as-is. In particular:
@@ -41,7 +41,7 @@ The pipeline covers the empirical workflow described in the paper:
    - proportional-hazards diagnostics record;
    - sensitivity analyses;
 7. qualitative code-frequency, thematic, and triangulation summaries;
-8. paper-ready CSV, PNG, Markdown, and LaTeX outputs.
+8. paper-ready CSV, PNG, Markdown, and PDF review outputs.
 
 ## Quick start
 
@@ -124,7 +124,7 @@ Docker is not required for replication. If you prefer containerized execution, u
 
 ## Fresh output behavior
 
-- PDF previews under `results/paper_tables_pdf/` are cleared and fully regenerated on each run.
+- PDF previews under `RQ2_Prompt_Effectiveness_Modeling/results/paper_tables_pdf/` are cleared and fully regenerated on each run.
 - Other generated outputs are overwritten by filename, but stale files from old naming schemes can remain unless cleaned.
 
 For a fully fresh regeneration of generated artifacts:
@@ -137,35 +137,31 @@ make PYTHON=.venv/bin/python verify
 
 ## Key outputs
 
-- `results/rq1/rq1_overall_agreement_metrics.csv`
-- `results/rq1/rq1_class_conditioned_kappa.csv`
-- `results/rq1/rq1_annotation_policy.csv`
-- `dataset/processed/gate_model_dataset.csv`
-- `dataset/processed/prompt_scores.csv`
-- `dataset/processed/qualitative_dataset.csv`
-- `results/tables/gate0_generation_model.csv`
-- `results/tables/gate1_adoption_model.csv`
-- `results/tables/gate2_integration_model.csv`
-- `results/tables/axisb_lifecycle_model.csv`
-- `results/diagnostics/vif_results.csv`
-- `results/diagnostics/separation_checks.csv`
-- `results/diagnostics/schoenfeld_residual_tests.csv`
-- `results/diagnostics/sensitivity_analysis.csv`
-- `results/diagnostics/full_robustness_sensitivity_results.csv`
-- `results/diagnostics/robustness_summary_table.csv`
-- `results/diagnostics/clustered_se_models.csv`
-- `results/diagnostics/mixed_effects_models.csv`
-- `results/diagnostics/holdout_stability_checks.csv`
-- `results/diagnostics/prompt_length_control_models.csv`
-- `results/diagnostics/gate2_reuse_level_counts.csv`
-- `paper/tables/robustness_summary_table.tex`
-- `paper/tables/full_robustness_sensitivity_results.tex`
-- `results/qualitative/*.csv`
-- `results/figures/*.png`
-- `paper/tables/*.tex`
-- `paper/figures/*.png`
-- `results/manifests/*_manifest.csv`
-- `results/logs/last_run_metadata.json`
+- `RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_overall_agreement_metrics.csv`
+- `RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_class_conditioned_kappa.csv`
+- `RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_annotation_policy.csv`
+- `Dataset_Construction/processed_data/gate_model_dataset.csv`
+- `Dataset_Construction/processed_data/prompt_scores.csv`
+- `Dataset_Construction/processed_data/qualitative_dataset.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/tables/gate0_generation_model.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/tables/gate1_adoption_model.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/tables/gate2_integration_model.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/tables/axisb_lifecycle_model.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/vif_results.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/separation_checks.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/schoenfeld_residual_tests.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/sensitivity_analysis.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/full_robustness_sensitivity_results.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/robustness_summary_table.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/clustered_se_models.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/mixed_effects_models.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/holdout_stability_checks.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/prompt_length_control_models.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/diagnostics/gate2_reuse_level_counts.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/*.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/figures/*.png`
+- `RQ2_Prompt_Effectiveness_Modeling/results/manifests/*_manifest.csv`
+- `RQ2_Prompt_Effectiveness_Modeling/results/logs/last_run_metadata.json`
 
 ## Repository layout
 
@@ -198,8 +194,16 @@ PatchTrack-Replication-Package/
 │   ├── expected_outputs.yaml              ← expected outputs and validation rules
 │   └── run_config.yaml                    ← seed, paths, and run configuration
 │
-├── dataset/
-│   ├── processed/
+├── Dataset_Construction/
+│   ├── annotation/
+│   │   ├── rubric/
+│   │   ├── coding/
+│   │   └── validation/
+│   ├── raw_data/
+│   │   ├── github/                        ← raw GitHub-side extracted artifacts
+│   │   ├── chatgpt/                       ← raw ChatGPT-side extracted artifacts
+│   │   └── metadata/                      ← supplemental metadata for raw collection
+│   ├── processed_data/
 │   │   ├── final_analysis_dataset.csv     ← canonical cleaned downstream dataset
 │   │   ├── gate_model_dataset.csv         ← derived modeling view
 │   │   ├── qualitative_dataset.csv        ← derived qualitative-analysis view
@@ -211,68 +215,10 @@ PatchTrack-Replication-Package/
 │   │   ├── data_manifest.csv              ← source/data manifest
 │   │   ├── lineage.md                     ← raw/intermediate/processed lineage
 │   │   └── checksums.sha256               ← dataset checksums
-│   └── raw/
-│       ├── github/                        ← raw GitHub-side extracted artifacts
-│       ├── chatgpt/                       ← raw ChatGPT-side extracted artifacts
-│       └── metadata/                      ← supplemental metadata for raw collection
+│   └── mining/
+│       └── preprocessing/
 │
-├── annotation/
-│   ├── rubric/
-│   │   ├── prompt_quality_rubric.md       ← Context/Specificity/Verification rubric
-│   │   ├── PA_PN_NE_CL_definitions.md     ← outcome-class definitions
-│   │   ├── annotation_guidelines.md       ← annotation instructions
-│   │   ├── prompt_dimension_definitions.md← detailed prompt-dimension definitions
-│   │   ├── annotation_policy_notes.md     ← annotation policy rationale and notes
-│   │   └── llm_annotation_prompt_full.md  ← full LLM annotation prompt template
-│   ├── coding/
-│   │   ├── qualitative_codebook.md        ← qualitative coding definitions
-│   │   ├── coding_examples.csv            ← example coded cases
-│   │   └── theme_mapping.csv              ← theme-to-dimension mapping
-│   └── validation/
-│       ├── README.md                      ← validation artifact usage notes
-│       ├── human_gold_annotations.csv     ← 30% human-consensus validation subset
-│       ├── llm_annotations_v1_combined.csv← combined LLM-v1 annotations
-│       ├── agreement_checks.py            ← legacy/simple agreement checks
-│       └── adjudication_notes.md          ← adjudication notes placeholder
-│
-├── analysis/
-│   ├── common.py                          ← shared data-loading/output-writing helpers
-│   ├── rq1/
-│   │   └── agreement_analysis.py          ← Section 4.1 reliability and policy analysis
-│   ├── descriptive/
-│   │   ├── descriptive_statistics.py      ← Table 3 and Appendix descriptive statistics
-│   │   ├── appendix_b_descriptives.py     ← Appendix B combined descriptive pipeline
-│   │   ├── distribution_analysis.py       ← core distributional summaries and plots
-│   │   ├── skewness_outlier_analysis.py   ← skewness and outlier diagnostics
-│   │   ├── repository_distribution_analysis.py ← repository concentration analysis
-│   │   ├── language_distribution_analysis.py   ← language concentration analysis
-│   │   └── prompt_structure_correlations.py    ← prompt-dimension correlation analysis
-│   ├── quantitative/
-│   │   ├── gate0_generation.py            ← Gate 0 logistic model
-│   │   ├── gate1_adoption.py              ← Gate 1 logistic model
-│   │   ├── gate2_integration.py           ← Gate 2 fractional/integration model
-│   │   ├── axisB_lifecycle.py             ← lifecycle outcome models
-│   │   └── effect_sizes.py                ← supporting effect-size summaries
-│   ├── diagnostics/
-│   │   ├── vif_analysis.py                ← multicollinearity diagnostics
-│   │   ├── separation_checks.py           ← logistic separation checks
-│   │   ├── schoenfeld_tests.py            ← proportional hazards diagnostics record
-│   │   ├── sensitivity_analysis.py        ← baseline robustness/sensitivity checks
-│   │   ├── methodological_alignment_outputs.py ← clustered/mixed/holdout diagnostic layer
-│   │   ├── robustness_sensitivity_outputs.py   ← full robustness-sensitivity result suite
-│   │   └── diagnostic_plots_summary.py    ← diagnostic plots and narrative summary
-│   └── qualitative/
-│       ├── code_frequency_analysis.py     ← code frequency summaries
-│       ├── thematic_analysis.py           ← directed qualitative summary
-│       ├── triangulation_analysis.py      ← quantitative/qualitative triangulation
-│       ├── illustrative_examples.py       ← illustrative case extraction and summaries
-│       ├── gate_qualitative_patterns_common.py ← shared helpers for gate evidence-table generation
-│       ├── gate0_qualitative_patterns.py  ← Gate 0 qualitative pattern table generator
-│       ├── gate1_qualitative_patterns.py  ← Gate 1 qualitative pattern table generator
-│       └── gate2_qualitative_patterns.py  ← Gate 2 qualitative pattern table generator
-│
-├── results/
-│   ├── rq1/                               ← generated Section 4.1 RQ1 outputs
+├── RQ2_Prompt_Effectiveness_Modeling/results/
 │   ├── tables/                            ← generated CSV tables
 │   ├── figures/                           ← generated figures
 │   ├── diagnostics/                       ← generated diagnostic outputs
@@ -289,29 +235,28 @@ PatchTrack-Replication-Package/
 │   ├── logs/                              ← run logs and metadata
 │   └── reproduction_report.md             ← concise artifact-evaluation run report
 │
-├── qualitative_examples/                  ← mirrored reviewer-facing qualitative outputs
-│   ├── README.md                          ← qualitative mirror usage notes
-│   ├── gate0/                             ← Gate 0 mirrored qualitative outputs
-│   ├── gate1/                             ← Gate 1 mirrored qualitative outputs
-│   └── gate2/                             ← Gate 2 mirrored qualitative outputs
+├── RQ1_Prompt_Evaluation_Validation/
+│   ├── analysis/
+│   │   └── rq1/
+│   ├── results/
+│   │   └── rq1/
+│   └── notebooks/
+│       └── rq1_annotation_reliability.ipynb  ← RQ1 reliability walkthrough
 │
-├── paper/
-│   ├── figures/                           ← paper-ready figure copies
-│   ├── tables/                            ← paper-ready LaTeX tables
-│   └── generated_sections/                ← generated text/summary sections
-│
-├── notebooks/
-│   ├── rq1_annotation_reliability.ipynb   ← RQ1 reliability walkthrough
-│   ├── descriptive_statistics_walkthrough.ipynb ← descriptive statistics walkthrough
-│   ├── appendix_b_descriptive_walkthrough.ipynb ← Appendix B descriptive walkthrough
-│   ├── exploratory_analysis.ipynb         ← exploratory analysis notebook
-│   ├── modeling_walkthrough.ipynb         ← gate and lifecycle modeling walkthrough
-│   ├── diagnostics_walkthrough.ipynb      ← diagnostics and model checks walkthrough
-│   ├── robustness_sensitivity_walkthrough.ipynb ← robustness and sensitivity walkthrough
-│   ├── qualitative_walkthrough.ipynb      ← qualitative coding and summary walkthrough
-│   ├── illustrative_examples_walkthrough.ipynb ← illustrative case-trace walkthrough
-│   ├── reproduction_driver.ipynb          ← notebook-driven pipeline reproduction runner
-│   └── README.md                          ← notebook reproducibility policy
+├── RQ2_Prompt_Effectiveness_Modeling/
+│   ├── analysis/
+│   ├── results/
+│   └── notebooks/
+│       ├── descriptive_statistics_walkthrough.ipynb
+│       ├── appendix_b_descriptive_walkthrough.ipynb
+│       ├── exploratory_analysis.ipynb
+│       ├── modeling_walkthrough.ipynb
+│       ├── diagnostics_walkthrough.ipynb
+│       ├── robustness_sensitivity_walkthrough.ipynb
+│       ├── qualitative_walkthrough.ipynb
+│       ├── illustrative_examples_walkthrough.ipynb
+│       ├── reproduction_driver.ipynb
+│       └── README.md
 │
 ├── docs/
 │   ├── reproduction_steps.md              ← full reproduction instructions
@@ -326,83 +271,15 @@ PatchTrack-Replication-Package/
 │   ├── docker_reproduction.md             ← Docker and docker-compose reproduction path
 │   └── results_expected_from_current_paper.md ← expected results mapping for evaluators
 │
-├── mining/
-│   └── preprocessing/
-│       └── build_processed_datasets.py    ← canonical processed-dataset builder
-│
 └── environment/
    ├── pip_freeze.txt                     ← captured pip snapshot from reproduction run
    ├── conda_env_frozen.yml               ← frozen conda-style environment export
    └── runtime_capture.json               ← captured runtime environment metadata
 ```
 
-
-### Robustness, Sensitivity, and Diagnostics
-
-Robustness and sensitivity outputs for Gate 0, Gate 1, and Gate 2 are generated under `results/diagnostics/`.
-
-The package includes checks for:
-
-- repository-clustered standard errors,
-- mixed-effects-style specifications,
-- dominant repository/language exclusions,
-- top 1\% and 5\% PR-size outlier exclusions,
-- alternative Gate 2 reuse operationalization,
-- aggregate PQS and prompt-length-control variants,
-- and stratified hold-out stability checks.
-
-Diagnostic artifacts also include:
-
-```text
-results/diagnostics/
-├── diagnostics_summary.md
-├── vif_diagnostics.png
-├── vif_correlation_heatmap.png
-└── schoenfeld_residual_plots/
-```
-
-Together, these outputs support model-validity checks for multicollinearity, separation, proportional hazards, and robustness stability.
-
-### LLM annotation versions
-
-Only LLM V1 annotation outputs were used in the final paper analyses. LLM V2 files
-were not used and are not required for reproduction.
-
-
 ## Qualitative Illustrative Evidence
 
-The package includes a traceable qualitative evidence dataset at `results/qualitative/illustrative_examples_dataset.csv` and gate-specific qualitative evidence bundles under `results/qualitative/gate0/`, `results/qualitative/gate1/`, and `results/qualitative/gate2/`. Each gate folder includes curated pattern tables in CSV/XLSX/PDF, full-record case CSV files, and a README. Matching evaluator-facing copies are mirrored under `qualitative_examples/gate0/`, `qualitative_examples/gate1/`, and `qualitative_examples/gate2/`, with a cross-gate index in `results/qualitative/qualitative_examples_manifest.csv`. The illustrative selection process is documented in `notebooks/illustrative_examples_walkthrough.ipynb`.
-
-## Appendix B Descriptive Evidence
-
-The package includes an expanded descriptive-analysis layer beyond the main paper tables. The scripts in `analysis/descriptive/` regenerate Appendix B summaries for PR-size distributions, contributor experience, repository/language concentration, prompt-score distributions, skewness, outliers, and prompt-structure correlations. Outputs are written to:
-
-```text
-results/descriptive/
-├── appendix_b_summary_statistics.csv
-├── prompt_dimension_distributions.csv
-├── repository_distribution.csv
-├── language_distribution.csv
-├── skewness_analysis.csv
-├── outlier_summary.csv
-├── prompt_structure_correlations.csv
-├── contributor_experience_summary.csv
-├── pr_size_distribution_summary.csv
-├── appendix_b_tables/
-├── appendix_b_figures/
-└── appendix_b_summary.md
-```
-
-The walkthrough notebook is available at `notebooks/appendix_b_descriptive_walkthrough.ipynb`.
-
-## Final Artifact-Evaluation Additions
-
-The repository structure already lists these support artifacts in one place. For evaluator use, prioritize:
-
-- `results/reproduction_report.md`
-- `results/runtime/`
-- `results/manifests/`
-- `dataset/provenance/`
+The package includes a traceable qualitative evidence dataset at `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/illustrative_examples_dataset.csv` and gate-specific qualitative evidence bundles under `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate0/`, `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate1/`, and `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate2/`. Each gate folder includes curated pattern tables in CSV/XLSX/PDF, full-record case CSV files, and a README, with a cross-gate index in `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/qualitative_examples_manifest.csv`. The illustrative selection process is documented in `RQ2_Prompt_Effectiveness_Modeling/notebooks/illustrative_examples_walkthrough.ipynb`.
 
 ## License
 

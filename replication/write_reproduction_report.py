@@ -12,7 +12,7 @@ def _count_files(path: Path, suffixes: tuple[str, ...]) -> int:
 
 
 def write_report(root: Path, verification_status: str = "not run") -> None:
-    dataset = root / "dataset" / "processed" / "final_analysis_dataset.csv"
+    dataset = root / "Dataset_Construction" / "processed_data" / "final_analysis_dataset.csv"
     n = "unknown"
     classes = "unknown"
     if dataset.exists():
@@ -20,17 +20,20 @@ def write_report(root: Path, verification_status: str = "not run") -> None:
         n = len(df)
         if "Outcome_Class" in df.columns:
             classes = df["Outcome_Class"].value_counts().to_dict()
-    runtime_json = root / "results" / "runtime" / "runtime_environment.json"
+    runtime_json = root / "RQ2_Prompt_Effectiveness_Modeling" / "results" / "runtime" / "runtime_environment.json"
     runtime = {}
     if runtime_json.exists():
         runtime = json.loads(runtime_json.read_text(encoding="utf-8"))
+    rq2_results = root / "RQ2_Prompt_Effectiveness_Modeling" / "results"
+    rq1_results = root / "RQ1_Prompt_Evaluation_Validation" / "results"
+
     md = f"""# Reproduction Report
 
 Generated: {time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}
 
 ## Dataset
 
-- Canonical dataset: `dataset/processed/final_analysis_dataset.csv`
+- Canonical dataset: `Dataset_Construction/processed_data/final_analysis_dataset.csv`
 - Observations: {n}
 - Outcome-class counts: `{classes}`
 
@@ -44,13 +47,13 @@ Generated: {time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}
 
 ## Generated Output Counts
 
-- Tables: {_count_files(root / 'results' / 'tables', ('.csv',))}
-- Figures: {_count_files(root / 'results' / 'figures', ('.png',))}
-- Descriptive artifacts: {_count_files(root / 'results' / 'descriptive', ('.csv', '.md', '.png'))}
-- Diagnostic artifacts: {_count_files(root / 'results' / 'diagnostics', ('.csv', '.md', '.png'))}
-- Qualitative artifacts: {_count_files(root / 'results' / 'qualitative', ('.csv', '.md'))}
-- RQ1 artifacts: {_count_files(root / 'results' / 'rq1', ('.csv', '.md'))}
-- PDF table exports: {_count_files(root / 'results' / 'paper_tables_pdf', ('.pdf',))}
+- Tables: {_count_files(rq2_results / 'tables', ('.csv',))}
+- Figures: {_count_files(rq2_results / 'figures', ('.png',))}
+- Descriptive artifacts: {_count_files(rq2_results / 'descriptive', ('.csv', '.md', '.png'))}
+- Diagnostic artifacts: {_count_files(rq2_results / 'diagnostics', ('.csv', '.md', '.png'))}
+- Qualitative artifacts: {_count_files(rq2_results / 'qualitative', ('.csv', '.md'))}
+- RQ1 artifacts: {_count_files(rq1_results / 'rq1', ('.csv', '.md'))}
+- PDF table exports: {_count_files(rq2_results / 'paper_tables_pdf', ('.pdf',))}
 
 ## Verification Status
 
@@ -65,7 +68,7 @@ checks involving holdout resampling use the seed in `replication/run_config.yaml
 Small numerical differences may occur across platform/library versions for regression
 standard errors and floating-point optimization routines.
 """
-    (root / "results" / "reproduction_report.md").write_text(md, encoding="utf-8")
+    (root / "RQ2_Prompt_Effectiveness_Modeling" / "results" / "reproduction_report.md").write_text(md, encoding="utf-8")
 
 
 if __name__ == "__main__":

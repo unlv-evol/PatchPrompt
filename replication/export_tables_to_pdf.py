@@ -96,14 +96,18 @@ def _render_csv_to_pdf(csv_path: Path, pdf_path: Path) -> None:
 
 
 def _csv_sources(root: Path) -> Iterable[Path]:
-    for rel in ["results/tables", "results/rq1", "results/diagnostics"]:
+    for rel in [
+        "RQ2_Prompt_Effectiveness_Modeling/results/tables",
+        "RQ1_Prompt_Evaluation_Validation/results/rq1",
+        "RQ2_Prompt_Effectiveness_Modeling/results/diagnostics",
+    ]:
         src_dir = root / rel
         if src_dir.exists():
             yield from sorted(src_dir.glob("*.csv"))
 
 
 def export(root: Path) -> None:
-    out = root / "results" / "paper_tables_pdf"
+    out = root / "RQ2_Prompt_Effectiveness_Modeling" / "results" / "paper_tables_pdf"
     out.mkdir(parents=True, exist_ok=True)
 
     # Ensure a fresh PDF set for each run to avoid stale artifacts.

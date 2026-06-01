@@ -34,8 +34,8 @@ Smoke mode intentionally skips methodological-alignment sensitivity artifacts to
 
 The canonical orchestration is implemented in `replication/reproduce_all.py` and described in `replication/pipeline_manifest.yaml`.
 
-1. **Prepare derived datasets** from `dataset/processed/final_analysis_dataset.csv` without modifying the canonical dataset.
-2. **Reproduce RQ1 annotation reliability** from `annotation/validation/human_gold_annotations.csv` and `annotation/validation/llm_annotations_v1_combined.csv`.
+1. **Prepare derived datasets** from `Dataset_Construction/processed_data/final_analysis_dataset.csv` without modifying the canonical dataset.
+2. **Reproduce RQ1 annotation reliability** from `Dataset_Construction/annotation/validation/human_gold_annotations.csv` and `Dataset_Construction/annotation/validation/llm_annotations_v1_combined.csv`.
 3. **Reproduce descriptive statistics** for Section 4.2.1 and Appendix B.
 4. **Run gate-level quantitative models** for Gate 0, Gate 1, Gate 2, and Axis B.
 5. **Run model diagnostics and sensitivity checks**.
@@ -47,27 +47,24 @@ The canonical orchestration is implemented in `replication/reproduce_all.py` and
 Section 4.1 of the paper is reproduced by:
 
 ```bash
-python -m analysis.rq1.agreement_analysis
+python -m RQ1_Prompt_Evaluation_Validation.analysis.rq1.agreement_analysis
 ```
 
 Inputs:
 
 ```text
-annotation/validation/human_gold_annotations.csv
-annotation/validation/llm_annotations_v1_combined.csv
+Dataset_Construction/annotation/validation/human_gold_annotations.csv
+Dataset_Construction/annotation/validation/llm_annotations_v1_combined.csv
 ```
 
 Outputs:
 
 ```text
-results/rq1/rq1_overall_agreement_metrics.csv
-results/rq1/rq1_class_conditioned_kappa.csv
-results/rq1/rq1_annotation_policy.csv
-results/rq1/rq1_human_llm_validation_pairs.csv
-results/rq1/rq1_summary.md
-paper/tables/table_rq1a_overall_agreement.tex
-paper/tables/table_rq1b_class_conditioned_kappa.tex
-paper/tables/table_rq1c_annotation_policy.tex
+RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_overall_agreement_metrics.csv
+RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_class_conditioned_kappa.csv
+RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_annotation_policy.csv
+RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_human_llm_validation_pairs.csv
+RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_summary.md
 ```
 
 The policy table is intentionally class-aware and reproduces the paper's Table 2. It uses agreement statistics plus construct-validity judgment rather than a blind threshold rule.
@@ -77,7 +74,7 @@ The policy table is intentionally class-aware and reproduces the paper's Table 2
 Section 4.2.1 and Appendix B are reproduced by:
 
 ```bash
-python -m analysis.descriptive.descriptive_statistics
+python -m RQ2_Prompt_Effectiveness_Modeling.analysis.descriptive.descriptive_statistics
 ```
 
 This regenerates Table 3(a), Table 3(b), the combined Table 3 LaTeX file, Appendix Tables 8--12, and the PQS distribution figure.
@@ -87,26 +84,26 @@ This regenerates Table 3(a), Table 3(b), the combined Table 3 LaTeX file, Append
 Place the real study data at:
 
 ```text
-dataset/processed/final_analysis_dataset.csv
+Dataset_Construction/processed_data/final_analysis_dataset.csv
 ```
 
-The required schema is documented in `dataset/schema/dataset_schema.md` and enforced by `replication/verify_outputs.py`.
+The required schema is documented in `Dataset_Construction/schema/dataset_schema.md` and enforced by `replication/verify_outputs.py`.
 
 The canonical dataset is intentionally preserved as supplied. Repository, PR number, merged status, closed status, and normalized `PQS` are derived during preprocessing and written to derived outputs, not added back to the canonical file.
 
 
 ## Qualitative Illustrative Evidence
 
-The package includes a traceable qualitative evidence dataset at `results/qualitative/illustrative_examples_dataset.csv` and gate-specific qualitative evidence outputs in `results/qualitative/gate0/`, `results/qualitative/gate1/`, and `results/qualitative/gate2/`. Each gate directory contains curated pattern tables (CSV/XLSX/PDF), full-record case CSV files, and README notes. Matching reviewer-facing copies are mirrored under `qualitative_examples/`, and a cross-gate index is written to `results/qualitative/qualitative_examples_manifest.csv`.
+The package includes a traceable qualitative evidence dataset at `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/illustrative_examples_dataset.csv` and gate-specific qualitative evidence outputs in `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate0/`, `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate1/`, and `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/gate2/`. Each gate directory contains curated pattern tables (CSV/XLSX/PDF), full-record case CSV files, and README notes, and a cross-gate index is written to `RQ2_Prompt_Effectiveness_Modeling/results/qualitative/qualitative_examples_manifest.csv`.
 
 ## Appendix B Extended Descriptive Analysis
 
-The reproduction pipeline also regenerates the richer Appendix B descriptive layer. These outputs are written under `results/descriptive/` and include distribution summaries, skewness diagnostics, outlier summaries, repository/language frequency tables, prompt-structure correlations, and supporting figures.
+The reproduction pipeline also regenerates the richer Appendix B descriptive layer. These outputs are written under `RQ2_Prompt_Effectiveness_Modeling/results/descriptive/` and include distribution summaries, skewness diagnostics, outlier summaries, repository/language frequency tables, prompt-structure correlations, and supporting figures.
 
-The relevant scripts are located in `analysis/descriptive/`:
+The relevant scripts are located in `RQ2_Prompt_Effectiveness_Modeling/analysis/descriptive/`:
 
 ```text
-analysis/descriptive/
+RQ2_Prompt_Effectiveness_Modeling/analysis/descriptive/
 ├── descriptive_statistics.py
 ├── appendix_b_descriptives.py
 ├── distribution_analysis.py

@@ -2,27 +2,23 @@ from __future__ import annotations
 """Figure reproduction script.
 
 This module regenerates the figures used by the descriptive and modeling sections.
-It uses the canonical processed dataset and copies paper-ready PNGs into
-``paper/figures``. The important paper figure for Section 4.2.1 is
-``figure_2_pqs_by_outcome.png``, corresponding to the PQS boxplot shown in the paper.
+It uses the canonical processed dataset and writes figures under
+``RQ2_Prompt_Effectiveness_Modeling/results/figures``.
 """
 from pathlib import Path
-import shutil
 import matplotlib.pyplot as plt
-from analysis.common import load_analysis_dataset, ensure_dir
-
-
-def _copy(src: Path, dst: Path) -> None:
-    """Copy a generated figure into the paper-ready figure directory."""
-    dst.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(src, dst)
+from RQ2_Prompt_Effectiveness_Modeling.analysis.common import load_analysis_dataset, ensure_dir
 
 
 def reproduce_figures(root_or_results_dir: Path):
-    """Regenerate all paper figures available from the canonical dataset."""
-    root = root_or_results_dir if (root_or_results_dir / "dataset").exists() else root_or_results_dir.parent
+    """Regenerate all figures available from the canonical dataset."""
+    root = (
+        root_or_results_dir
+        if (root_or_results_dir / "Dataset_Construction").exists()
+        else root_or_results_dir.parent
+    )
     df = load_analysis_dataset(root)
-    figs = ensure_dir(root / "results" / "figures")
+    figs = ensure_dir(root / "RQ2_Prompt_Effectiveness_Modeling" / "results" / "figures")
 
     # Figure 2 in the paper: distribution of PQS by outcome class.
     # The class order matches the paper screenshot and LaTeX section.
@@ -38,7 +34,6 @@ def reproduce_figures(root_or_results_dir: Path):
     f = figs / "figure_2_pqs_by_outcome.png"
     fig.savefig(f, dpi=200)
     plt.close(fig)
-    _copy(f, root / "paper" / "figures" / f.name)
 
     # Outcome-class counts, useful for checking the final 273-case dataset composition.
     counts = df["Outcome_Class"].value_counts().reindex(["PA", "PN", "NE", "CL"])
@@ -51,7 +46,6 @@ def reproduce_figures(root_or_results_dir: Path):
     f = figs / "figure_1_outcome_distribution.png"
     fig.savefig(f, dpi=200)
     plt.close(fig)
-    _copy(f, root / "paper" / "figures" / f.name)
 
     # Gate 2 support figure: integration depth among PA cases by Context score.
     pa = df[df.Outcome_Class.eq("PA")].dropna(subset=["Context", "Fraction_Adopted"])
@@ -67,7 +61,6 @@ def reproduce_figures(root_or_results_dir: Path):
     f = figs / "figure_3_fraction_adopted_by_context.png"
     fig.savefig(f, dpi=200)
     plt.close(fig)
-    _copy(f, root / "paper" / "figures" / f.name)
 
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@ This guide lists common issues that may arise while running the replication pack
 Check that the following file exists:
 
 ```text
-dataset/processed/final_analysis_dataset.csv
+Dataset_Construction/processed_data/final_analysis_dataset.csv
 ```
 
 The canonical downstream analysis starts from this cleaned dataset.
@@ -17,8 +17,8 @@ The canonical downstream analysis starts from this cleaned dataset.
 Check that these files exist:
 
 ```text
-annotation/validation/human_gold_annotations.csv
-annotation/validation/llm_annotations_v1_combined.csv
+Dataset_Construction/annotation/validation/human_gold_annotations.csv
+Dataset_Construction/annotation/validation/llm_annotations_v1_combined.csv
 ```
 
 These files are required to reproduce Section 4.1 agreement metrics and annotation policy tables.
@@ -91,7 +91,7 @@ If a notebook fails, first confirm the corresponding script succeeds.
 Confirm the output directory exists:
 
 ```text
-results/figures/
+RQ2_Prompt_Effectiveness_Modeling/results/figures/
 ```
 
 The scripts should create missing directories automatically, but permission issues can prevent writing.
@@ -132,7 +132,7 @@ If the error persists, inspect:
 
 ```text
 replication/expected_outputs.yaml
-results/logs/reproduction.log
+RQ2_Prompt_Effectiveness_Modeling/results/logs/reproduction.log
 ```
 
 The expected-output manifest lists the files that verification checks.
@@ -160,8 +160,8 @@ If a Cox-model dependency is unavailable, install the required survival-analysis
 Some uploaded ZIP files may preserve their original top-level folder names. This is acceptable as long as the raw artifacts remain under:
 
 ```text
-dataset/raw/github/
-dataset/raw/chatgpt/
+Dataset_Construction/raw_data/github/
+Dataset_Construction/raw_data/chatgpt/
 ```
 
 The processed-data pipeline does not depend on exact raw-folder nesting.
@@ -175,8 +175,8 @@ Run commands from the repository root. Avoid spaces in cloned path names if usin
 Open these files first:
 
 ```text
-results/logs/reproduction.log
-results/logs/last_run_metadata.json
+RQ2_Prompt_Effectiveness_Modeling/results/logs/reproduction.log
+RQ2_Prompt_Effectiveness_Modeling/results/logs/last_run_metadata.json
 replication/run_config.yaml
 replication/expected_outputs.yaml
 ```
