@@ -1,6 +1,6 @@
 # Reproduction Report
 
-Generated: 2026-06-01T23:53:09Z
+Generated: 2026-06-02T03:36:04Z
 
 ## Dataset
 
@@ -10,7 +10,7 @@ Generated: 2026-06-01T23:53:09Z
 
 ## Runtime Environment
 
-- Python: 3.9.6
+- Python: 3.11.15
 - Platform: macOS-26.2-arm64-arm-64bit
 - Machine: arm64
 - Package snapshot: `environment/pip_freeze.txt`

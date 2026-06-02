@@ -1,5 +1,6 @@
 step,seconds
-tables,2.718
-figures,0.147
-runtime_capture,0.178
-table_pdf_exports,0.191
+tables,2.604
+figures,0.119
+methodological_alignment,0.849
+runtime_capture,0.154
+table_pdf_exports,0.132
