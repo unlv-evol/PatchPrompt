@@ -29,4 +29,4 @@ Notes:
 
 - Smoke mode skips methodological-alignment sensitivity models to keep evaluator runs fast.
 - PDF previews under `RQ2_Prompt_Effectiveness_Modeling/results/paper_tables_pdf/` are rendered tables generated from CSV outputs (not raw LaTeX source text).
-- The Makefile enforces a supported interpreter range (Python 3.9 to 3.12) and prints a hint if an unsupported interpreter is used.
+- The Makefile enforces a supported interpreter range (Python 3.10 to 3.12) and prints a hint if an unsupported interpreter is used.
