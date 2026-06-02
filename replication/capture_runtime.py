@@ -31,7 +31,7 @@ def capture(root: Path) -> None:
         freeze = f"# pip freeze unavailable: {exc}\n"
     (env_dir / "pip_freeze.txt").write_text(freeze, encoding="utf-8")
 
-    conda_yml = "name: patchtrack-replication-frozen\nchannels:\n  - conda-forge\n  - defaults\ndependencies:\n  - python=" + platform.python_version() + "\n  - pip\n  - pip:\n"
+    conda_yml = "name: patchtprompt-replication-frozen\nchannels:\n  - conda-forge\n  - defaults\ndependencies:\n  - python=" + platform.python_version() + "\n  - pip\n  - pip:\n"
     for line in freeze.splitlines():
         if line.strip() and not line.startswith("#"):
             conda_yml += f"      - {line}\n"

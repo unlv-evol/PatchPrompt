@@ -1,4 +1,4 @@
-name: patchtrack-replication-frozen
+name: patchprompt-replication-frozen
 channels:
   - conda-forge
   - defaults
