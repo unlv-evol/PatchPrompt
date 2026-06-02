@@ -12,8 +12,8 @@ make verify
 ## Build and run
 
 ```bash
-docker build -t patchtrack-replication .
-docker run --rm patchtrack-replication
+docker build -t patchprompt-replication .
+docker run --rm patchprompt-replication
 ```
 
 Or with Docker Compose:

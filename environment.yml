@@ -1,4 +1,4 @@
-name: patchtrack-replication
+name: patchprompt-replication
 channels:
   - conda-forge
 dependencies:

@@ -1,7 +1,7 @@
 services:
   replication:
     build: .
-    image: patchtrack-replication:latest
+    image: patchprompt-replication:latest
     command: ["bash", "-lc", "make reproduce && make verify"]
     volumes:
       - .:/app

@@ -83,8 +83,8 @@ The scripts are designed to rely on common scientific Python packages.
 To use Docker:
 
 ```bash
-docker build -t patchtrack-replication .
-docker run --rm patchtrack-replication
+docker build -t patchprompt-replication .
+docker run --rm patchprompt-replication
 ```
 
 If Docker is unavailable, use:

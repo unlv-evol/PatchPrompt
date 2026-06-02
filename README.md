@@ -169,7 +169,7 @@ make PYTHON=.venv/bin/python verify
 ## Repository layout
 
 ```text
-PatchTrack-Replication-Package/
+PatchPrompt-Replication-Package/
 ├── .github/                               ← CI and automation configuration
 │   └── workflows/
 │       └── smoke-reproduction.yml         ← smoke-reproduction workflow for CI checks
