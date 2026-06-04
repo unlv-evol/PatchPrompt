@@ -49,6 +49,8 @@ Recommended Python version: 3.11 (tested and supported range is 3.10 to 3.12; th
 
 Create and use a virtual environment (recommended):
 
+The pinned environment includes `ipykernel`, so opening the bundled notebooks in VS Code or Jupyter does not require a separate kernel-package install after `pip install -r requirements-lock.txt`.
+
 macOS:
 
 ```bash
