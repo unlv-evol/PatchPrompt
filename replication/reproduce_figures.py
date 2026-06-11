@@ -10,6 +10,14 @@ import matplotlib.pyplot as plt
 from RQ2_Prompt_Effectiveness_Modeling.analysis.common import load_analysis_dataset, ensure_dir
 
 
+OUTCOME_COLORS = {
+    "CL": "#84541E",  # brown
+    "NE": "#7F170E",  # dark red
+    "PA": "#387B7C",  # teal
+    "PN": "#213554",  # navy
+}
+
+
 def reproduce_figures(root_or_results_dir: Path):
     """Regenerate all figures available from the canonical dataset."""
     root = (
@@ -25,7 +33,22 @@ def reproduce_figures(root_or_results_dir: Path):
     order = ["CL", "NE", "PA", "PN"]
     data = [df.loc[df["Outcome_Class"].eq(cls), "PQS"].dropna() for cls in order]
     fig, ax = plt.subplots(figsize=(7, 5))
-    ax.boxplot(data, labels=order, patch_artist=True)
+    bp = ax.boxplot(data, tick_labels=order, patch_artist=True)
+    for patch, cls in zip(bp["boxes"], order):
+        patch.set_facecolor(OUTCOME_COLORS[cls])
+        patch.set_edgecolor("#111111")
+        patch.set_alpha(0.9)
+    for median in bp["medians"]:
+        median.set_color("#FFFFFF")
+        median.set_linewidth(1.8)
+    for whisker in bp["whiskers"]:
+        whisker.set_color("#111111")
+    for cap in bp["caps"]:
+        cap.set_color("#111111")
+    for flier in bp["fliers"]:
+        flier.set_markerfacecolor("#111111")
+        flier.set_markeredgecolor("#111111")
+        flier.set_alpha(0.35)
     ax.set_xlabel("Outcome Class")
     ax.set_ylabel("PQS")
     ax.set_title("Distribution of Prompt Quality Score (PQS) across outcome classes")
@@ -52,7 +75,7 @@ def reproduce_figures(root_or_results_dir: Path):
     context_order = sorted(pa["Context"].unique())
     data = [pa.loc[pa["Context"].eq(c), "Fraction_Adopted"] for c in context_order]
     fig, ax = plt.subplots(figsize=(6, 4))
-    ax.boxplot(data, labels=[str(int(c)) if float(c).is_integer() else str(c) for c in context_order], patch_artist=True)
+    ax.boxplot(data, tick_labels=[str(int(c)) if float(c).is_integer() else str(c) for c in context_order], patch_artist=True)
     ax.set_title("Fraction adopted by Context score among PA cases")
     ax.set_xlabel("Context score")
     ax.set_ylabel("Fraction adopted (%)")
