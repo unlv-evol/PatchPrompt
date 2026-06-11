@@ -6,7 +6,7 @@ Outcome_Class,canonical outcome,PatchTrack outcome class: PA PN NE or CL.
 Context,prompt score,Context rubric score from 0 to 2.
 Specificity,prompt score,Specificity rubric score from 0 to 2.
 Verification,prompt score,Verification rubric score from 0 to 2.
-PQS ,prompt score,Prompt Quality Score preserved with original trailing-space column name.
+PQS,prompt score,Prompt Quality Score.
 PR_Size,control variable,Pull request size metric.
 Log_PR_Size,control variable,Log-transformed pull request size used in models.
 Status,lifecycle outcome,PR status; used to derive merged and closed indicators.

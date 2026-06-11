@@ -19,10 +19,9 @@ import pandas as pd
 
 CANONICAL_COLUMNS = [
     "Case ID", "PR_Link", "Conversation_Link", "Outcome_Class", "Context",
-    "Specificity", "Verification", "Rationale", "PQS ", "PR_Size", "Log_PR_Size",
+    "Specificity", "Verification", "Rationale", "PQS", "PR_Size", "Log_PR_Size",
     "Has_Code", "Adopt_Any", "Fraction_Adopted", "Status", "Exp_Author_Repo",
     "Time_To_Event", "PR_Language", "Merged_By_Author", "Closed_By_Author",
-    "Closed_By_Author_new",
 ]
 
 OUTCOME_ORDER = ["PA", "CL", "PN", "NE"]
@@ -57,6 +56,8 @@ def load_canonical_dataset(root: Path) -> pd.DataFrame:
     if not path.exists():
         raise FileNotFoundError(f"Missing canonical dataset: {path}")
     df = pd.read_csv(path)
+    if "PQS" not in df.columns and "PQS " in df.columns:
+        df = df.rename(columns={"PQS ": "PQS"})
     missing = [c for c in CANONICAL_COLUMNS if c not in df.columns]
     if missing:
         raise ValueError(f"Canonical dataset is missing expected columns: {missing}")
@@ -72,7 +73,7 @@ def derive_analysis_dataset(df: pd.DataFrame) -> pd.DataFrame:
     """
     out = df.copy()
     out["Case_ID"] = out["Case ID"]
-    out["PQS"] = out["PQS "]
+    out["PQS"] = out["PQS"]
     out["Repository"] = out["PR_Link"].map(_extract_repo)
     out["PR_Number"] = out["PR_Link"].map(_extract_pr_number)
     status = out["Status"].astype(str).str.lower()
@@ -127,4 +128,11 @@ def format_effect(effect: float, lo: float, hi: float, p: float, digits: int = 2
 
 def safe_logit_fit(formula: str, data: pd.DataFrame):
     import statsmodels.formula.api as smf
-    return smf.logit(formula, data=data).fit(disp=False, maxiter=500)
+    model = smf.logit(formula, data=data)
+    last_error = None
+    for method in ("newton", "lbfgs", "bfgs", "powell"):
+        try:
+            return model.fit(disp=False, maxiter=500, method=method)
+        except Exception as exc:
+            last_error = exc
+    raise last_error

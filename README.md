@@ -20,7 +20,7 @@ It contains 273 PR-linked cases and 21 variables. The dataset is intentionally p
 
 - `Repository` and `PR_Number` are **not** stored as additional canonical columns; they are derived from `PR_Link` inside the pipeline.
 - merged/closed state is derived from the existing `Status` field.
-- the original `PQS ` column name, including its trailing space, is preserved in the canonical CSV for fidelity. Derived analysis views expose it as `PQS`.
+- the canonical `PQS` column is preserved in the canonical CSV for fidelity.
 
 ## What this package reproduces
 

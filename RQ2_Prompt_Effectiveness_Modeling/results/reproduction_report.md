@@ -1,6 +1,6 @@
 # Reproduction Report
 
-Generated: 2026-06-02T03:36:04Z
+Generated: 2026-06-11T19:35:08Z
 
 ## Dataset
 
@@ -11,7 +11,7 @@ Generated: 2026-06-02T03:36:04Z
 ## Runtime Environment
 
 - Python: 3.11.15
-- Platform: macOS-26.2-arm64-arm-64bit
+- Platform: macOS-26.5.1-arm64-arm-64bit
 - Machine: arm64
 - Package snapshot: `environment/pip_freeze.txt`
 - Frozen conda-style environment: `environment/conda_env_frozen.yml`

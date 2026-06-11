@@ -18,7 +18,7 @@ The file is preserved exactly as supplied for the final analysis. The pipeline d
 | `Specificity` | Prompt Specificity score on the 0--2 rubric. |
 | `Verification` | Prompt Verification score on the 0--2 rubric. |
 | `Rationale` | Annotation rationale explaining Context, Specificity, and Verification scores. |
-| `PQS ` | Prompt Quality Score. The trailing space is preserved in the canonical file. |
+| `PQS` | Prompt Quality Score. |
 | `PR_Size` | Pull request size metric used as a control variable. |
 | `Log_PR_Size` | Log-transformed pull request size. |
 | `Has_Code` | Indicator for whether the interaction produced code. |
@@ -30,7 +30,6 @@ The file is preserved exactly as supplied for the final analysis. The pipeline d
 | `PR_Language` | Main programming language associated with the pull request. |
 | `Merged_By_Author` | Indicator/metadata for author merge behavior where available. |
 | `Closed_By_Author` | Indicator/metadata for author close behavior where available. |
-| `Closed_By_Author_new` | Revised close-by-author field where available. |
 
 ## Derived metadata
 

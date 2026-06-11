@@ -18,7 +18,7 @@ def run(root: Path):
     df = load_canonical_dataset(root)
     analysis = derive_analysis_dataset(df)
     write_csv(analysis, root / "Dataset_Construction" / "processed_data" / "gate_model_dataset.csv")
-    write_csv(df[["Case ID", "PR_Link", "Conversation_Link", "Outcome_Class", "Context", "Specificity", "Verification", "Rationale", "PQS "]], root / "Dataset_Construction" / "processed_data" / "prompt_scores.csv")
+    write_csv(df[["Case ID", "PR_Link", "Conversation_Link", "Outcome_Class", "Context", "Specificity", "Verification", "Rationale", "PQS"]], root / "Dataset_Construction" / "processed_data" / "prompt_scores.csv")
     write_csv(df[["Case ID", "Outcome_Class", "Context", "Specificity", "Verification", "Rationale", "PR_Link", "Conversation_Link"]], root / "Dataset_Construction" / "processed_data" / "qualitative_dataset.csv")
     prov = root / "Dataset_Construction" / "provenance"
     prov.mkdir(parents=True, exist_ok=True)

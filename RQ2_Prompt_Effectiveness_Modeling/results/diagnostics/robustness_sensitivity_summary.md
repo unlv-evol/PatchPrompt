@@ -27,42 +27,42 @@ The analyses use the cleaned downstream dataset. Repository identifiers are deri
 ## Gate 2 reuse-level operationalization
 | Reuse_Level   |   N | Definition                                  |
 |:--------------|----:|:--------------------------------------------|
+| High          |  30 | Terciles of Fraction_Adopted among PA cases |
 | Low           |  29 | Terciles of Fraction_Adopted among PA cases |
 | Medium        |  29 | Terciles of Fraction_Adopted among PA cases |
-| High          |  29 | Terciles of Fraction_Adopted among PA cases |
 
 ## Exclusion details
 | Family                          | Gate   | Scenario                   |   N_before |   N_after | Removed                                                                                                                                                 |
 |:--------------------------------|:-------|:---------------------------|-----------:|----------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Dominant repository sensitivity | Gate 0 | Exclude largest repository |        214 |       204 | VOICEVOX/voicevox                                                                                                                                       |
-| Dominant repository sensitivity | Gate 0 | Exclude top 5 repositories |        214 |       184 | VOICEVOX/voicevox; UNLV-CS472-672/2024-S-GROUP3-Barbell; VOICEVOX/voicevox_core; open-learning-exchange/myplanet; darklang/dark                         |
-| Dominant repository sensitivity | Gate 1 | Exclude largest repository |        139 |       133 | UNLV-CS472-672/2024-S-GROUP3-Barbell                                                                                                                    |
-| Dominant repository sensitivity | Gate 1 | Exclude top 5 repositories |        139 |       119 | UNLV-CS472-672/2024-S-GROUP3-Barbell; open-learning-exchange/myplanet; VOICEVOX/voicevox; pyspark-ai/pyspark-ai; darklang/dark                          |
-| Dominant repository sensitivity | Gate 2 | Exclude largest repository |         87 |        81 | UNLV-CS472-672/2024-S-GROUP3-Barbell                                                                                                                    |
-| Dominant repository sensitivity | Gate 2 | Exclude top 5 repositories |         87 |        69 | UNLV-CS472-672/2024-S-GROUP3-Barbell; UNLV-CS472-672/2024-S-GROUP1-Roadwatch; pyspark-ai/pyspark-ai; VOICEVOX/voicevox; open-learning-exchange/myplanet |
-| Language sensitivity            | Gate 0 | Exclude dominant language  |        214 |       154 | TypeScript                                                                                                                                              |
-| Language sensitivity            | Gate 0 | Exclude top 2 languages    |        214 |       123 | TypeScript; Python                                                                                                                                      |
-| Language sensitivity            | Gate 1 | Exclude dominant language  |        139 |       100 | TypeScript                                                                                                                                              |
-| Language sensitivity            | Gate 1 | Exclude top 2 languages    |        139 |        77 | TypeScript; Python                                                                                                                                      |
-| Language sensitivity            | Gate 2 | Exclude dominant language  |         87 |        57 | TypeScript                                                                                                                                              |
-| Language sensitivity            | Gate 2 | Exclude top 2 languages    |         87 |        44 | TypeScript; Python                                                                                                                                      |
-| PR-size outlier sensitivity     | Gate 1 | Exclude top 1% PR size     |        139 |       137 | PR_Size > 10573.90; removed 2                                                                                                                           |
-| PR-size outlier sensitivity     | Gate 1 | Exclude top 5% PR size     |        139 |       132 | PR_Size > 2750.40; removed 7                                                                                                                            |
-| PR-size outlier sensitivity     | Gate 2 | Exclude top 1% PR size     |         87 |        86 | PR_Size > 9918.34; removed 1                                                                                                                            |
-| PR-size outlier sensitivity     | Gate 2 | Exclude top 5% PR size     |         87 |        82 | PR_Size > 4006.40; removed 5                                                                                                                            |
+| Dominant repository sensitivity | Gate 0 | Exclude largest repository |        215 |       205 | VOICEVOX/voicevox                                                                                                                                       |
+| Dominant repository sensitivity | Gate 0 | Exclude top 5 repositories |        215 |       185 | VOICEVOX/voicevox; UNLV-CS472-672/2024-S-GROUP3-Barbell; VOICEVOX/voicevox_core; darklang/dark; open-learning-exchange/myplanet                         |
+| Dominant repository sensitivity | Gate 1 | Exclude largest repository |        140 |       134 | UNLV-CS472-672/2024-S-GROUP3-Barbell                                                                                                                    |
+| Dominant repository sensitivity | Gate 1 | Exclude top 5 repositories |        140 |       120 | UNLV-CS472-672/2024-S-GROUP3-Barbell; open-learning-exchange/myplanet; VOICEVOX/voicevox; pyspark-ai/pyspark-ai; darklang/dark                          |
+| Dominant repository sensitivity | Gate 2 | Exclude largest repository |         88 |        82 | UNLV-CS472-672/2024-S-GROUP3-Barbell                                                                                                                    |
+| Dominant repository sensitivity | Gate 2 | Exclude top 5 repositories |         88 |        70 | UNLV-CS472-672/2024-S-GROUP3-Barbell; UNLV-CS472-672/2024-S-GROUP1-Roadwatch; pyspark-ai/pyspark-ai; VOICEVOX/voicevox; open-learning-exchange/myplanet |
+| Language sensitivity            | Gate 0 | Exclude dominant language  |        215 |       155 | TypeScript                                                                                                                                              |
+| Language sensitivity            | Gate 0 | Exclude top 2 languages    |        215 |       124 | TypeScript; Python                                                                                                                                      |
+| Language sensitivity            | Gate 1 | Exclude dominant language  |        140 |       101 | TypeScript                                                                                                                                              |
+| Language sensitivity            | Gate 1 | Exclude top 2 languages    |        140 |        78 | TypeScript; Python                                                                                                                                      |
+| Language sensitivity            | Gate 2 | Exclude dominant language  |         88 |        58 | TypeScript                                                                                                                                              |
+| Language sensitivity            | Gate 2 | Exclude top 2 languages    |         88 |        45 | TypeScript; Python                                                                                                                                      |
+| PR-size outlier sensitivity     | Gate 1 | Exclude top 1% PR size     |        140 |       138 | PR_Size > 10543.95; removed 2                                                                                                                           |
+| PR-size outlier sensitivity     | Gate 1 | Exclude top 5% PR size     |        140 |       133 | PR_Size > 2726.70; removed 7                                                                                                                            |
+| PR-size outlier sensitivity     | Gate 2 | Exclude top 1% PR size     |         88 |        87 | PR_Size > 9832.53; removed 1                                                                                                                            |
+| PR-size outlier sensitivity     | Gate 2 | Exclude top 5% PR size     |         88 |        83 | PR_Size > 3913.30; removed 5                                                                                                                            |
 
 ## Core finding stability
 | Gate   | Term         | Expected_Pattern                             |   Models_Checked |   Positive_Direction_Share |   Significant_Share | Interpretation   |
 |:-------|:-------------|:---------------------------------------------|-----------------:|---------------------------:|--------------------:|:-----------------|
-| Gate 0 | Context      | positive; expected significant=True          |                6 |                      1     |               1     | stable           |
-| Gate 0 | Specificity  | positive; expected significant=True          |                6 |                      1     |               1     | stable           |
-| Gate 0 | Verification | negative_or_null; expected significant=False |                6 |                      0     |               0     | stable           |
-| Gate 1 | Context      | positive_or_null; expected significant=False |                8 |                      1     |               0     | stable           |
-| Gate 1 | Specificity  | positive; expected significant=True          |                8 |                      1     |               1     | stable           |
-| Gate 1 | Verification | positive; expected significant=True          |                8 |                      1     |               0.875 | stable           |
+| Gate 0 | Context      | positive; expected significant=True          |                6 |                      1     |               0.5   | stable           |
+| Gate 0 | Specificity  | positive; expected significant=True          |                6 |                      1     |               0     | stable           |
+| Gate 0 | Verification | negative_or_null; expected significant=False |                6 |                      0.333 |               0     | stable           |
+| Gate 1 | Context      | positive_or_null; expected significant=False |                8 |                      1     |               0.125 | stable           |
+| Gate 1 | Specificity  | positive; expected significant=True          |                8 |                      0     |               0     | review           |
+| Gate 1 | Verification | positive; expected significant=True          |                8 |                      1     |               1     | stable           |
 | Gate 2 | Context      | positive; expected significant=True          |                8 |                      1     |               0.125 | stable           |
-| Gate 2 | Specificity  | null; expected significant=False             |                8 |                      0.25  |               0     | stable           |
-| Gate 2 | Verification | null; expected significant=False             |                8 |                      0.375 |               0     | stable           |
+| Gate 2 | Specificity  | null; expected significant=False             |                8 |                      0.375 |               0     | stable           |
+| Gate 2 | Verification | null; expected significant=False             |                8 |                      0.125 |               0     | stable           |
 
 ## Interpretation by robustness family
 

@@ -11,7 +11,7 @@ artifacts:
   - Specificity
   - Verification
   - Rationale
-  - 'PQS '
+  - PQS
   - PR_Size
   - Log_PR_Size
   - Has_Code
@@ -48,7 +48,7 @@ artifacts:
   - Context
   - Specificity
   - Verification
-  - 'PQS '
+  - PQS
   smoke: true
 - name: Human Annotation Codebook (CSV)
   path: Dataset_Construction/annotation/rubric/human_annotation_codebook.csv
@@ -169,7 +169,6 @@ artifacts:
   - Case_ID
   - Classification
   - Human_Context
-  - Human_Specificity
   - Human_Verification
   - LLM_Context
   - LLM_Specificity
@@ -665,11 +664,11 @@ artifacts:
   validation: csv_schema
   required_columns:
   - path
-  - category
-  - bytes
+  - role
+  - records
+  - columns
   - sha256
-  - mime_type
-  - description
+  - notes
   smoke: true
 - name: SHA256 Checksums
   path: Dataset_Construction/provenance/checksums.sha256
