@@ -1,12 +1,12 @@
 # Reproduction Report
 
-Generated: 2026-06-12T20:23:59Z
+Generated: 2026-06-12T21:03:03Z
 
 ## Dataset
 
 - Canonical dataset: `Dataset_Construction/processed_data/final_analysis_dataset.csv`
-- Observations: 273
-- Outcome-class counts: `{'PA': 89, 'NE': 84, 'PN': 53, 'CL': 47}`
+- Observations: 265
+- Outcome-class counts: `{'PA': 89, 'NE': 80, 'PN': 53, 'CL': 43}`
 
 ## Runtime Environment
 

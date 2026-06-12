@@ -175,7 +175,6 @@ NE-31,91,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE31.
 NE-32,71,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE32.pdf
 NE-33,74,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE33.pdf
 NE-34,69,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE34.pdf
-NE-35,1,rationale_fallback,
 NE-36,79,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE36.pdf
 NE-37,97,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE37.pdf
 NE-38,69,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE38.pdf
@@ -188,10 +187,8 @@ NE-44,67,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE44.
 NE-45,64,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE45.pdf
 NE-46,82,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE46.pdf
 NE-47,88,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE47.pdf
-NE-48,1,rationale_fallback,
 NE-49,83,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE49.pdf
 NE-50,76,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE50.pdf
-NE-51,1,rationale_fallback,
 NE-52,59,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE52.pdf
 NE-53,105,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE53.pdf
 NE-54,87,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE54.pdf
@@ -205,7 +202,6 @@ NE-61,58,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE61.
 NE-62,100,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE62.pdf
 NE-63,89,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE63.pdf
 NE-64,95,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE64.pdf
-NE-65,1,rationale_fallback,
 NE-66,76,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE66.pdf
 NE-67,89,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE67.pdf
 NE-68,86,rationale_fallback,Dataset_Construction/raw_data/chatgpt/NE_Cases/NE68.pdf
@@ -229,14 +225,12 @@ CL-1,115,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL1.p
 CL-2,95,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL2.pdf
 CL-3,118,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL3.pdf
 CL-4,123,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL4.pdf
-CL-5,1,rationale_fallback,
 CL-6,134,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL6.pdf
 CL-7,92,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL7.pdf
 CL-8,103,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL8.pdf
 CL-9,106,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL9.pdf
 CL-10,101,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL10.pdf
 CL-11,102,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL11.pdf
-CL-12,1,rationale_fallback,
 CL-13,89,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL13.pdf
 CL-14,108,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL14.pdf
 CL-15,90,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL15.pdf
@@ -244,10 +238,8 @@ CL-16,105,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL16
 CL-17,115,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL17.pdf
 CL-18,81,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL18.pdf
 CL-19,116,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL19.pdf
-CL-20,1,rationale_fallback,
 CL-21,84,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL21.pdf
 CL-22,101,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL22.pdf
-CL-23,1,rationale_fallback,
 CL-24,108,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL24.pdf
 CL-25,93,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL25.pdf
 CL-26,96,rationale_fallback,Dataset_Construction/raw_data/chatgpt/CL_Cases/CL26.pdf

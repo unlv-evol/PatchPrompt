@@ -148,9 +148,9 @@ artifacts:
   required_columns:
   - Class
   - N
-  - kappa_C
-  - kappa_S
-  - kappa_V
+  - Quadratic_Weighted_Kappa_C
+  - Quadratic_Weighted_Kappa_S
+  - Quadratic_Weighted_Kappa_V
   smoke: true
 - name: RQ1 Annotation Policy Table
   path: RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_annotation_policy.csv

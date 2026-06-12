@@ -13,16 +13,16 @@ The analyses use the cleaned downstream dataset. Repository identifiers are deri
 | open-learning-exchange/myplanet      |       8 |
 | UNLV-CS472-672/2024-S-GROUP3-Barbell |       7 |
 | VOICEVOX/voicevox_core               |       5 |
-| darklang/dark                        |       4 |
+| faker-js/faker                       |       4 |
 
 ## Top languages
 | PR_Language   |   Count |
 |:--------------|--------:|
-| TypeScript    |      67 |
-| Python        |      40 |
-| Markdown      |      30 |
+| TypeScript    |      66 |
+| Python        |      39 |
+| Markdown      |      28 |
 | YAML          |      22 |
-| JSON          |      15 |
+| Go            |      15 |
 
 ## Gate 2 reuse-level operationalization
 | Reuse_Level   |   N | Definition                                  |

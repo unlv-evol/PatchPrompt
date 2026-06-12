@@ -7,15 +7,15 @@ evidence for the modeling decisions used downstream.
 
 ## Pull Request Size
 
-Pull request size is strongly right-skewed. The mean PR size is 1769.93, while
-the median is 202.0, with a maximum of 182390.0. This substantial
+Pull request size is strongly right-skewed. The mean PR size is 1802.77, while
+the median is 214.0, with a maximum of 182390.0. This substantial
 mean--median discrepancy and the presence of upper-tail outliers motivate the use
 of log-transformed PR-size controls and robustness checks that remove extreme PR-size
 observations.
 
 ## Contributor Experience
 
-Contributor experience is also right-skewed. The mean is 57.21, the median
+Contributor experience is also right-skewed. The mean is 58.69, the median
 is 10.0, and the maximum is 788.0. This indicates that a small
 number of highly experienced contributors contribute disproportionately large values,
 which motivates careful interpretation of experience-related controls.
@@ -24,7 +24,7 @@ which motivates careful interpretation of experience-related controls.
 
 The most frequent repository is `VOICEVOX/voicevox` with 10
 observations. The most frequent programming language is `TypeScript`
-with 67 observations. These concentrations motivate the
+with 66 observations. These concentrations motivate the
 robustness checks that exclude the dominant repository and dominant language.
 
 ## Generated Artifacts

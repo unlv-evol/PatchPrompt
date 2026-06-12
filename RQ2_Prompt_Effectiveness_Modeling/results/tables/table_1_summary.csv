@@ -1,9 +1,9 @@
 Metric,Value
-Cases,273.0
-Repositories (derived from PR_Link),207.0
+Cases,265.0
+Repositories (derived from PR_Link),200.0
 PA,89.0
 PN,53.0
-NE,84.0
-CL,47.0
+NE,80.0
+CL,43.0
 Mean PQS,3.14
 Median PQS,3.0

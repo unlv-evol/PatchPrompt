@@ -1,9 +1,9 @@
 Metric,Value
-Mean,57.21
+Mean,58.69
 Median,10.0
-Std. Dev.,122.21
-Skewness,3.72
+Std. Dev.,123.73
+Skewness,3.66
 Max,788.0
 Q1,1.0
-Q3,55.0
-IQR,54.0
+Q3,58.0
+IQR,57.0

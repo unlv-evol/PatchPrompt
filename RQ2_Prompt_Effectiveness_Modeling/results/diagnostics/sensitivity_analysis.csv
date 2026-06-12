@@ -1,4 +1,4 @@
 Check,N,PQS_OR,Conclusion
 Gate 0 aggregate PQS,218,2.9443864168607754,Consistent with prompt quality supporting code generation
 Gate 1 aggregate PQS,141,2.7013183873109243,Consistent with higher prompt quality supporting adoption
-Exclude top 5% PR size,255,,Sensitivity subset generated for evaluator inspection
+Exclude top 5% PR size,248,,Sensitivity subset generated for evaluator inspection
