@@ -99,14 +99,18 @@ def write_csv(df: pd.DataFrame, path: str | Path) -> Path:
 
 
 def write_latex_table(df: pd.DataFrame, path: str | Path, caption: str, label: str) -> Path:
-    """Compatibility no-op for retired root paper TeX exports.
-
-    The replication package now treats CSV artifacts under RQ result folders as
-    canonical outputs and renders reviewer PDFs from those CSVs. The historical
-    
-    """
-    _ = (df, caption, label)
-    return Path(path)
+    """Write a LaTeX table artifact for RQ2 replication outputs."""
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    tex = df.to_latex(
+        index=False,
+        caption=caption,
+        label=label,
+        escape=False,
+        na_rep="",
+    )
+    p.write_text(tex, encoding="utf-8")
+    return p
 
 
 def ci_from_result(result, term: str, alpha: float = 0.05, transform=np.exp) -> tuple[float, float]:

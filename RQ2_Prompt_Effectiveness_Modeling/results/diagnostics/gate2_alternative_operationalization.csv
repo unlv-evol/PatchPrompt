@@ -1,5 +1,5 @@
 Family,Gate,Scenario,Specification,N,Term,Metric,Estimate,CI_Low,CI_High,p_value,Significant_0_05,Direction,Formatted
-Gate 2 alternative operationalization,Gate 2,Reuse terciles,Ordinal logistic,88,Context,Coefficient,1.0113260266473867,0.11713267359560842,1.905519379699165,0.026643278905508126,True,positive,"1.01* [0.12, 1.91]"
-Gate 2 alternative operationalization,Gate 2,Reuse terciles,Ordinal logistic,88,Specificity,Coefficient,0.09632941897739679,-0.8689347672168749,1.0615936051716686,0.8449260847439946,False,positive,"0.10 [-0.87, 1.06]"
-Gate 2 alternative operationalization,Gate 2,Reuse terciles,Ordinal logistic,88,Verification,Coefficient,-0.3574610057536073,-1.1818225598088814,0.46690054830166694,0.3953902549612366,False,negative,"-0.36 [-1.18, 0.47]"
-Gate 2 alternative operationalization,Gate 2,Reuse terciles,Ordinal logistic,88,Log_PR_Size,Coefficient,-0.21251002379338266,-0.4580519207578706,0.03303187317110526,0.08982964079767741,False,negative,"-0.21 [-0.46, 0.03]"
+Gate 2 alternative operationalization,Gate 2,Reuse terciles,Ordinal logistic,89,Context,Coefficient,0.9690379644096144,0.07813496496273109,1.8599409638564977,0.03301844586020774,True,positive,"0.97* [0.08, 1.86]"
+Gate 2 alternative operationalization,Gate 2,Reuse terciles,Ordinal logistic,89,Specificity,Coefficient,0.16345952304280006,-0.7961917610332575,1.1231108071188576,0.7384965282802369,False,positive,"0.16 [-0.80, 1.12]"
+Gate 2 alternative operationalization,Gate 2,Reuse terciles,Ordinal logistic,89,Verification,Coefficient,-0.3948190654120096,-1.2164675053436933,0.42682937451967407,0.34629339494651423,False,negative,"-0.39 [-1.22, 0.43]"
+Gate 2 alternative operationalization,Gate 2,Reuse terciles,Ordinal logistic,89,Log_PR_Size,Coefficient,-0.21497559988868015,-0.4601953317398291,0.030244131962468834,0.08575427491431768,False,negative,"-0.21 [-0.46, 0.03]"

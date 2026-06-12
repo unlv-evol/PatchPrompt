@@ -1,4 +1,4 @@
 Dimension,Quadratic_Weighted_Kappa,MAE,Directional_Bias
-Context,0.526,0.463,-0.439
-Specificity,0.431,0.317,-0.195
-Verification,0.291,0.354,-0.061
+Context,0.526,0.475,-0.45
+Specificity,0.431,0.325,-0.2
+Verification,0.316,0.338,-0.037

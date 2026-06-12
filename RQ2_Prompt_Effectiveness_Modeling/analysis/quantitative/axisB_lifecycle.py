@@ -31,7 +31,7 @@ def _fit(d, event_col, label):
 
 def run(root:Path):
     # Load the canonical processed dataset and write regenerated artifacts under results/.
-    df=load_analysis_dataset(root)
+    df=load_analysis_dataset(root).dropna(subset=["PQS"]).copy()
     out=pd.concat([_fit(df,"Merge_Event","Merge Hazard"), _fit(df,"Close_Event","Close Hazard")], ignore_index=True)
     write_csv(out, root/"RQ2_Prompt_Effectiveness_Modeling/results/tables/axisb_lifecycle_model.csv")
     wide=out.pivot(index="Variable", columns="Model", values="Formatted").reset_index()

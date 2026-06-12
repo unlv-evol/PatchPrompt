@@ -14,34 +14,34 @@ Agreement was measured before discussion/reconciliation. Human annotators were b
 | PN | Context | 16 | 9 | 7 | 56.2 | 0.337 | 0.416 | True |
 | PN | Specificity | 16 | 6 | 10 | 37.5 | -0.006 | 0.279 | True |
 | PN | Verification | 16 | 12 | 4 | 75.0 | 0.158 | 0.429 | True |
-| CL | Context | 14 | 5 | 9 | 35.7 | -0.033 | 0.045 | True |
-| CL | Specificity | 14 | 4 | 10 | 28.6 | -0.207 | -0.565 | True |
-| CL | Verification | 14 | 4 | 10 | 28.6 | 0.073 | 0.099 | True |
-| NE | Context | 25 | 14 | 11 | 56.0 | 0.314 | 0.563 | True |
-| NE | Specificity | 25 | 18 | 7 | 72.0 | 0.324 | 0.441 | True |
-| NE | Verification | 25 | 23 | 2 | 92.0 | 0.457 | 0.457 | True |
+| CL | Context | 13 | 5 | 8 | 38.5 | 0.010 | -0.059 | True |
+| CL | Specificity | 13 | 3 | 10 | 23.1 | -0.262 | -0.573 | True |
+| CL | Verification | 13 | 4 | 9 | 30.8 | 0.086 | 0.114 | True |
+| NE | Context | 24 | 13 | 11 | 54.2 | 0.298 | 0.563 | True |
+| NE | Specificity | 24 | 17 | 7 | 70.8 | 0.317 | 0.440 | True |
+| NE | Verification | 24 | 22 | 2 | 91.7 | -0.043 | -0.043 | True |
 
 ## Human--LLM Overall Agreement Metrics
 
 | Dimension | Quadratic Weighted Kappa | MAE | Directional Bias |
 |---|---|---|---|
-| Context | 0.526 | 0.463 | -0.439 |
-| Specificity | 0.431 | 0.317 | -0.195 |
-| Verification | 0.291 | 0.354 | -0.061 |
+| Context | 0.526 | 0.475 | -0.450 |
+| Specificity | 0.431 | 0.325 | -0.200 |
+| Verification | 0.316 | 0.338 | -0.037 |
 
 ## Human--LLM Outcome-Conditioned Agreement
 
-| Class | N | kappa_C | kappa_S | kappa_V |
+| Class | N | Quadratic_Weighted_Kappa_C | Quadratic_Weighted_Kappa_S | Quadratic_Weighted_Kappa_V |
 |---|---|---|---|---|
 | PA | 27 | 0.427 | 0.053 | 0.073 |
 | PN | 16 | 0.308 | 0.282 | 0.667 |
-| CL | 14 | 0.576 | 0.588 | -0.033 |
-| NE | 25 | 0.620 | 0.444 | -0.129 |
+| CL | 13 | 0.544 | 0.581 | -0.020 |
+| NE | 24 | 0.621 | 0.438 | -0.075 |
 
 ## Annotation Policy
 
 | Metric | PA | PN | CL | NE |
 |---|---|---|---|---|
 | Context | Human | Human | Human | Human |
-| Specificity | Human | LLM | LLM | LLM |
+| Specificity | Human | Human | LLM | LLM |
 | Verification | Human | LLM | Human | Human |

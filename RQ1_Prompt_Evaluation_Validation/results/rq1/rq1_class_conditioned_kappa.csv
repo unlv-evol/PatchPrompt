@@ -1,5 +1,5 @@
-Class,N,kappa_C,kappa_S,kappa_V
+Class,N,Quadratic_Weighted_Kappa_C,Quadratic_Weighted_Kappa_S,Quadratic_Weighted_Kappa_V
 PA,27,0.427,0.053,0.073
 PN,16,0.308,0.282,0.667
-CL,14,0.576,0.588,-0.033
-NE,25,0.62,0.444,-0.129
+CL,13,0.544,0.581,-0.02
+NE,24,0.621,0.438,-0.075

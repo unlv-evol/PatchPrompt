@@ -5,12 +5,12 @@ The diagnostics support the modeling claims reported in the paper: no severe mul
 
 ## Multicollinearity
 
-The maximum observed VIF is `1.402`. Values remain below common concern thresholds, supporting the conclusion that the main predictors are not severely collinear.
+The maximum observed VIF is `1.412`. Values remain below common concern thresholds, supporting the conclusion that the main predictors are not severely collinear.
 See `vif_results.csv`, `vif_diagnostics.png`, and `vif_correlation_heatmap.png`.
 
 ## Logistic separation
 
-The separation check flagged `4` predictor/model combinations for possible sparse-cell inspection. No complete separation was detected in the primary Gate 0 or Gate 1 specifications.
+The separation check flagged `3` predictor/model combinations for possible sparse-cell inspection. No complete separation was detected in the primary Gate 0 or Gate 1 specifications.
 See `separation_checks.csv`.
 
 ## Proportional hazards diagnostics

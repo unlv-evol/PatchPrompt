@@ -273,7 +273,7 @@ def compute_class_conditioned_kappa(validation_df: pd.DataFrame) -> pd.DataFrame
         subset = validation_df[validation_df["Classification"] == outcome_class]
         row = {"Class": outcome_class, "N": len(subset)}
         for dim, hcol, lcol in DIMENSIONS:
-            row[f"kappa_{dim[0]}"] = round(_quadratic_weighted_kappa(subset[hcol], subset[lcol]), 3)
+            row[f"Quadratic_Weighted_Kappa_{dim[0]}"] = round(_quadratic_weighted_kappa(subset[hcol], subset[lcol]), 3)
         rows.append(row)
     return pd.DataFrame(rows)
 
@@ -287,7 +287,7 @@ def derive_policy_table() -> pd.DataFrame:
     """
     return pd.DataFrame([
         {"Metric": "Context", "PA": "Human", "PN": "Human", "CL": "Human", "NE": "Human"},
-        {"Metric": "Specificity", "PA": "Human", "PN": "LLM", "CL": "LLM", "NE": "LLM"},
+        {"Metric": "Specificity", "PA": "Human", "PN": "Human", "CL": "LLM", "NE": "LLM"},
         {"Metric": "Verification", "PA": "Human", "PN": "LLM", "CL": "Human", "NE": "Human"},
     ])
 
@@ -405,9 +405,9 @@ def run(root: Path) -> dict[str, pd.DataFrame]:
     class_kappa_table = _markdown_table(
         class_kappa,
         formatters={
-            "kappa_C": lambda value: f"{value:.3f}",
-            "kappa_S": lambda value: f"{value:.3f}",
-            "kappa_V": lambda value: f"{value:.3f}",
+            "Quadratic_Weighted_Kappa_C": lambda value: f"{value:.3f}",
+            "Quadratic_Weighted_Kappa_S": lambda value: f"{value:.3f}",
+            "Quadratic_Weighted_Kappa_V": lambda value: f"{value:.3f}",
         },
     )
     policy_table = _markdown_table(policy)

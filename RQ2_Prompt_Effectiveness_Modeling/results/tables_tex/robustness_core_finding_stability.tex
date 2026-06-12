@@ -1,0 +1,19 @@
+\begin{table}
+\caption{Qualitative stability of core gate findings}
+\label{tab:robustness-core-stability}
+\begin{tabular}{lllrrrl}
+\toprule
+Gate & Term & Expected_Pattern & Models_Checked & Positive_Direction_Share & Significant_Share & Interpretation \\
+\midrule
+Gate 0 & Context & positive; expected significant=True & 6 & 1.000000 & 0.500000 & stable \\
+Gate 0 & Specificity & positive; expected significant=True & 6 & 1.000000 & 1.000000 & stable \\
+Gate 0 & Verification & negative_or_null; expected significant=False & 6 & 0.000000 & 0.000000 & stable \\
+Gate 1 & Context & positive_or_null; expected significant=False & 8 & 1.000000 & 0.250000 & stable \\
+Gate 1 & Specificity & positive; expected significant=True & 8 & 0.000000 & 0.000000 & review \\
+Gate 1 & Verification & positive; expected significant=True & 8 & 1.000000 & 1.000000 & stable \\
+Gate 2 & Context & positive; expected significant=True & 8 & 1.000000 & 0.125000 & stable \\
+Gate 2 & Specificity & null; expected significant=False & 8 & 0.375000 & 0.000000 & stable \\
+Gate 2 & Verification & null; expected significant=False & 8 & 0.000000 & 0.000000 & stable \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,130 @@
+\begin{table}
+\caption{Structured robustness and sensitivity results}
+\label{tab:robustness-full}
+\begin{tabular}{llllrlll}
+\toprule
+Family & Gate & Scenario & Specification & N & Term & Metric & Formatted \\
+\midrule
+Repository-level dependence & Gate 0 & Repository-clustered SE & C/S/V + PR size & 218 & Context & OR & 2.14* [1.09, 4.21] \\
+Repository-level dependence & Gate 0 & Repository-clustered SE & C/S/V + PR size & 218 & Specificity & OR & 65.84*** [9.23, 469.60] \\
+Repository-level dependence & Gate 0 & Repository-clustered SE & C/S/V + PR size & 218 & Verification & OR & 0.90 [0.42, 1.95] \\
+Repository-level dependence & Gate 0 & Repository-clustered SE & C/S/V + PR size & 218 & Log_PR_Size & OR & 1.12 [0.91, 1.37] \\
+Repository-level dependence & Gate 1 & Repository-clustered SE & C/S/V + PR size & 141 & Context & OR & 2.22* [1.00, 4.91] \\
+Repository-level dependence & Gate 1 & Repository-clustered SE & C/S/V + PR size & 141 & Specificity & OR & 0.79 [0.30, 2.09] \\
+Repository-level dependence & Gate 1 & Repository-clustered SE & C/S/V + PR size & 141 & Verification & OR & 8.45*** [3.52, 20.31] \\
+Repository-level dependence & Gate 1 & Repository-clustered SE & C/S/V + PR size & 141 & Log_PR_Size & OR & 1.36* [1.07, 1.74] \\
+Repository-level dependence & Gate 2 & Repository-clustered SE & C/S/V + PR size & 89 & Context & AME & 0.129* [0.021, 0.236] \\
+Repository-level dependence & Gate 2 & Repository-clustered SE & C/S/V + PR size & 89 & Specificity & AME & -0.014 [-0.135, 0.107] \\
+Repository-level dependence & Gate 2 & Repository-clustered SE & C/S/V + PR size & 89 & Verification & AME & -0.008 [-0.110, 0.093] \\
+Repository-level dependence & Gate 2 & Repository-clustered SE & C/S/V + PR size & 89 & Log_PR_Size & AME & -0.037 [-0.078, 0.004] \\
+Dominant repository sensitivity & Gate 0 & Exclude largest repository & C/S/V + PR size & 208 & Context & OR & 1.98* [1.04, 3.78] \\
+Dominant repository sensitivity & Gate 0 & Exclude largest repository & C/S/V + PR size & 208 & Specificity & OR & 63.08*** [8.52, 466.97] \\
+Dominant repository sensitivity & Gate 0 & Exclude largest repository & C/S/V + PR size & 208 & Verification & OR & 0.89 [0.42, 1.87] \\
+Dominant repository sensitivity & Gate 0 & Exclude largest repository & C/S/V + PR size & 208 & Log_PR_Size & OR & 1.10 [0.90, 1.34] \\
+Dominant repository sensitivity & Gate 0 & Exclude top 5 repositories & C/S/V + PR size & 188 & Context & OR & 1.92 [0.98, 3.74] \\
+Dominant repository sensitivity & Gate 0 & Exclude top 5 repositories & C/S/V + PR size & 188 & Specificity & OR & 53.28*** [7.15, 397.20] \\
+Dominant repository sensitivity & Gate 0 & Exclude top 5 repositories & C/S/V + PR size & 188 & Verification & OR & 0.91 [0.42, 1.98] \\
+Dominant repository sensitivity & Gate 0 & Exclude top 5 repositories & C/S/V + PR size & 188 & Log_PR_Size & OR & 1.10 [0.89, 1.36] \\
+Dominant repository sensitivity & Gate 1 & Exclude largest repository & C/S/V + PR size & 135 & Context & OR & 2.19 [0.95, 5.07] \\
+Dominant repository sensitivity & Gate 1 & Exclude largest repository & C/S/V + PR size & 135 & Specificity & OR & 0.79 [0.29, 2.15] \\
+Dominant repository sensitivity & Gate 1 & Exclude largest repository & C/S/V + PR size & 135 & Verification & OR & 8.59*** [3.55, 20.76] \\
+Dominant repository sensitivity & Gate 1 & Exclude largest repository & C/S/V + PR size & 135 & Log_PR_Size & OR & 1.32* [1.05, 1.66] \\
+Dominant repository sensitivity & Gate 1 & Exclude top 5 repositories & C/S/V + PR size & 121 & Context & OR & 2.36 [0.97, 5.75] \\
+Dominant repository sensitivity & Gate 1 & Exclude top 5 repositories & C/S/V + PR size & 121 & Specificity & OR & 0.76 [0.26, 2.16] \\
+Dominant repository sensitivity & Gate 1 & Exclude top 5 repositories & C/S/V + PR size & 121 & Verification & OR & 7.69*** [3.03, 19.51] \\
+Dominant repository sensitivity & Gate 1 & Exclude top 5 repositories & C/S/V + PR size & 121 & Log_PR_Size & OR & 1.36* [1.07, 1.74] \\
+Dominant repository sensitivity & Gate 2 & Exclude largest repository & C/S/V + PR size & 83 & Context & AME & 0.134 [-0.104, 0.371] \\
+Dominant repository sensitivity & Gate 2 & Exclude largest repository & C/S/V + PR size & 83 & Specificity & AME & -0.002 [-0.242, 0.239] \\
+Dominant repository sensitivity & Gate 2 & Exclude largest repository & C/S/V + PR size & 83 & Verification & AME & -0.016 [-0.236, 0.204] \\
+Dominant repository sensitivity & Gate 2 & Exclude largest repository & C/S/V + PR size & 83 & Log_PR_Size & AME & -0.035 [-0.099, 0.029] \\
+Dominant repository sensitivity & Gate 2 & Exclude top 5 repositories & C/S/V + PR size & 71 & Context & AME & 0.098 [-0.153, 0.349] \\
+Dominant repository sensitivity & Gate 2 & Exclude top 5 repositories & C/S/V + PR size & 71 & Specificity & AME & 0.053 [-0.202, 0.307] \\
+Dominant repository sensitivity & Gate 2 & Exclude top 5 repositories & C/S/V + PR size & 71 & Verification & AME & -0.065 [-0.304, 0.174] \\
+Dominant repository sensitivity & Gate 2 & Exclude top 5 repositories & C/S/V + PR size & 71 & Log_PR_Size & AME & -0.040 [-0.109, 0.029] \\
+Language sensitivity & Gate 0 & Exclude dominant language & C/S/V + PR size & 158 & Context & OR & 1.47 [0.72, 2.98] \\
+Language sensitivity & Gate 0 & Exclude dominant language & C/S/V + PR size & 158 & Specificity & OR & 49.98*** [6.65, 375.89] \\
+Language sensitivity & Gate 0 & Exclude dominant language & C/S/V + PR size & 158 & Verification & OR & 0.73 [0.32, 1.66] \\
+Language sensitivity & Gate 0 & Exclude dominant language & C/S/V + PR size & 158 & Log_PR_Size & OR & 1.06 [0.86, 1.31] \\
+Language sensitivity & Gate 0 & Exclude top 2 languages & C/S/V + PR size & 127 & Context & OR & 1.30 [0.60, 2.84] \\
+Language sensitivity & Gate 0 & Exclude top 2 languages & C/S/V + PR size & 127 & Specificity & OR & 46.34*** [6.06, 354.29] \\
+Language sensitivity & Gate 0 & Exclude top 2 languages & C/S/V + PR size & 127 & Verification & OR & 0.73 [0.29, 1.82] \\
+Language sensitivity & Gate 0 & Exclude top 2 languages & C/S/V + PR size & 127 & Log_PR_Size & OR & 1.16 [0.92, 1.46] \\
+Language sensitivity & Gate 1 & Exclude dominant language & C/S/V + PR size & 102 & Context & OR & 3.27* [1.17, 9.15] \\
+Language sensitivity & Gate 1 & Exclude dominant language & C/S/V + PR size & 102 & Specificity & OR & 0.52 [0.16, 1.76] \\
+Language sensitivity & Gate 1 & Exclude dominant language & C/S/V + PR size & 102 & Verification & OR & 10.33*** [3.65, 29.24] \\
+Language sensitivity & Gate 1 & Exclude dominant language & C/S/V + PR size & 102 & Log_PR_Size & OR & 1.28 [0.99, 1.66] \\
+Language sensitivity & Gate 1 & Exclude top 2 languages & C/S/V + PR size & 79 & Context & OR & 3.40 [1.00, 11.57] \\
+Language sensitivity & Gate 1 & Exclude top 2 languages & C/S/V + PR size & 79 & Specificity & OR & 0.58 [0.14, 2.49] \\
+Language sensitivity & Gate 1 & Exclude top 2 languages & C/S/V + PR size & 79 & Verification & OR & 10.87*** [3.29, 35.93] \\
+Language sensitivity & Gate 1 & Exclude top 2 languages & C/S/V + PR size & 79 & Log_PR_Size & OR & 1.22 [0.90, 1.66] \\
+Language sensitivity & Gate 2 & Exclude dominant language & C/S/V + PR size & 59 & Context & AME & 0.128 [-0.183, 0.438] \\
+Language sensitivity & Gate 2 & Exclude dominant language & C/S/V + PR size & 59 & Specificity & AME & 0.062 [-0.239, 0.362] \\
+Language sensitivity & Gate 2 & Exclude dominant language & C/S/V + PR size & 59 & Verification & AME & -0.058 [-0.322, 0.206] \\
+Language sensitivity & Gate 2 & Exclude dominant language & C/S/V + PR size & 59 & Log_PR_Size & AME & -0.032 [-0.107, 0.042] \\
+Language sensitivity & Gate 2 & Exclude top 2 languages & C/S/V + PR size & 46 & Context & AME & 0.084 [-0.264, 0.433] \\
+Language sensitivity & Gate 2 & Exclude top 2 languages & C/S/V + PR size & 46 & Specificity & AME & 0.034 [-0.308, 0.376] \\
+Language sensitivity & Gate 2 & Exclude top 2 languages & C/S/V + PR size & 46 & Verification & AME & -0.082 [-0.382, 0.217] \\
+Language sensitivity & Gate 2 & Exclude top 2 languages & C/S/V + PR size & 46 & Log_PR_Size & AME & -0.015 [-0.100, 0.070] \\
+PR-size outlier sensitivity & Gate 1 & Exclude top 1% PR size & C/S/V + PR size & 139 & Context & OR & 2.08 [0.90, 4.83] \\
+PR-size outlier sensitivity & Gate 1 & Exclude top 1% PR size & C/S/V + PR size & 139 & Specificity & OR & 0.94 [0.33, 2.64] \\
+PR-size outlier sensitivity & Gate 1 & Exclude top 1% PR size & C/S/V + PR size & 139 & Verification & OR & 7.83*** [3.22, 19.05] \\
+PR-size outlier sensitivity & Gate 1 & Exclude top 1% PR size & C/S/V + PR size & 139 & Log_PR_Size & OR & 1.40** [1.10, 1.79] \\
+PR-size outlier sensitivity & Gate 1 & Exclude top 5% PR size & C/S/V + PR size & 134 & Context & OR & 2.25 [0.96, 5.30] \\
+PR-size outlier sensitivity & Gate 1 & Exclude top 5% PR size & C/S/V + PR size & 134 & Specificity & OR & 0.91 [0.32, 2.58] \\
+PR-size outlier sensitivity & Gate 1 & Exclude top 5% PR size & C/S/V + PR size & 134 & Verification & OR & 7.81*** [3.20, 19.06] \\
+PR-size outlier sensitivity & Gate 1 & Exclude top 5% PR size & C/S/V + PR size & 134 & Log_PR_Size & OR & 1.39* [1.08, 1.79] \\
+PR-size outlier sensitivity & Gate 2 & Exclude top 1% PR size & C/S/V + PR size & 88 & Context & AME & 0.133 [-0.102, 0.368] \\
+PR-size outlier sensitivity & Gate 2 & Exclude top 1% PR size & C/S/V + PR size & 88 & Specificity & AME & -0.013 [-0.245, 0.219] \\
+PR-size outlier sensitivity & Gate 2 & Exclude top 1% PR size & C/S/V + PR size & 88 & Verification & AME & -0.009 [-0.219, 0.201] \\
+PR-size outlier sensitivity & Gate 2 & Exclude top 1% PR size & C/S/V + PR size & 88 & Log_PR_Size & AME & -0.039 [-0.101, 0.024] \\
+PR-size outlier sensitivity & Gate 2 & Exclude top 5% PR size & C/S/V + PR size & 84 & Context & AME & 0.148 [-0.096, 0.391] \\
+PR-size outlier sensitivity & Gate 2 & Exclude top 5% PR size & C/S/V + PR size & 84 & Specificity & AME & -0.013 [-0.248, 0.223] \\
+PR-size outlier sensitivity & Gate 2 & Exclude top 5% PR size & C/S/V + PR size & 84 & Verification & AME & -0.001 [-0.223, 0.221] \\
+PR-size outlier sensitivity & Gate 2 & Exclude top 5% PR size & C/S/V + PR size & 84 & Log_PR_Size & AME & -0.040 [-0.109, 0.029] \\
+PR-size outlier sensitivity & Axis B merge hazard & Exclude top 1% PR size; cutoff=19144.00; removed=3 & Cox PH & 258 & Context & HR & 1.03 [0.81, 1.31] \\
+PR-size outlier sensitivity & Axis B merge hazard & Exclude top 1% PR size; cutoff=19144.00; removed=3 & Cox PH & 258 & Specificity & HR & 1.06 [0.81, 1.40] \\
+PR-size outlier sensitivity & Axis B merge hazard & Exclude top 1% PR size; cutoff=19144.00; removed=3 & Cox PH & 258 & Verification & HR & 0.85 [0.65, 1.10] \\
+PR-size outlier sensitivity & Axis B merge hazard & Exclude top 1% PR size; cutoff=19144.00; removed=3 & Cox PH & 258 & Log_PR_Size & HR & 0.94 [0.88, 1.00] \\
+PR-size outlier sensitivity & Axis B close hazard & Exclude top 1% PR size; cutoff=19144.00; removed=3 & Cox PH & 258 & Context & HR & 1.62 [0.89, 2.97] \\
+PR-size outlier sensitivity & Axis B close hazard & Exclude top 1% PR size; cutoff=19144.00; removed=3 & Cox PH & 258 & Specificity & HR & 0.63 [0.34, 1.18] \\
+PR-size outlier sensitivity & Axis B close hazard & Exclude top 1% PR size; cutoff=19144.00; removed=3 & Cox PH & 258 & Verification & HR & 1.71 [0.99, 2.94] \\
+PR-size outlier sensitivity & Axis B close hazard & Exclude top 1% PR size; cutoff=19144.00; removed=3 & Cox PH & 258 & Log_PR_Size & HR & 0.77*** [0.67, 0.90] \\
+PR-size outlier sensitivity & Axis B merge hazard & Exclude top 5% PR size; cutoff=3017.00; removed=13 & Cox PH & 248 & Context & HR & 1.04 [0.81, 1.33] \\
+PR-size outlier sensitivity & Axis B merge hazard & Exclude top 5% PR size; cutoff=3017.00; removed=13 & Cox PH & 248 & Specificity & HR & 1.08 [0.82, 1.43] \\
+PR-size outlier sensitivity & Axis B merge hazard & Exclude top 5% PR size; cutoff=3017.00; removed=13 & Cox PH & 248 & Verification & HR & 0.82 [0.62, 1.07] \\
+PR-size outlier sensitivity & Axis B merge hazard & Exclude top 5% PR size; cutoff=3017.00; removed=13 & Cox PH & 248 & Log_PR_Size & HR & 0.95 [0.88, 1.03] \\
+PR-size outlier sensitivity & Axis B close hazard & Exclude top 5% PR size; cutoff=3017.00; removed=13 & Cox PH & 248 & Context & HR & 1.57 [0.84, 2.93] \\
+PR-size outlier sensitivity & Axis B close hazard & Exclude top 5% PR size; cutoff=3017.00; removed=13 & Cox PH & 248 & Specificity & HR & 0.63 [0.33, 1.20] \\
+PR-size outlier sensitivity & Axis B close hazard & Exclude top 5% PR size; cutoff=3017.00; removed=13 & Cox PH & 248 & Verification & HR & 1.73 [1.00, 3.01] \\
+PR-size outlier sensitivity & Axis B close hazard & Exclude top 5% PR size; cutoff=3017.00; removed=13 & Cox PH & 248 & Log_PR_Size & HR & 0.73*** [0.63, 0.86] \\
+Gate 2 alternative operationalization & Gate 2 & Reuse terciles & Ordinal logistic & 89 & Context & Coefficient & 0.97* [0.08, 1.86] \\
+Gate 2 alternative operationalization & Gate 2 & Reuse terciles & Ordinal logistic & 89 & Specificity & Coefficient & 0.16 [-0.80, 1.12] \\
+Gate 2 alternative operationalization & Gate 2 & Reuse terciles & Ordinal logistic & 89 & Verification & Coefficient & -0.39 [-1.22, 0.43] \\
+Gate 2 alternative operationalization & Gate 2 & Reuse terciles & Ordinal logistic & 89 & Log_PR_Size & Coefficient & -0.21 [-0.46, 0.03] \\
+Gate2 binary high-vs-low & Gate 2 & High vs low reuse & Binary logistic & 60 & Context & OR & 2.92 [0.84, 10.10] \\
+Gate2 binary high-vs-low & Gate 2 & High vs low reuse & Binary logistic & 60 & Specificity & OR & 1.23 [0.35, 4.41] \\
+Gate2 binary high-vs-low & Gate 2 & High vs low reuse & Binary logistic & 60 & Verification & OR & 0.76 [0.22, 2.68] \\
+Gate2 binary high-vs-low & Gate 2 & High vs low reuse & Binary logistic & 60 & Log_PR_Size & OR & 0.76 [0.52, 1.12] \\
+Aggregate PQS robustness & Gate 0 & PQS only & PQS + PR size & 218 & PQS & OR & 2.94*** [2.15, 4.04] \\
+Aggregate PQS robustness & Gate 0 & PQS only & PQS + PR size & 218 & Log_PR_Size & OR & 1.05 [0.88, 1.26] \\
+Aggregate PQS robustness & Gate 1 & PQS only & PQS + PR size & 141 & PQS & OR & 2.70*** [1.79, 4.09] \\
+Aggregate PQS robustness & Gate 1 & PQS only & PQS + PR size & 141 & Log_PR_Size & OR & 1.39** [1.12, 1.73] \\
+Aggregate PQS robustness & Gate 2 & PQS only & PQS + PR size & 89 & PQS & AME & 0.017 [-0.078, 0.112] \\
+Aggregate PQS robustness & Gate 2 & PQS only & PQS + PR size & 89 & Log_PR_Size & AME & -0.038 [-0.097, 0.022] \\
+Prompt-length control & Gate 0 & Add log(prompt_tokens) & C/S/V + PR size + prompt length & 218 & Context & OR & 2.16* [1.14, 4.11] \\
+Prompt-length control & Gate 0 & Add log(prompt_tokens) & C/S/V + PR size + prompt length & 218 & Specificity & OR & 60.39*** [8.11, 449.86] \\
+Prompt-length control & Gate 0 & Add log(prompt_tokens) & C/S/V + PR size + prompt length & 218 & Verification & OR & 0.83 [0.39, 1.78] \\
+Prompt-length control & Gate 0 & Add log(prompt_tokens) & C/S/V + PR size + prompt length & 218 & Log_PR_Size & OR & 1.11 [0.91, 1.36] \\
+Prompt-length control & Gate 0 & Add log(prompt_tokens) & C/S/V + PR size + prompt length & 218 & log_prompt_tokens & OR & 2.56 [0.30, 21.73] \\
+Prompt-length control & Gate 1 & Add log(prompt_tokens) & C/S/V + PR size + prompt length & 141 & Context & OR & 2.14 [0.91, 5.04] \\
+Prompt-length control & Gate 1 & Add log(prompt_tokens) & C/S/V + PR size + prompt length & 141 & Specificity & OR & 0.56 [0.19, 1.59] \\
+Prompt-length control & Gate 1 & Add log(prompt_tokens) & C/S/V + PR size + prompt length & 141 & Verification & OR & 6.96*** [2.81, 17.23] \\
+Prompt-length control & Gate 1 & Add log(prompt_tokens) & C/S/V + PR size + prompt length & 141 & Log_PR_Size & OR & 1.36* [1.08, 1.73] \\
+Prompt-length control & Gate 1 & Add log(prompt_tokens) & C/S/V + PR size + prompt length & 141 & log_prompt_tokens & OR & 18.33* [1.82, 184.43] \\
+Prompt-length control & Gate 2 & Add log(prompt_tokens) & C/S/V + PR size + prompt length & 89 & Context & AME & 0.128 [-0.103, 0.360] \\
+Prompt-length control & Gate 2 & Add log(prompt_tokens) & C/S/V + PR size + prompt length & 89 & Specificity & AME & -0.005 [-0.247, 0.237] \\
+Prompt-length control & Gate 2 & Add log(prompt_tokens) & C/S/V + PR size + prompt length & 89 & Verification & AME & -0.007 [-0.217, 0.202] \\
+Prompt-length control & Gate 2 & Add log(prompt_tokens) & C/S/V + PR size + prompt length & 89 & Log_PR_Size & AME & -0.037 [-0.098, 0.024] \\
+\bottomrule
+\end{tabular}
+\end{table}

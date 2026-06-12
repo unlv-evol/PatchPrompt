@@ -15,7 +15,7 @@ import statsmodels.api as sm
 TERMS=[("Context","Context (C)"),("Specificity","Specificity (S)"),("Verification","Verification (V)"),("Log_PR_Size","Log(PR Size)")]
 def run(root:Path):
     # Load the canonical processed dataset and write regenerated artifacts under results/.
-    df=load_analysis_dataset(root)
+    df=load_analysis_dataset(root).dropna(subset=["PQS"]).copy()
     d=df[df.Outcome_Class.eq("PA")].dropna(subset=["Context","Specificity","Verification","Log_PR_Size","Fraction_Adopted","Repository"]).copy()
     d["frac"]=(d["Fraction_Adopted"].astype(float)/100.0).clip(1e-6,1-1e-6)
     model=smf.glm("frac ~ Context + Specificity + Verification + Log_PR_Size", data=d, family=sm.families.Binomial()).fit(cov_type="cluster", cov_kwds={"groups":d["Repository"]})

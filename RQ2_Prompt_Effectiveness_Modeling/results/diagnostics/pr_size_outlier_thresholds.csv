@@ -1,5 +1,5 @@
 Gate,Scenario,Quantile,Threshold_PR_Size,N_before,N_after,Removed_N
-Gate 1,Exclude top 1% PR size,0.99,10543.949999999955,140,138,2
-Gate 1,Exclude top 5% PR size,0.95,2726.699999999992,140,133,7
-Gate 2,Exclude top 1% PR size,0.99,9832.52999999996,88,87,1
-Gate 2,Exclude top 5% PR size,0.95,3913.2999999999843,88,83,5
+Gate 1,Exclude top 1% PR size,0.99,10513.999999999984,141,139,2
+Gate 1,Exclude top 5% PR size,0.95,2703.0,141,134,7
+Gate 2,Exclude top 1% PR size,0.99,9746.72000000004,89,88,1
+Gate 2,Exclude top 5% PR size,0.95,3820.1999999999894,89,84,5

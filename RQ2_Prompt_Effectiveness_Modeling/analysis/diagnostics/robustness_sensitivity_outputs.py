@@ -202,7 +202,7 @@ def _pr_size_filter(d: pd.DataFrame, q: float) -> tuple[pd.DataFrame, float, int
 
 def _axisb_pr_size_sensitivity(df: pd.DataFrame, rows: list[dict], failures: list[dict]) -> None:
     for q, label in [(0.99, "Exclude top 1% PR size"), (0.95, "Exclude top 5% PR size")]:
-        d, cutoff, removed = _pr_size_filter(df.dropna(subset=["PR_Size", "Time_To_Event", "Context", "Specificity", "Verification", "Log_PR_Size"]), q)
+        d, cutoff, removed = _pr_size_filter(df.dropna(subset=["PQS", "PR_Size", "Time_To_Event", "Context", "Specificity", "Verification", "Log_PR_Size"]), q)
         for event_col, event_label in [("Merge_Event", "Axis B merge hazard"), ("Close_Event", "Axis B close hazard")]:
             try:
                 m = d.dropna(subset=[event_col]).copy()

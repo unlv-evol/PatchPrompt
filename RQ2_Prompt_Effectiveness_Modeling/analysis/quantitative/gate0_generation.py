@@ -28,7 +28,7 @@ def _fit_table(df, formula, label):
 
 def run(root: Path):
     # Load the canonical processed dataset and write regenerated artifacts under results/.
-    df=load_analysis_dataset(root)
+    df=load_analysis_dataset(root).dropna(subset=["PQS"]).copy()
     d=df[df.Outcome_Class.isin(["PA","PN","NE"])].dropna(subset=["Context","Specificity","Verification","Log_PR_Size"])
     d1=d
     base=_fit_table(d, "Generated_Code ~ Context + Specificity + Verification", "(1) Baseline")

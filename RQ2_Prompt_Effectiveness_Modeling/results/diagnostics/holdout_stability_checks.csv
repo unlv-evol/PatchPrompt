@@ -1,13 +1,13 @@
 Family,Gate,Scenario,Specification,N,Term,Metric,Estimate,CI_Low,CI_High,p_value,Significant_0_05,Direction,Formatted
-Hold-out stability,Gate 0,Stratified 80/20 split,"Train N=172, Holdout N=43",172,Context,Coefficient direction,0.7656251038730704,,,0.05432275418723603,False,positive,beta=0.766
-Hold-out stability,Gate 0,Stratified 80/20 split,"Train N=172, Holdout N=43",172,Specificity,Coefficient direction,24.370657759139025,,,0.9987342892013572,False,positive,beta=24.371
-Hold-out stability,Gate 0,Stratified 80/20 split,"Train N=172, Holdout N=43",172,Verification,Coefficient direction,-0.2579367333810923,,,0.5629579318775694,False,negative,beta=-0.258
-Hold-out stability,Gate 0,Stratified 80/20 split,"Train N=172, Holdout N=43",172,Log_PR_Size,Coefficient direction,-0.08766148314104166,,,0.4930899778208241,False,negative,beta=-0.088
-Hold-out stability,Gate 1,Stratified 80/20 split,"Train N=112, Holdout N=28",112,Context,Coefficient direction,0.7103446523271466,,,0.13320992080730504,False,positive,beta=0.710
-Hold-out stability,Gate 1,Stratified 80/20 split,"Train N=112, Holdout N=28",112,Specificity,Coefficient direction,-0.30766350863282893,,,0.602767698974561,False,negative,beta=-0.308
-Hold-out stability,Gate 1,Stratified 80/20 split,"Train N=112, Holdout N=28",112,Verification,Coefficient direction,2.2078932679675276,,,1.609789576104512e-05,True,positive,beta=2.208***
-Hold-out stability,Gate 1,Stratified 80/20 split,"Train N=112, Holdout N=28",112,Log_PR_Size,Coefficient direction,0.24362207043678763,,,0.058868772561503364,False,positive,beta=0.244
-Hold-out stability,Gate 2,Stratified 80/20 split,"Train N=70, Holdout N=18",70,Context,Coefficient direction,0.39344440094993705,,,0.5351689744810233,False,positive,beta=0.393
-Hold-out stability,Gate 2,Stratified 80/20 split,"Train N=70, Holdout N=18",70,Specificity,Coefficient direction,-0.11861243580502352,,,0.8475288490773846,False,negative,beta=-0.119
-Hold-out stability,Gate 2,Stratified 80/20 split,"Train N=70, Holdout N=18",70,Verification,Coefficient direction,-0.025298045889853987,,,0.9645664274493941,False,negative,beta=-0.025
-Hold-out stability,Gate 2,Stratified 80/20 split,"Train N=70, Holdout N=18",70,Log_PR_Size,Coefficient direction,-0.19389765677405116,,,0.2371238524858008,False,negative,beta=-0.194
+Hold-out stability,Gate 0,Stratified 80/20 split,"Train N=175, Holdout N=43",175,Context,Coefficient direction,0.9049588207886516,,,0.014938939254095517,True,positive,beta=0.905*
+Hold-out stability,Gate 0,Stratified 80/20 split,"Train N=175, Holdout N=43",175,Specificity,Coefficient direction,4.037688810306503,,,8.811988152087961e-05,True,positive,beta=4.038***
+Hold-out stability,Gate 0,Stratified 80/20 split,"Train N=175, Holdout N=43",175,Verification,Coefficient direction,-0.25773557780068146,,,0.5430102279790741,False,negative,beta=-0.258
+Hold-out stability,Gate 0,Stratified 80/20 split,"Train N=175, Holdout N=43",175,Log_PR_Size,Coefficient direction,0.04785008743995788,,,0.7024067191321853,False,positive,beta=0.048
+Hold-out stability,Gate 1,Stratified 80/20 split,"Train N=113, Holdout N=28",113,Context,Coefficient direction,0.6858850654195505,,,0.136527176952225,False,positive,beta=0.686
+Hold-out stability,Gate 1,Stratified 80/20 split,"Train N=113, Holdout N=28",113,Specificity,Coefficient direction,-0.039057150541251716,,,0.9453851806370903,False,negative,beta=-0.039
+Hold-out stability,Gate 1,Stratified 80/20 split,"Train N=113, Holdout N=28",113,Verification,Coefficient direction,2.0674915600018746,,,2.4257698083397557e-05,True,positive,beta=2.067***
+Hold-out stability,Gate 1,Stratified 80/20 split,"Train N=113, Holdout N=28",113,Log_PR_Size,Coefficient direction,0.20969904668255493,,,0.0914981036490131,False,positive,beta=0.210
+Hold-out stability,Gate 2,Stratified 80/20 split,"Train N=71, Holdout N=18",71,Context,Coefficient direction,0.4385780240699423,,,0.47922834171663586,False,positive,beta=0.439
+Hold-out stability,Gate 2,Stratified 80/20 split,"Train N=71, Holdout N=18",71,Specificity,Coefficient direction,-0.15706000908560624,,,0.8004938922367015,False,negative,beta=-0.157
+Hold-out stability,Gate 2,Stratified 80/20 split,"Train N=71, Holdout N=18",71,Verification,Coefficient direction,0.054352632818292335,,,0.9235539144707732,False,positive,beta=0.054
+Hold-out stability,Gate 2,Stratified 80/20 split,"Train N=71, Holdout N=18",71,Log_PR_Size,Coefficient direction,-0.18885890815360798,,,0.23943281907807912,False,negative,beta=-0.189

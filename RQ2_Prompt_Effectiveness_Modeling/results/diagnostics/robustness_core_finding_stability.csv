@@ -1,10 +1,10 @@
 Gate,Term,Expected_Pattern,Models_Checked,Positive_Direction_Share,Significant_Share,Interpretation
 Gate 0,Context,positive; expected significant=True,6,1.0,0.5,stable
-Gate 0,Specificity,positive; expected significant=True,6,1.0,0.0,stable
-Gate 0,Verification,negative_or_null; expected significant=False,6,0.333,0.0,stable
-Gate 1,Context,positive_or_null; expected significant=False,8,1.0,0.125,stable
+Gate 0,Specificity,positive; expected significant=True,6,1.0,1.0,stable
+Gate 0,Verification,negative_or_null; expected significant=False,6,0.0,0.0,stable
+Gate 1,Context,positive_or_null; expected significant=False,8,1.0,0.25,stable
 Gate 1,Specificity,positive; expected significant=True,8,0.0,0.0,review
 Gate 1,Verification,positive; expected significant=True,8,1.0,1.0,stable
 Gate 2,Context,positive; expected significant=True,8,1.0,0.125,stable
 Gate 2,Specificity,null; expected significant=False,8,0.375,0.0,stable
-Gate 2,Verification,null; expected significant=False,8,0.125,0.0,stable
+Gate 2,Verification,null; expected significant=False,8,0.0,0.0,stable
