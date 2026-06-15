@@ -1,7 +1,7 @@
 # Reproduction Timing Summary
 
-- tables: 2.357 seconds
-- figures: 0.086 seconds
-- methodological_alignment: 0.8 seconds
-- runtime_capture: 0.16 seconds
-- table_pdf_exports: 0.123 seconds
+- tables: 2.156 seconds
+- figures: 0.094 seconds
+- methodological_alignment: 0.647 seconds
+- runtime_capture: 0.15 seconds
+- table_pdf_exports: 0.138 seconds

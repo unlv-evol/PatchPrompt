@@ -52,7 +52,8 @@ rq1_overall_agreement_metrics.csv:
 Dimension, Quadratic_Weighted_Kappa, MAE, Directional_Bias
 
 rq1_class_conditioned_kappa.csv:
-Class, N, kappa_C, kappa_S, kappa_V
+Class, N, Quadratic_Weighted_Kappa_C, Quadratic_Weighted_Kappa_S,
+Quadratic_Weighted_Kappa_V
 
 rq1_annotation_policy.csv:
 Metric, PA, PN, CL, NE
@@ -64,9 +65,9 @@ LLM_Context, LLM_Specificity, LLM_Verification
 
 The human--human agreement outputs are computed before discussion/reconciliation. The human--LLM values should reproduce the manuscript-level results:
 
-- Context overall κ = 0.526, MAE = 0.463, bias = -0.439;
-- Specificity overall κ = 0.431, MAE = 0.317, bias = -0.195;
-- Verification overall κ = 0.291, MAE = 0.354, bias approximately -0.061;
+- Context overall κ = 0.526, MAE = 0.475, bias = -0.450;
+- Specificity overall κ = 0.431, MAE = 0.325, bias = -0.200;
+- Verification overall κ = 0.316, MAE = 0.338, bias = -0.037;
 - Table 1 per-class κ values for PA, PN, CL, and NE;
 - Table 2 class-aware annotation policy.
 
