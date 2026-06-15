@@ -20,10 +20,9 @@ license: MIT
 repository-code: https://github.com/unlv-evol/PatchPrompt
 
 abstract: >-
-  Replication package for the PatchPrompt empirical software engineering study.
-  The package includes raw PatchTrack artifacts, ChatGPT conversation PDFs,
-  human and LLM-based prompt annotations, downstream modeling datasets,
-  descriptive statistics, stage-based quantitative analyses, robustness and
-  sensitivity analyses, qualitative evidence artifacts, diagnostics, notebooks,
-  and artifact-evaluation materials supporting end-to-end reproducibility of the
-  study findings.
+  This replication package supports a stage-based empirical study of how developer prompt structure 
+  relates to ChatGPT-assisted pull request outcomes. The study operationalizes prompt quality using 
+  three dimensions—Context, Specificity, and Verification—and analyzes how these dimensions influence code generation, 
+  code adoption, integration depth, and pull request lifecycle behavior. The package includes the final cleaned dataset, 
+  human and LLM annotation-validation artifacts, reproducible scripts, notebooks, diagnostics, tables, and figures needed 
+  to reproduce the reported results.
