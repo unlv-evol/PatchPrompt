@@ -40,7 +40,7 @@ ILLUSTRATIVE_CASES = [
         "Paper_Interpretation": "High specificity and explicit verification cues make generated code easier to evaluate and trust for adoption.",
     },
     {
-        "Case ID": "PN-19",
+        "Case ID": "PN-3",
         "Paper_Section": "4.3.2 Gate 1: Code Adoption",
         "Gate_or_Axis": "Gate 1",
         "Illustrative_Role": "Generated but weakly evaluable code limiting adoption",
