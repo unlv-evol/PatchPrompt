@@ -33,11 +33,11 @@ The final paper uses a class-aware annotation policy derived from agreement metr
 | Metric | PA | PN | CL | NE |
 |---|---|---|---|---|
 | Context | Human | Human | Human | Human |
-| Specificity | Human | LLM | LLM | LLM |
+| Specificity | Human | Human | LLM | LLM |
 | Verification | Human | LLM | Human | Human |
 
 This policy is reproduced in `RQ1_Prompt_Evaluation_Validation/results/rq1/rq1_annotation_policy.csv`.
 
 ## Rationale
 
-Context is retained as human-scored because the LLM showed systematic under-scoring bias. Specificity is automated in non-PA cases where agreement was stronger, but retained as human-scored for PA cases. Verification is automated only for PN cases, where explicit evaluation or rejection reasoning made correctness cues more observable; it remains human-scored for PA, CL, and NE due to instability and ambiguity.
+Context is retained as human-scored because the LLM showed systematic under-scoring bias. Specificity is automated only for CL and NE, and retained as human-scored for PA and PN. Verification is automated only for PN cases, where explicit evaluation or rejection reasoning made correctness cues more observable; it remains human-scored for PA, CL, and NE due to instability and ambiguity.
